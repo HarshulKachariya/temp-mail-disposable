@@ -116,7 +116,7 @@ const MailBox = () => {
             )}
           </ul>
         </div>
-        <div className="flex justify-center items-center flex-col md:w-1/2 px-6 gap-3 text-slate-500">
+        <div className="flex justify-center items-center flex-col md:w-1/2 sm:w-full w-full px-6 gap-3 text-slate-500">
           <h1 className="text-2xl font-bold">
             What is Disposable Temporary E-mail?
           </h1>

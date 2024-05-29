@@ -4,6 +4,7 @@ import QrCodeIcon from "@mui/icons-material/QrCode";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
 import SyncIcon from "@mui/icons-material/Sync";
 import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Button from "../button";
 
@@ -113,7 +114,7 @@ const Home: React.FC<HomeProps> = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row gap-4  md:gap-7 shadow-2xl justify-center items-center p-7 bg-white text-black">
+      <div className="flex flex-wrap md:flex-row gap-4  md:gap-7 shadow-2xl justify-center items-center p-7 bg-white text-black">
         <Button
           onClick={copyEmailToClipboard}
           className="flex gap-1 font-semibold  px-7 py-3 shadow-lg bg-slate-100  hover:bg-emerald-500"
@@ -131,6 +132,13 @@ const Home: React.FC<HomeProps> = () => {
         >
           <EditIcon />
           Change
+        </Button>
+        <Button
+          className="flex gap-1 font-semibold  px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
+          onClick={() => generateEmail()}
+        >
+          <DeleteIcon />
+          Delete
         </Button>
       </div>
       <MailBox />
