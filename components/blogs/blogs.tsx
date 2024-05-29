@@ -11,7 +11,7 @@ const Blogs = () => {
           Popular Articles
         </h1>
         <div className="grid md:gap-8 sm:gap-5 gap-3 lg:grid-cols-2 sm:grid-cols-1 ">
-          {blogs.map((blog) => (
+          {blogs?.map((blog) => (
             <Link href={blog.articleUrl}>
               <div
                 key={blog.id}
