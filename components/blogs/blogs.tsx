@@ -1,4 +1,3 @@
-// pages/blogs.js
 import Image from "next/image";
 import { blogs } from "@/utils/data";
 import Link from "next/link";
