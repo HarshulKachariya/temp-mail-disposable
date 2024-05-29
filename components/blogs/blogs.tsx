@@ -11,7 +11,7 @@ const Blogs = () => {
         </h1>
         <div className="grid md:gap-8 sm:gap-5 gap-3 lg:grid-cols-2 sm:grid-cols-1 ">
           {blogs?.map((blog, index) => (
-            <Link href={blog.articleUrl}>
+            <Link href={blog.articleUrl} key={blog.id || index}>
               <div
                 key={blog.id || index}
                 className="bg-white shadow-md rounded-xl overflow-hidden cursor-pointer p-4"
