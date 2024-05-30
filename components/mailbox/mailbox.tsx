@@ -1,39 +1,70 @@
+import { errorHandler, successHandler } from "@/common/appHandler";
+import axiosInstance from "@/common/axiosInstance";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
-const MailBox = () => {
+const MailBox = ({ email }) => {
+  const [modalTitle, setModalTitle] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [modalTxt, setModalTxt] = useState("Loading...");
   const [countdown, setCountdown] = useState(600); // 10 minutes
+  const [mails, setMails] = useState([]);
 
-  const emails = [
-    {
-      id: 1,
-      subject: "Welcome to Our Service",
-      sender: "admin@example.com",
-      content: "Thank you for joining our service!",
-    },
-    {
-      id: 2,
-      subject: "Your Weekly Update",
-      sender: "newsletter@example.com",
-      content: "Here is your weekly update.",
-    },
-    // Add more emails here if needed
-  ];
+  const fetchEmailsMessage = async () => {
+    try {
+      const res = await axiosInstance.get(`/messages?email=${email}`);
+      setMails(res.data);
+      return successHandler(res);
+    } catch (err) {
+      errorHandler(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchEmailsMessage();
+  }, []);
+
+  // const emails = [];
 
   useEffect(() => {
     if (countdown > 0) {
       const timer = setInterval(() => setCountdown(countdown - 1), 1000);
       return () => clearInterval(timer);
     }
+    fetchEmailsMessage();
   }, [countdown]);
 
-  const handleMailClick = (content: any) => {
-    setModalTxt(content);
-    setShowModal(true);
+  const handleMailClick = async (id: any, title: any) => {
+    try {
+      const response = await axiosInstance.get(`/message?id=${id}`);
+      setModalTitle(title);
+      setModalTxt(response.data);
+      setShowModal(true);
+      return successHandler(response);
+    } catch (error) {
+      errorHandler(error);
+    }
+  };
+
+  const formatGmail = (mail) => {
+    let inputString = mail.from;
+
+    // Remove the surrounding double quotes
+    let withoutQuotes = inputString.replace(/"/g, "");
+
+    // Split the string into an array using '<' and '>' as separators
+    let parts = withoutQuotes.split("<");
+
+    // Extract the name and email
+    let name = parts[0].trim();
+    let emails = parts[1] ? parts[1].replace(">", "").trim() : "";
+    var data = {
+      email: emails,
+      name,
+    };
+    return data;
   };
 
   const modifiedHtmlContent = modalTxt?.replace(
@@ -46,6 +77,8 @@ const MailBox = () => {
     const secs = seconds % 60;
     return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
   };
+
+  // console.log(email);
 
   return (
     <>
@@ -68,18 +101,18 @@ const MailBox = () => {
               />
             </div>
           </div>
-          <ul className="flex flex-col h-96 overflow-y-auto">
-            {emails.length > 0 ? (
-              emails.map((mail, index) => (
+          <ul className="flex flex-col min-h-96  overflow-y-auto">
+            {mails.length > 0 ? (
+              mails?.map((mail, index) => (
                 <li key={index} className="border-b border-gray-200">
                   <button
                     className="flex w-full p-4 text-left"
-                    onClick={() => handleMailClick(mail.content)}
+                    onClick={() => handleMailClick(mail?.id, mail?.subject)}
                   >
                     <div className="flex-shrink-0">
                       <Image
                         className="h-8 w-8 rounded-full"
-                        src="/email.png" // Ensure you have the correct path to your image
+                        src="/email.png"
                         alt="Email icon"
                         width={32}
                         height={32}
@@ -87,17 +120,17 @@ const MailBox = () => {
                     </div>
                     <div className="ml-3 flex-grow">
                       <p className="text-sm font-semibold text-gray-900">
-                        {mail.sender}
+                        {formatGmail(mail)?.email}
                       </p>
                       <p className="mt-1 text-xs text-gray-500">
-                        {mail.subject}
+                        {formatGmail(mail)?.name}
                       </p>
                     </div>
                   </button>
                 </li>
               ))
             ) : (
-              <div className="flex items-center justify-center h-full">
+              <div className="flex items-center justify-center  ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -110,18 +143,18 @@ const MailBox = () => {
                     d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"
                   />
                 </svg>
-                <p className="text-white mt-4">Your inbox is empty</p>
+                <p className="text-gray-400 mt-4">Your inbox is empty</p>
                 <p className="text-gray-400">Waiting for incoming emails</p>
               </div>
             )}
           </ul>
         </div>
-        <div className="flex justify-center items-center flex-col md:w-1/2 sm:w-full w-full px-6 gap-3 text-slate-500">
+        <div className="flex justify-center items-center flex-col lg:w-1/2 md:w-full sm:w-full w-full px-6 gap-3 text-slate-500">
           <h1 className="text-2xl font-bold">
             What is Disposable Temporary E-mail?
           </h1>
 
-          <p className="text-center">
+          <p className="md:text-center text-start">
             <strong>Disposable email</strong> - is a free email service that
             allows to receive email at a temporary address that self-destructed
             after a certain time elapses. It is also known by names like :
@@ -138,21 +171,26 @@ const MailBox = () => {
       {showModal && (
         <>
           <div className="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-black bg-opacity-50">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-2xl w-full">
-              <div className="flex justify-end p-4 border-b">
-                <button
-                  className="text-red-500 font-bold uppercase text-sm"
-                  onClick={() => setShowModal(false)}
-                >
-                  Close
-                </button>
-              </div>
-              <div className="p-6">
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: modifiedHtmlContent,
-                  }}
-                />
+            <div className="justify-center w-full  items-center flex overflow-hidden  fixed inset-0 z-50 outline-none focus:outline-none">
+              <div className="relative h-[90%] w-[90%] my-6 mx-auto overflow-hidden">
+                <div className="border-0 h-full rounded-lg shadow-lg overflow-hidden relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                  <div className="flex items-center justify-end p-2 border-t border-solid border-blueGray-200 rounded-b">
+                    <button
+                      className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                      type="button"
+                      onClick={() => setShowModal(false)}
+                    >
+                      Close
+                    </button>
+                  </div>
+                  <section className="relative p-6 flex-auto overflow-auto ">
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: modifiedHtmlContent,
+                      }}
+                    />
+                  </section>
+                </div>
               </div>
             </div>
           </div>

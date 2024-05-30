@@ -6,19 +6,17 @@ import SyncIcon from "@mui/icons-material/Sync";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useCallback, useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import Button from "../button";
-
 import QRCode from "react-qr-code";
 
-import MailBox from "../mailbox/mailbox";
-import Blogs from "../blogs/blogs";
+import { errorHandler, successHandler } from "@/common/appHandler";
+import axiosInstance from "@/common/axiosInstance";
 
-interface HomeProps {
-  email?: string;
-  handleSetEmail?: () => void;
-}
+const MailBox = dynamic(() => import("../mailbox/mailbox"), { ssr: false });
+// const Blogs = dynamic(() => import("../blogs"), { ssr: true });
 
-const Home: React.FC<HomeProps> = () => {
+const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   const emailRef = useRef<HTMLInputElement>(null);
   const [email, setEmail] = useState<string>("");
@@ -31,27 +29,19 @@ const Home: React.FC<HomeProps> = () => {
     }
   }, [email]);
 
-  const generateEmail = useCallback(() => {
-    const str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    const number = "0123456789";
-    const providers = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com"];
-    let randomEmail = "";
-    const randomLength = Math.floor(Math.random() * 10) + 5;
-
-    for (let i = 0; i < randomLength; i++) {
-      const randomChar = str.charAt(Math.floor(Math.random() * str.length));
-      randomEmail += randomChar;
+  const handleFetchEmails = async () => {
+    try {
+      const response = await axiosInstance.get("/new");
+      const res = successHandler(response);
+      return setEmail(res.data.email);
+    } catch (error) {
+      return errorHandler(error);
     }
-
-    randomEmail += number.charAt(Math.floor(Math.random() * number.length));
-    randomEmail +=
-      "@" + providers[Math.floor(Math.random() * providers.length)];
-    setEmail(randomEmail);
-  }, []);
+  };
 
   useEffect(() => {
-    generateEmail();
-  }, [generateEmail]);
+    handleFetchEmails();
+  }, []);
 
   return (
     <>
@@ -72,10 +62,8 @@ const Home: React.FC<HomeProps> = () => {
                 />
                 <div className="md:flex flex flex-row gap-5 md:absolute md:-right-2 md:-top-4 mt-5 w-full">
                   <Button
-                    onClick={() => {
-                      setIsOpen(!isOpen);
-                    }}
-                    className="bg-zinc-600 gap-1 rounded-full md:w-12 w-full h-12 p-3 items-center justify-center flex md:absolute  md:right-24"
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="bg-zinc-600 gap-1 rounded-full md:w-12 w-full h-12 p-3 items-center justify-center flex md:absolute md:right-24"
                   >
                     <QrCodeIcon className="text-white text-2xl" />
                     <span className="md:hidden">QR Code</span>
@@ -83,7 +71,7 @@ const Home: React.FC<HomeProps> = () => {
 
                   <Button
                     onClick={copyEmailToClipboard}
-                    className="bg-emerald-500 hover:bg-zinc-500 gap-1 rounded-full md:w-12 w-full h-12  p-3 items-center justify-center flex md:absolute md:right-7"
+                    className="bg-emerald-500 hover:bg-zinc-500 gap-1 rounded-full md:w-12 w-full h-12 p-3 items-center justify-center flex md:absolute md:right-7"
                   >
                     <FileCopyIcon className="text-white text-2xl" />
                     <span className="md:hidden">Copy</span>
@@ -92,7 +80,7 @@ const Home: React.FC<HomeProps> = () => {
                 <div
                   className={`${
                     isOpen ? "bg-white p-3 rounded-md h-46 w-46" : "hidden"
-                  } absolute top-32 left-2 md:top-16  md:left-72 `}
+                  } absolute top-32 left-2 md:top-16 md:left-72`}
                 >
                   <QRCode
                     size={256}
@@ -114,35 +102,37 @@ const Home: React.FC<HomeProps> = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap md:flex-row gap-4  md:gap-7 shadow-2xl justify-center items-center p-7 bg-white text-black">
+      <div className="flex flex-wrap md:flex-row gap-4 md:gap-7 shadow-2xl justify-center items-center p-7 bg-white text-black">
         <Button
           onClick={copyEmailToClipboard}
-          className="flex gap-1 font-semibold  px-7 py-3 shadow-lg bg-slate-100  hover:bg-emerald-500"
+          className="flex gap-1 font-semibold px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
         >
           <FileCopyIcon />
           Copy
         </Button>
-        <Button className="flex gap-1 font-light  px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500">
+        <Button
+          onClick={handleFetchEmails}
+          className="flex gap-1 font-light px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
+        >
           <SyncIcon />
           Refresh
         </Button>
         <Button
-          className="flex gap-1 font-semibold  px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
-          onClick={() => generateEmail()}
+          onClick={handleFetchEmails}
+          className="flex gap-1 font-semibold px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
         >
           <EditIcon />
           Change
         </Button>
         <Button
-          className="flex gap-1 font-semibold  px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
-          onClick={() => generateEmail()}
+          onClick={handleFetchEmails}
+          className="flex gap-1 font-semibold px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
         >
           <DeleteIcon />
           Delete
         </Button>
       </div>
-      <MailBox />
-      <Blogs />
+      <MailBox email={email} />
     </>
   );
 };
