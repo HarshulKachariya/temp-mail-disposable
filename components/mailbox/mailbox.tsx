@@ -7,9 +7,12 @@ import "react-circular-progressbar/dist/styles.css";
 
 const MailBox = ({ email }) => {
   const [modalTitle, setModalTitle] = useState("");
+
   const [showModal, setShowModal] = useState(false);
   const [modalTxt, setModalTxt] = useState("Loading...");
-  const [countdown, setCountdown] = useState(600); // 10 minutes
+
+  const [countdown, setCountdown] = useState(600);
+
   const [mails, setMails] = useState([]);
 
   const fetchEmailsMessage = async () => {
@@ -22,18 +25,21 @@ const MailBox = ({ email }) => {
     }
   };
 
+  // initial state components
   useEffect(() => {
     fetchEmailsMessage();
   }, []);
 
-  // const emails = [];
+  useEffect(() => {
+    const intervalId = setInterval(fetchEmailsMessage, 10000); // Fetch every 10 seconds
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, []);
 
   useEffect(() => {
     if (countdown > 0) {
       const timer = setInterval(() => setCountdown(countdown - 1), 1000);
       return () => clearInterval(timer);
     }
-    fetchEmailsMessage();
   }, [countdown]);
 
   const handleMailClick = async (id: any, title: any) => {
@@ -48,7 +54,7 @@ const MailBox = ({ email }) => {
     }
   };
 
-  const formatGmail = (mail) => {
+  const formatGmail = (mail: any) => {
     let inputString = mail.from;
 
     // Remove the surrounding double quotes
@@ -77,8 +83,6 @@ const MailBox = ({ email }) => {
     const secs = seconds % 60;
     return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
   };
-
-  // console.log(email);
 
   return (
     <>
@@ -118,13 +122,20 @@ const MailBox = ({ email }) => {
                         height={32}
                       />
                     </div>
-                    <div className="ml-3 flex-grow">
-                      <p className="text-sm font-semibold text-gray-900">
-                        {formatGmail(mail)?.email}
-                      </p>
-                      <p className="mt-1 text-xs text-gray-500">
-                        {formatGmail(mail)?.name}
-                      </p>
+                    <div className=" flex w-full justify-between">
+                      <div className="min-w-0 px-3 flex-col text-start">
+                        <p className="text-sm font-semibold leading-6 text-gray-900">
+                          {formatGmail(mail)?.email}
+                        </p>
+                        <p className="mt-0 truncate text-xs leading-5 text-gray-500">
+                          {formatGmail(mail)?.name}
+                        </p>
+                      </div>
+                      <div className="min-w-0 px-3 flex-col text-start">
+                        <p className="text-sm font-semibold leading-6 text-gray-900 hidden md:flex">
+                          {mail?.subject}
+                        </p>
+                      </div>
                     </div>
                   </button>
                 </li>
@@ -168,34 +179,34 @@ const MailBox = ({ email }) => {
         </div>
       </div>
 
-      {showModal && (
+      {showModal ? (
         <>
-          <div className="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-black bg-opacity-50">
-            <div className="justify-center w-full  items-center flex overflow-hidden  fixed inset-0 z-50 outline-none focus:outline-none">
-              <div className="relative h-[90%] w-[90%] my-6 mx-auto overflow-hidden">
-                <div className="border-0 h-full rounded-lg shadow-lg overflow-hidden relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                  <div className="flex items-center justify-end p-2 border-t border-solid border-blueGray-200 rounded-b">
-                    <button
-                      className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                      type="button"
-                      onClick={() => setShowModal(false)}
-                    >
-                      Close
-                    </button>
-                  </div>
-                  <section className="relative p-6 flex-auto overflow-auto ">
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: modifiedHtmlContent,
-                      }}
-                    />
-                  </section>
+          <div className="justify-center w-full  items-center flex overflow-hidden  fixed inset-0 z-50 outline-none focus:outline-none">
+            <div className="relative h-[90%] w-[90%] my-6 mx-auto overflow-hidden">
+              <div className="border-0 h-full rounded-lg shadow-lg overflow-hidden relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                <div className="flex items-center justify-end p-2 border-t border-solid border-blueGray-200 rounded-b">
+                  <button
+                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    type="button"
+                    onClick={() => setShowModal(false)}
+                  >
+                    Close
+                  </button>
                 </div>
+                <section className="relative p-6 flex-auto overflow-auto ">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: modifiedHtmlContent,
+                    }}
+                    className="text-black"
+                  />
+                </section>
               </div>
             </div>
           </div>
+          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
         </>
-      )}
+      ) : null}
     </>
   );
 };

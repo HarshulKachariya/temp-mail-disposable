@@ -18,8 +18,10 @@ const MailBox = dynamic(() => import("../mailbox/mailbox"), { ssr: false });
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isBtnLoading, setIsBtnLoading] = useState(false);
   const emailRef = useRef<HTMLInputElement>(null);
   const [email, setEmail] = useState<string>("");
+  const effectRan = useRef(false);
 
   const copyEmailToClipboard = useCallback(() => {
     if (emailRef.current) {
@@ -32,15 +34,27 @@ const Home = () => {
   const handleFetchEmails = async () => {
     try {
       const response = await axiosInstance.get("/new");
-      const res = successHandler(response);
-      return setEmail(res.data.email);
+      const { email } = response.data;
+      setEmail(email);
+      setIsBtnLoading(true);
+      // return setEmail(res.data.email);
+      return successHandler(response);
     } catch (error) {
       return errorHandler(error);
     }
   };
 
   useEffect(() => {
-    handleFetchEmails();
+    if (effectRan.current === false) {
+      if (!email) {
+        handleFetchEmails();
+      }
+      effectRan.current = true;
+
+      return () => {
+        effectRan.current = false;
+      };
+    }
   }, []);
 
   return (
@@ -111,7 +125,7 @@ const Home = () => {
           Copy
         </Button>
         <Button
-          onClick={handleFetchEmails}
+          disabled={isBtnLoading}
           className="flex gap-1 font-light px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
         >
           <SyncIcon />
