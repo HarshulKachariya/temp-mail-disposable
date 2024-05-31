@@ -101,7 +101,7 @@ const MailBox = ({ email }: { email: string }) => {
           </div>
           <ul className="flex flex-col min-h-96 overflow-y-auto">
             {mails.length > 0 ? (
-              mails.map((mail, index) => (
+              mails.map((mail: any, index) => (
                 <li key={index} className="border-b border-gray-200">
                   <button
                     className="flex w-full p-4 text-left"
