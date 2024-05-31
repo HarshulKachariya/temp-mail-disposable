@@ -36,11 +36,10 @@ const Home = () => {
       const response = await axiosInstance.get("/new");
       const { email } = response.data;
       setEmail(email);
-      setIsBtnLoading(true);
-      // return setEmail(res.data.email);
-      return successHandler(response);
+      setIsBtnLoading(false);
     } catch (error) {
-      return errorHandler(error);
+      setIsBtnLoading(false);
+      console.log(error);
     }
   };
 
@@ -55,18 +54,18 @@ const Home = () => {
         effectRan.current = false;
       };
     }
-  }, []);
+  }, [email]);
 
   return (
     <>
       <div className="bg-[#21232a] md:p-7 p-5 flex flex-col justify-center items-center w-full md:h-2/3 h-3/4">
         <div className="max-w-[556px] w-full h-full">
-          <div className="flex flex-col gap-4 justify-center items-center mx-auto md:p-7 p-5 max-w-[556px] h-full border-2 border-zinc-700 rounded-md border-dashed">
+          <div className="flex flex-col gap-4 justify-center items-center text-white mx-auto md:p-7 p-5 max-w-[556px] h-full border-2 border-zinc-700 rounded-md border-dashed">
             <span className="text-xl font-bold">
               Your Temporary Email Address
             </span>
             <div className="flex w-full md:flex-row flex-col gap-5 md:justify-center relative">
-              <div className="flex md:flex-row flex-col w-full">
+              <div className="flex md:flex-row flex-col w-full text-white">
                 <input
                   type="text"
                   readOnly
@@ -126,6 +125,7 @@ const Home = () => {
         </Button>
         <Button
           disabled={isBtnLoading}
+          onClick={handleFetchEmails}
           className="flex gap-1 font-light px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
         >
           <SyncIcon />

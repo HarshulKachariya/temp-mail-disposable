@@ -7,12 +7,9 @@ import "react-circular-progressbar/dist/styles.css";
 
 const MailBox = ({ email }) => {
   const [modalTitle, setModalTitle] = useState("");
-
   const [showModal, setShowModal] = useState(false);
   const [modalTxt, setModalTxt] = useState("Loading...");
-
   const [countdown, setCountdown] = useState(600);
-
   const [mails, setMails] = useState([]);
 
   const fetchEmailsMessage = async () => {
@@ -25,15 +22,14 @@ const MailBox = ({ email }) => {
     }
   };
 
-  // initial state components
   useEffect(() => {
     fetchEmailsMessage();
-  }, []);
+  }, [email]);
 
   useEffect(() => {
     const intervalId = setInterval(fetchEmailsMessage, 10000); // Fetch every 10 seconds
     return () => clearInterval(intervalId); // Cleanup interval on component unmount
-  }, []);
+  }, [email]);
 
   useEffect(() => {
     if (countdown > 0) {
@@ -42,7 +38,7 @@ const MailBox = ({ email }) => {
     }
   }, [countdown]);
 
-  const handleMailClick = async (id: any, title: any) => {
+  const handleMailClick = async (id, title) => {
     try {
       const response = await axiosInstance.get(`/message?id=${id}`);
       setModalTitle(title);
@@ -54,7 +50,7 @@ const MailBox = ({ email }) => {
     }
   };
 
-  const formatGmail = (mail: any) => {
+  const formatGmail = (mail) => {
     let inputString = mail.from;
 
     // Remove the surrounding double quotes
@@ -78,7 +74,7 @@ const MailBox = ({ email }) => {
     '<a target="_blank"'
   );
 
-  const formatTime = (seconds: number) => {
+  const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
@@ -87,8 +83,6 @@ const MailBox = ({ email }) => {
   return (
     <>
       <div className="flex flex-col gap-4 items-center justify-center min-h-screen bg-gray-100">
-        {" "}
-        {/* //bg-gray-900 */}
         <div className="bg-white w-[90%] lg:w-[50%] mb-3 rounded-md shadow-md mt-10">
           <div className="bg-[#21232a] flex items-center justify-between p-4 rounded-t">
             <h1 className="text-xl font-bold text-white">Inbox</h1>
@@ -105,13 +99,13 @@ const MailBox = ({ email }) => {
               />
             </div>
           </div>
-          <ul className="flex flex-col min-h-96  overflow-y-auto">
+          <ul className="flex flex-col min-h-96 overflow-y-auto">
             {mails.length > 0 ? (
-              mails?.map((mail, index) => (
+              mails.map((mail, index) => (
                 <li key={index} className="border-b border-gray-200">
                   <button
                     className="flex w-full p-4 text-left"
-                    onClick={() => handleMailClick(mail?.id, mail?.subject)}
+                    onClick={() => handleMailClick(mail.id, mail.subject)}
                   >
                     <div className="flex-shrink-0">
                       <Image
@@ -122,18 +116,18 @@ const MailBox = ({ email }) => {
                         height={32}
                       />
                     </div>
-                    <div className=" flex w-full justify-between">
+                    <div className="flex w-full justify-between">
                       <div className="min-w-0 px-3 flex-col text-start">
                         <p className="text-sm font-semibold leading-6 text-gray-900">
-                          {formatGmail(mail)?.email}
+                          {formatGmail(mail).name}
                         </p>
                         <p className="mt-0 truncate text-xs leading-5 text-gray-500">
-                          {formatGmail(mail)?.name}
+                          {formatGmail(mail).email}
                         </p>
                       </div>
                       <div className="min-w-0 px-3 flex-col text-start">
                         <p className="text-sm font-semibold leading-6 text-gray-900 hidden md:flex">
-                          {mail?.subject}
+                          {mail.subject}
                         </p>
                       </div>
                     </div>
@@ -141,7 +135,7 @@ const MailBox = ({ email }) => {
                 </li>
               ))
             ) : (
-              <div className="flex items-center justify-center  ">
+              <div className="flex flex-col gap-2 items-center justify-center mt-28">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -164,7 +158,6 @@ const MailBox = ({ email }) => {
           <h1 className="text-2xl font-bold">
             What is Disposable Temporary E-mail?
           </h1>
-
           <p className="md:text-center text-start">
             <strong>Disposable email</strong> - is a free email service that
             allows to receive email at a temporary address that self-destructed
@@ -179,9 +172,9 @@ const MailBox = ({ email }) => {
         </div>
       </div>
 
-      {showModal ? (
+      {showModal && (
         <>
-          <div className="justify-center w-full  items-center flex overflow-hidden  fixed inset-0 z-50 outline-none focus:outline-none">
+          <div className="justify-center w-full items-center flex overflow-hidden fixed inset-0 z-50 outline-none focus:outline-none">
             <div className="relative h-[90%] w-[90%] my-6 mx-auto overflow-hidden">
               <div className="border-0 h-full rounded-lg shadow-lg overflow-hidden relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 <div className="flex items-center justify-end p-2 border-t border-solid border-blueGray-200 rounded-b">
@@ -193,11 +186,9 @@ const MailBox = ({ email }) => {
                     Close
                   </button>
                 </div>
-                <section className="relative p-6 flex-auto overflow-auto ">
+                <section className="relative p-6 flex-auto overflow-auto">
                   <div
-                    dangerouslySetInnerHTML={{
-                      __html: modifiedHtmlContent,
-                    }}
+                    dangerouslySetInnerHTML={{ __html: modifiedHtmlContent }}
                     className="text-black"
                   />
                 </section>
@@ -206,7 +197,7 @@ const MailBox = ({ email }) => {
           </div>
           <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
         </>
-      ) : null}
+      )}
     </>
   );
 };
