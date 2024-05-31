@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
-const MailBox = ({ email }) => {
+const MailBox = ({ email }: { email: string }) => {
   const [modalTitle, setModalTitle] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [modalTxt, setModalTxt] = useState("Loading...");
