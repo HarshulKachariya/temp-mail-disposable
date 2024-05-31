@@ -38,7 +38,7 @@ const MailBox = ({ email }: { email: string }) => {
     }
   }, [countdown]);
 
-  const handleMailClick = async (id, title) => {
+  const handleMailClick = async (id: any, title: any) => {
     try {
       const response = await axiosInstance.get(`/message?id=${id}`);
       setModalTitle(title);
@@ -50,7 +50,7 @@ const MailBox = ({ email }: { email: string }) => {
     }
   };
 
-  const formatGmail = (mail) => {
+  const formatGmail = (mail: any) => {
     let inputString = mail.from;
 
     // Remove the surrounding double quotes
@@ -74,7 +74,7 @@ const MailBox = ({ email }: { email: string }) => {
     '<a target="_blank"'
   );
 
-  const formatTime = (seconds) => {
+  const formatTime = (seconds: any) => {
     const minutes = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
@@ -105,7 +105,7 @@ const MailBox = ({ email }: { email: string }) => {
                 <li key={index} className="border-b border-gray-200">
                   <button
                     className="flex w-full p-4 text-left"
-                    onClick={() => handleMailClick(mail.id, mail.subject)}
+                    onClick={() => handleMailClick(mail?.id, mail?.subject)}
                   >
                     <div className="flex-shrink-0">
                       <Image
@@ -119,15 +119,15 @@ const MailBox = ({ email }: { email: string }) => {
                     <div className="flex w-full justify-between">
                       <div className="min-w-0 px-3 flex-col text-start">
                         <p className="text-sm font-semibold leading-6 text-gray-900">
-                          {formatGmail(mail).name}
+                          {formatGmail(mail)?.name}
                         </p>
                         <p className="mt-0 truncate text-xs leading-5 text-gray-500">
-                          {formatGmail(mail).email}
+                          {formatGmail(mail)?.email}
                         </p>
                       </div>
                       <div className="min-w-0 px-3 flex-col text-start">
                         <p className="text-sm font-semibold leading-6 text-gray-900 hidden md:flex">
-                          {mail.subject}
+                          {mail?.subject}
                         </p>
                       </div>
                     </div>

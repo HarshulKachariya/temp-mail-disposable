@@ -38,6 +38,7 @@ const Home = () => {
       setEmail(email);
       setIsBtnLoading(false);
     } catch (error) {
+      setEmail("");
       setIsBtnLoading(false);
       console.log(error);
     }
@@ -125,21 +126,21 @@ const Home = () => {
         </Button>
         <Button
           disabled={isBtnLoading}
-          onClick={handleFetchEmails}
+          onClick={() => {}}
           className="flex gap-1 font-light px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
         >
           <SyncIcon />
           Refresh
         </Button>
         <Button
-          onClick={handleFetchEmails}
+          onClick={() => handleFetchEmails()}
           className="flex gap-1 font-semibold px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
         >
           <EditIcon />
           Change
         </Button>
         <Button
-          onClick={handleFetchEmails}
+          onClick={() => handleFetchEmails()}
           className="flex gap-1 font-semibold px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
         >
           <DeleteIcon />
