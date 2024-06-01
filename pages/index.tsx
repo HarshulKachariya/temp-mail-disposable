@@ -8,9 +8,7 @@ const Header = dynamic(() => import("@/components/header"), { ssr: false });
 const Footer = dynamic(() => import("@/components/copyrightPage"), {
   ssr: false,
 });
-const HomePage = dynamic(() => import("@/components/home/home"), {
-  ssr: false,
-});
+import HomePage from "@/components/home/home";
 
 export default function Home() {
   return (

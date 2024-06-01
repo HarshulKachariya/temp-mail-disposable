@@ -88,6 +88,7 @@ const Home = () => {
                 />
                 <div className="md:flex flex flex-row gap-5 md:absolute md:-right-2 md:-top-4 mt-5 w-full">
                   <Button
+                    name="qrcode"
                     onClick={() => setIsOpen(!isOpen)}
                     className="bg-zinc-600 gap-1 rounded-full md:w-12 w-full h-12 p-3 items-center justify-center flex md:absolute md:right-24"
                   >
@@ -96,6 +97,7 @@ const Home = () => {
                   </Button>
 
                   <Button
+                    name="copy"
                     onClick={copyEmailToClipboard}
                     className="bg-emerald-500 hover:bg-zinc-500 gap-1 rounded-full md:w-12 w-full h-12 p-3 items-center justify-center flex md:absolute md:right-7"
                   >
@@ -126,19 +128,19 @@ const Home = () => {
         </div>
       </div>
       <div className="flex flex-wrap md:flex-row gap-4 md:gap-7 shadow-2xl justify-center items-center p-7 bg-white text-black">
-        <CustomButton onClick={copyEmailToClipboard}>
+        <CustomButton onClick={copyEmailToClipboard} name="copy">
           <FileCopyIcon />
           Copy
         </CustomButton>
-        <CustomButton disabled={isBtnLoading} onClick={() => {}}>
+        <CustomButton disabled={isBtnLoading} onClick={() => {}} name="refresh">
           <SyncIcon />
           Refresh
         </CustomButton>
-        <CustomButton onClick={() => handleFetchEmails()}>
+        <CustomButton onClick={() => handleFetchEmails()} name="change">
           <EditIcon />
           Change
         </CustomButton>
-        <CustomButton onClick={() => handleFetchEmails()}>
+        <CustomButton onClick={() => handleFetchEmails()} name="delete">
           <DeleteIcon />
           Delete
         </CustomButton>
