@@ -5,6 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="icon" href="/email.svg" />
+        <title>TempMail - Get your temporary email address instantly!</title>
         <meta
           name="description"
           content="TempMail - Get your temporary email address instantly!"
