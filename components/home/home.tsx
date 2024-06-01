@@ -43,8 +43,8 @@ const Home = () => {
 
   const handleFetchEmails = async () => {
     try {
-      // const response = await axiosInstance.get("/new");
-      // const { email } = response.data;
+      const response = await axiosInstance.get("/new");
+      const { email } = response.data;
       setEmail(email);
       setIsMailboxLoading(false);
       setIsBtnLoading(false);

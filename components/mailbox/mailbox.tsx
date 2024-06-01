@@ -2,9 +2,7 @@ import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import "react-circular-progressbar/dist/styles.css";
 
-const axiosInstance = dynamic(() => import("@/common/axiosInstance"), {
-  ssr: false,
-});
+import axiosInstance from "@/common/axiosInstance";
 const Image = dynamic(() => import("next/image"), { ssr: false });
 
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
@@ -18,8 +16,8 @@ const MailBox = ({ email }: { email: string }) => {
 
   const fetchEmailsMessage = async () => {
     try {
-      // const res = await axiosInstance.get(`/messages?email=${email}`);
-      // setMails(res.data);
+      const res = await axiosInstance.get(`/messages?email=${email}`);
+      setMails(res.data);
     } catch (err) {
       console.log(err);
     }
@@ -43,9 +41,9 @@ const MailBox = ({ email }: { email: string }) => {
 
   const handleMailClick = async (id: any, title: any) => {
     try {
-      // const response = await axiosInstance.get(`/message?id=${id}`);
+      const response = await axiosInstance.get(`/message?id=${id}`);
       setModalTitle(title);
-      // setModalTxt(response.data);
+      setModalTxt(response.data);
       setShowModal(true);
     } catch (error) {
       console.log(error);
