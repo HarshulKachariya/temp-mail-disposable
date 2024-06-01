@@ -1,9 +1,8 @@
 import React from "react";
-import Link from "next/link";
 
-const Footer = () => {
+const CopyrightPage = () => {
   return (
-    <div className="min-h-screen  w-full flex flex-col items-center justify-center bg-gray-100 ">
+    <div className="flex flex-col items-center justify-center bg-gray-100 ">
       <div className="bg-white shadow-md rounded-lg p-6 max-w-3xl w-full">
         <h1 className="text-2xl font-bold mb-4 text-center">
           Copyright Notice
@@ -36,4 +35,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default CopyrightPage;

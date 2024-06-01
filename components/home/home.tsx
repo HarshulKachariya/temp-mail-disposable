@@ -1,26 +1,36 @@
 "use client";
 
-import QrCodeIcon from "@mui/icons-material/QrCode";
-import FileCopyIcon from "@mui/icons-material/FileCopy";
-import SyncIcon from "@mui/icons-material/Sync";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
 import { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import Button from "../button";
-import QRCode from "react-qr-code";
 
-import { errorHandler, successHandler } from "@/common/appHandler";
-import axiosInstance from "@/common/axiosInstance";
-
+const QrCodeIcon = dynamic(() => import("@mui/icons-material/QrCode"), {
+  ssr: false,
+});
+const FileCopyIcon = dynamic(() => import("@mui/icons-material/FileCopy"), {
+  ssr: false,
+});
+const SyncIcon = dynamic(() => import("@mui/icons-material/Sync"), {
+  ssr: false,
+});
+const EditIcon = dynamic(() => import("@mui/icons-material/Edit"), {
+  ssr: false,
+});
+const DeleteIcon = dynamic(() => import("@mui/icons-material/Delete"), {
+  ssr: false,
+});
+const Button = dynamic(() => import("../button"), { ssr: false });
+const QRCode = dynamic(() => import("react-qr-code"), { ssr: false });
 const MailBox = dynamic(() => import("../mailbox/mailbox"), { ssr: false });
-// const Blogs = dynamic(() => import("../blogs"), { ssr: true });
+
+import axiosInstance from "@/common/axiosInstance";
+const CustomButton = dynamic(() => import("../custombuttons"), { ssr: false });
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isBtnLoading, setIsBtnLoading] = useState(false);
+  const [isMailboxLoading, setIsMailboxLoading] = useState(true);
   const emailRef = useRef<HTMLInputElement>(null);
-  const [email, setEmail] = useState<string>("");
+  const [email, setEmail] = useState<string>("Loading...");
   const effectRan = useRef(false);
 
   const copyEmailToClipboard = useCallback(() => {
@@ -33,12 +43,13 @@ const Home = () => {
 
   const handleFetchEmails = async () => {
     try {
-      const response = await axiosInstance.get("/new");
-      const { email } = response.data;
+      // const response = await axiosInstance.get("/new");
+      // const { email } = response.data;
       setEmail(email);
+      setIsMailboxLoading(false);
       setIsBtnLoading(false);
     } catch (error) {
-      setEmail("");
+      setEmail("Loading...");
       setIsBtnLoading(false);
       console.log(error);
     }
@@ -46,8 +57,9 @@ const Home = () => {
 
   useEffect(() => {
     if (effectRan.current === false) {
-      if (!email) {
+      if (email === "Loading...") {
         handleFetchEmails();
+        setIsMailboxLoading(false);
       }
       effectRan.current = true;
 
@@ -60,7 +72,7 @@ const Home = () => {
   return (
     <>
       <div className="bg-[#21232a] md:p-7 p-5 flex flex-col justify-center items-center w-full md:h-2/3 h-3/4">
-        <div className="max-w-[556px] w-full h-full">
+        <div className="max-w-[556px]">
           <div className="flex flex-col gap-4 justify-center items-center text-white mx-auto md:p-7 p-5 max-w-[556px] h-full border-2 border-zinc-700 rounded-md border-dashed">
             <span className="text-xl font-bold">
               Your Temporary Email Address
@@ -70,7 +82,7 @@ const Home = () => {
                 <input
                   type="text"
                   readOnly
-                  value={email}
+                  value={!isMailboxLoading ? email : "Loading..."}
                   ref={emailRef}
                   className="p-4 md:w-5/6 w-full h-full text-xl bg-[#2B2C33] rounded-full outline-none"
                 />
@@ -106,46 +118,30 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="w-full flex justify-center items-center mt-5">
-            <p className="text-zinc-500 text-center">
-              Forget about spam, advertising mailings, hacking and attacking
-              robots. Keep your real mailbox clean and secure. Temp Mail
-              provides temporary, secure, anonymous, free, disposable email
-              address.
-            </p>
-          </div>
+          <p className=" mt-5 text-zinc-500 text-center">
+            Forget about spam, advertising mailings, hacking and attacking
+            robots. Keep your real mailbox clean and secure. Temp Mail provides
+            temporary, secure, anonymous, free, disposable email address.
+          </p>
         </div>
       </div>
       <div className="flex flex-wrap md:flex-row gap-4 md:gap-7 shadow-2xl justify-center items-center p-7 bg-white text-black">
-        <Button
-          onClick={copyEmailToClipboard}
-          className="flex gap-1 font-semibold px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
-        >
+        <CustomButton onClick={copyEmailToClipboard}>
           <FileCopyIcon />
           Copy
-        </Button>
-        <Button
-          disabled={isBtnLoading}
-          onClick={() => {}}
-          className="flex gap-1 font-light px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
-        >
+        </CustomButton>
+        <CustomButton disabled={isBtnLoading} onClick={() => {}}>
           <SyncIcon />
           Refresh
-        </Button>
-        <Button
-          onClick={() => handleFetchEmails()}
-          className="flex gap-1 font-semibold px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
-        >
+        </CustomButton>
+        <CustomButton onClick={() => handleFetchEmails()}>
           <EditIcon />
           Change
-        </Button>
-        <Button
-          onClick={() => handleFetchEmails()}
-          className="flex gap-1 font-semibold px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500"
-        >
+        </CustomButton>
+        <CustomButton onClick={() => handleFetchEmails()}>
           <DeleteIcon />
           Delete
-        </Button>
+        </CustomButton>
       </div>
       <MailBox email={email} />
     </>

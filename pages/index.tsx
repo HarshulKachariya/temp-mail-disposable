@@ -1,10 +1,16 @@
-import Header from "@/components/header";
-import HomePage from "@/components/home/home";
 import { Inter } from "next/font/google";
-import Blogs from "../components/blogs";
-import Footer from "@/components/footer";
+import dynamic from "next/dynamic";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const Blogs = dynamic(() => import("@/pages/blogs/"), { ssr: true });
+const Header = dynamic(() => import("@/components/header"), { ssr: false });
+const Footer = dynamic(() => import("@/components/copyrightPage"), {
+  ssr: false,
+});
+const HomePage = dynamic(() => import("@/components/home/home"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
