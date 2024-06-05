@@ -5,7 +5,9 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="icon" href="/email.svg" />
-        <title>TempMail - Get your temporary email address instantly!</title>
+        <title>
+          TempMail - Get your temporary and disposable email address instantly!
+        </title>
         <meta
           name="description"
           content="TempMail - Get your temporary email address instantly!"
@@ -62,23 +64,18 @@ export default function Document() {
           "
         />
         <meta name="author" content="Tempmail email" />
-        <meta property="og:title" content="TempMail - Free Temporary Email" />
+        <meta
+          property="og:title"
+          content="TempMail email - Free Temporary Email"
+        />
         <meta
           property="og:description"
           content="TempMail provides temporary, secure, anonymous, free, disposable email addresses. No registration required!"
         />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://tempmail-disposableEmail.netlify.app"
-        />
-
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-DLM5LXM60F"
-        ></script>
+        <meta property="og:url" content="https://tempmail-email.com" />
       </Head>
-      <body>
+      <body className="bg-gray-100">
         <Main />
         <NextScript />
       </body>

@@ -129,7 +129,7 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-wrap md:flex-row gap-4 md:gap-7 shadow-2xl justify-center items-center p-7 bg-white text-black">
+      <div className="flex flex-wrap md:flex-row gap-4 md:gap-7 shadow-2xl  justify-center items-center p-7 bg-white text-black ">
         <CustomButton onClick={copyEmailToClipboard} name="copy">
           <FileCopyIcon />
           Copy

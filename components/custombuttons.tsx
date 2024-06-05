@@ -11,7 +11,7 @@ interface ButtonProps
 const CustomButton: React.FC<ButtonProps> = ({ children, ...props }) => {
   return (
     <button
-      className={`rounded-full flex gap-1 font-semibold px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500`}
+      className={`rounded-full flex gap-1  px-7 py-3 shadow-lg bg-slate-100 hover:bg-emerald-500`}
       {...props}
     >
       {children}

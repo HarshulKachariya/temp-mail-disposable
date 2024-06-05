@@ -11,13 +11,14 @@ const MailBox = ({ email }: { email: string }) => {
   const [modalTitle, setModalTitle] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [modalTxt, setModalTxt] = useState("Loading...");
-  const [countdown, setCountdown] = useState(600);
+  const [countdown, setCountdown] = useState(10);
   const [mails, setMails] = useState([]);
 
   const fetchEmailsMessage = async () => {
     try {
       const res = await axiosInstance.get(`/messages?email=${email}`);
       setMails(res.data);
+      setCountdown(10);
     } catch (err) {
       console.log(err);
     }
@@ -75,9 +76,8 @@ const MailBox = ({ email }: { email: string }) => {
   );
 
   const formatTime = (seconds: any) => {
-    const minutes = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+    const secs = seconds;
+    return `${secs < 10 ? "0" : ""}${secs}`;
   };
 
   return (
@@ -88,7 +88,7 @@ const MailBox = ({ email }: { email: string }) => {
             <h1 className="text-xl font-bold text-white">Inbox</h1>
             <div className="w-12 h-12">
               <CircularProgressbar
-                value={(countdown / 600) * 100}
+                value={countdown * 10}
                 text={formatTime(countdown)}
                 styles={buildStyles({
                   textSize: "24px",
