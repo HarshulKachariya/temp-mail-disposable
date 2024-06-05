@@ -1,29 +1,18 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import dynamic from "next/dynamic";
 
-const QrCodeIcon = dynamic(() => import("@mui/icons-material/QrCode"), {
-  ssr: false,
-});
-const FileCopyIcon = dynamic(() => import("@mui/icons-material/FileCopy"), {
-  ssr: false,
-});
-const SyncIcon = dynamic(() => import("@mui/icons-material/Sync"), {
-  ssr: false,
-});
-const EditIcon = dynamic(() => import("@mui/icons-material/Edit"), {
-  ssr: false,
-});
-const DeleteIcon = dynamic(() => import("@mui/icons-material/Delete"), {
-  ssr: false,
-});
-const Button = dynamic(() => import("../button"), { ssr: false });
-const QRCode = dynamic(() => import("react-qr-code"), { ssr: false });
-const MailBox = dynamic(() => import("../mailbox/mailbox"), { ssr: false });
+import QrCodeIcon from "@mui/icons-material/QrCode";
+import FileCopyIcon from "@mui/icons-material/FileCopy";
+import SyncIcon from "@mui/icons-material/Sync";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Button from "../button";
+import QRCode from "react-qr-code";
+import MailBox from "../mailbox/mailbox";
 
 import axiosInstance from "@/common/axiosInstance";
-const CustomButton = dynamic(() => import("../custombuttons"), { ssr: false });
+import CustomButton from "../custombuttons";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
