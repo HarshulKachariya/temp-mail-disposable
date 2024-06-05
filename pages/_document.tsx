@@ -72,6 +72,11 @@ export default function Document() {
           property="og:url"
           content="https://tempmail-disposableEmail.netlify.app"
         />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-DLM5LXM60F"
+        ></script>
       </Head>
       <body>
         <Main />

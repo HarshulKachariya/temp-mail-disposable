@@ -58,7 +58,9 @@ const Home = () => {
   useEffect(() => {
     if (effectRan.current === false) {
       if (email === "Loading...") {
-        handleFetchEmails();
+        setTimeout(() => {
+          handleFetchEmails();
+        });
         setIsMailboxLoading(false);
       }
       effectRan.current = true;
@@ -67,7 +69,7 @@ const Home = () => {
         effectRan.current = false;
       };
     }
-  }, [email]);
+  }, []);
 
   return (
     <>
