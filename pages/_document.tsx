@@ -74,11 +74,13 @@ export default function Document() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tempmail-email.com" />
-                <meta name="google-site-verification" content="WuFxV91DgUW_CNbRf45kqrU3eFpS49q5qqTBnGLhpCM" />
+        <meta
+          name="google-site-verification"
+          content="google157ac4885f988124"
+        />
+        {/* <meta name="google-site-verification" content="WuFxV91DgUW_CNbRf45kqrU3eFpS49q5qqTBnGLhpCM" /> */}
       </Head>
       <body className="bg-gray-100">
-
-   
         <Main />
         <NextScript />
       </body>
