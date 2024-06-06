@@ -1,24 +1,26 @@
-import { errorHandler, successHandler } from "@/common/appHandler";
-import axiosInstance from "@/common/axiosInstance";
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+
+import axiosInstance from "@/common/axiosInstance";
+const Image = dynamic(() => import("next/image"), { ssr: false });
+
+import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 
 const MailBox = ({ email }: { email: string }) => {
   const [modalTitle, setModalTitle] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [modalTxt, setModalTxt] = useState("Loading...");
-  const [countdown, setCountdown] = useState(600);
+  const [countdown, setCountdown] = useState(10);
   const [mails, setMails] = useState([]);
 
   const fetchEmailsMessage = async () => {
     try {
       const res = await axiosInstance.get(`/messages?email=${email}`);
       setMails(res.data);
-      return successHandler(res);
+      setCountdown(10);
     } catch (err) {
-      errorHandler(err);
+      console.log(err);
     }
   };
 
@@ -44,9 +46,8 @@ const MailBox = ({ email }: { email: string }) => {
       setModalTitle(title);
       setModalTxt(response.data);
       setShowModal(true);
-      return successHandler(response);
     } catch (error) {
-      errorHandler(error);
+      console.log(error);
     }
   };
 
@@ -75,9 +76,8 @@ const MailBox = ({ email }: { email: string }) => {
   );
 
   const formatTime = (seconds: any) => {
-    const minutes = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+    const secs = seconds;
+    return `${secs < 10 ? "0" : ""}${secs}`;
   };
 
   return (
@@ -88,7 +88,7 @@ const MailBox = ({ email }: { email: string }) => {
             <h1 className="text-xl font-bold text-white">Inbox</h1>
             <div className="w-12 h-12">
               <CircularProgressbar
-                value={(countdown / 600) * 100}
+                value={countdown * 10}
                 text={formatTime(countdown)}
                 styles={buildStyles({
                   textSize: "24px",
