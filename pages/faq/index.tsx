@@ -67,7 +67,7 @@ export default function FAQ() {
 
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-4">
-      <Link href="/page/temp mail" className="text-lg font-semibold">
+      <Link href="/pages/temp mail" className="text-lg font-semibold">
         {"<"} GO BACK
       </Link>
       <h1 className="bg-[#21232a] capitalize p-3 rounded-2xl text-white font-mono sm:text-3xl text-xl font-bold mb-8 text-center">

@@ -7,7 +7,7 @@ export async function getServerSideProps(context: any) {
 
   return {
     redirect: {
-      destination: "/page/temp mail",
+      destination: "/pages/temp mail",
       permanent: false,
     },
   };
@@ -17,7 +17,7 @@ export default function Home({ params }: { params: any }) {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/page/temp mail");
+    router.push("/pages/temp mail");
   }, [router]);
   return (
     <>
