@@ -36,7 +36,7 @@ const Home = () => {
       const { email } = response.data;
       setEmail(email);
       setIsMailboxLoading(false);
-      setIsBtnLoading(false);
+      setIsBtnLoading(true);
     } catch (error) {
       setEmail("Loading...");
       setIsBtnLoading(false);
@@ -47,9 +47,7 @@ const Home = () => {
   useEffect(() => {
     if (effectRan.current === false) {
       if (email === "Loading...") {
-        setTimeout(() => {
-          handleFetchEmails();
-        });
+        handleFetchEmails();
         setIsMailboxLoading(false);
       }
       effectRan.current = true;
@@ -127,11 +125,11 @@ const Home = () => {
           <SyncIcon />
           Refresh
         </CustomButton>
-        <CustomButton onClick={() => handleFetchEmails()} name="change">
+        <CustomButton onClick={handleFetchEmails} name="change">
           <EditIcon />
           Change
         </CustomButton>
-        <CustomButton onClick={() => handleFetchEmails()} name="delete">
+        <CustomButton onClick={handleFetchEmails} name="delete">
           <DeleteIcon />
           Delete
         </CustomButton>

@@ -35,7 +35,7 @@ const ContactForm = () => {
   });
 
   return (
-    <div className="md:max-w-xl max-w-md mx-auto p-6 bg-white rounded-md shadow-lg  my-5">
+    <div className="md:max-w-xl min-h-screen max-w-md mx-auto p-6 bg-white rounded-md shadow-lg  my-5">
       <h1 className="bg-[#21232a]  capitalize p-3 rounded-2xl text-white font-mono sm:text-3xl text-lg font-bold mb-8 text-center">
         Conatct us
       </h1>
@@ -50,8 +50,8 @@ const ContactForm = () => {
         experience in receiving emails in the unlikely event they occur.
       </p>
       {isSubmitted ? (
-        <h1 className="text-xl font-bold text-green-500">
-          Form Submitted SuccessFull
+        <h1 className="text-2xl font-bold text-green-500 text-center">
+          Your request sent sucessfull and we will contact you soon...
         </h1>
       ) : (
         <form onSubmit={formik.handleSubmit}>
