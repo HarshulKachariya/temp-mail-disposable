@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <link rel="icon" href="/email.svg" crossorigin="anonymous"/>
+        <link rel="icon" href="/email.svg" crossOrigin="anonymous"/>
         <title>
           TempMail - Get your temporary and disposable email address instantly!
         </title>
