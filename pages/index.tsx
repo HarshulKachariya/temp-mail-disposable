@@ -1,18 +1,26 @@
-import Header from "@/components/header";
-import HomePage from "@/components/home/home";
-import { Inter } from "next/font/google";
-import Blogs from "../components/blogs";
-import Footer from "@/components/footer";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+export async function getServerSideProps(context: any) {
+  const { params } = context;
 
-export default function Home() {
+  return {
+    redirect: {
+      destination: "/pages/temp mail",
+      permanent: false,
+    },
+  };
+}
+
+export default function Home({ params }: { params: any }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/pages/temp mail");
+  }, [router]);
   return (
-    <main>
-      <Header />
-      <HomePage />
-      <Blogs />
-      <Footer />
-    </main>
+    <>
+      <h1>Temp mail</h1>
+    </>
   );
 }
