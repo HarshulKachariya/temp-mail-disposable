@@ -35,8 +35,7 @@ export default function Document() {
           content="google157ac4885f988124"
         />
         <meta name="google-adsense-account" content="ca-pub-5728499744349930" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5728499744349930"
-     crossorigin="anonymous"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5728499744349930"></script>
       </Head>
       <body className="bg-gray-100">
         <Main />
