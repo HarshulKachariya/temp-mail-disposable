@@ -3,7 +3,6 @@ import { useEffect } from "react";
 
 export async function getServerSideProps(context: any) {
   const { params } = context;
-  console.log(params, "params");
 
   return {
     redirect: {

@@ -1,8 +1,6 @@
-import axiosInstance from "@/common/axiosInstance";
 import BlogsCard from "@/components/blogs";
 import { blogs } from "@/utils/data";
 
-import Image from "next/image";
 import Link from "next/link";
 
 const Blogs = () => {

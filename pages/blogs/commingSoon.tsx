@@ -4,7 +4,7 @@ import React from "react";
 const CommingSoon = () => {
   return (
     <>
-      <div className="flex h-screen flex-col-reverse gap-10  justify-center items-center text-zinc-400  font-bold bg-[#21232a]">
+      <div className="flex h-screen flex-col-reverse gap-10  justify-center items-center text-zinc-200  font-bold bg-[#21232a]">
         <Link href="/pages/temp mail" className="text-lg font-semibold">
           {"<"} GO BACK
         </Link>
