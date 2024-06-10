@@ -1,6 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import clientPromise from "../../lib/mongodb";
 
+import cors, { runMiddleware } from "../../lib/cors";
+
+
 type RequestBody = {
   name: string;
   email: string;
@@ -48,6 +51,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+
+  await runMiddleware(req, res, cors);
+
+
   if (req.method === "POST") {
     await handlePostRequest(req, res);
   } else if (req.method === "GET") {
