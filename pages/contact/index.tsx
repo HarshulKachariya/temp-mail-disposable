@@ -3,7 +3,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import axiosInstance from "@/common/axiosInstance";
-import Header from "@/components/header";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
