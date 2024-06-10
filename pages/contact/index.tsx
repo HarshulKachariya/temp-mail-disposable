@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import axiosInstance from "@/common/axiosInstance";
+import axios from "axios";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -25,7 +26,7 @@ const ContactForm = () => {
     validationSchema,
     onSubmit: (values) => {
       try {
-        axiosInstance.post("http://localhost:3000/api/contact", values);
+        axios.post("/api/contact", values);
         setIsSubmmited(true);
       } catch (error) {
         console.log(error);
