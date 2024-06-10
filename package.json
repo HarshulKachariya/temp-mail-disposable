@@ -25,7 +25,9 @@
     "yup": "^1.4.0"
   },
   "devDependencies": {
+
     "@types/cors": "^2.8.17",
+
     "@types/mongodb": "^4.0.7",
     "@types/node": "^20",
     "@types/react": "^18",
