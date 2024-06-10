@@ -7,8 +7,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/api/:path*",
-        destination: "https://tempmail-email.com/api/:path*",
+        source: "/api/contact",
+        destination: "https://tempmail-email.com/api/contact",
       },
     ];
   },
