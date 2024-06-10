@@ -1,9 +1,11 @@
-
 import Cors from "cors";
 
 const cors = Cors({
   methods: ["GET", "POST", "OPTIONS"],
-  origin: "https://tempmail-email.com",
+  origin:
+    "https://tempmail-email.com" ||
+    "http://localhost:3000" ||
+    "https://temp-mail-disposable.vercel.app",
 });
 
 function runMiddleware(req: any, res: any, fn: any) {
