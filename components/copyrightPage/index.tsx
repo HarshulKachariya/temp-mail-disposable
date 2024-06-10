@@ -1,9 +1,6 @@
-import { useParams } from "next/navigation";
 import React from "react";
 
 const CopyrightPage = () => {
-  const params = useParams();
-  console.log(params);
   return (
     <>
       <div className="flex flex-col items-center justify-center bg-gray-100 mb-5">
