@@ -8,34 +8,8 @@ type RequestBody = {
   message: string;
 };
 
-// const validateEmail = (email: string): boolean => {
-//   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//   return emailRegex.test(email);
-// };
-
-// const validateRequestBody = (
-//   body: RequestBody
-// ): { isValid: boolean; error?: string } => {
-//   const { name, email, reason, message } = body;
-
-//   if (!name || !email || !reason || !message) {
-//     return { isValid: false, error: "All fields are required." };
-//   }
-
-//   if (!validateEmail(email)) {
-//     return { isValid: false, error: "Invalid email format." };
-//   }
-
-//   return { isValid: true };
-// };
-
 const handlePostRequest = async (req: NextApiRequest, res: NextApiResponse) => {
   const { name, email, reason, message } = req.body as RequestBody;
-
-  // const validation = validateRequestBody(req.body as RequestBody);
-  // if (!validation.isValid) {
-  //   return res.status(400).json({ error: validation.error });
-  // }
 
   try {
     const client = await clientPromise;
