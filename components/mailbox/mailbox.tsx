@@ -6,6 +6,7 @@ import axiosInstance from "@/common/axiosInstance";
 const Image = dynamic(() => import("next/image"), { ssr: false });
 
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
+import Ads from "../ads";
 
 const MailBox = ({ email }: { email: string }) => {
   const [modalTitle, setModalTitle] = useState("");
@@ -83,6 +84,7 @@ const MailBox = ({ email }: { email: string }) => {
   return (
     <>
       <div className="flex flex-col gap-4 items-center justify-center min-h-screen bg-gray-100">
+        <Ads />
         <div className="bg-white w-[90%] lg:w-[50%] mb-3 rounded-md shadow-md mt-10">
           <div className="bg-[#21232a] flex items-center justify-between p-4 rounded-t">
             <h1 className="text-xl font-bold text-white">Inbox</h1>
@@ -154,6 +156,7 @@ const MailBox = ({ email }: { email: string }) => {
             )}
           </ul>
         </div>
+        <Ads />
         <div className="flex justify-center items-center flex-col lg:w-1/2 md:w-full sm:w-full w-full px-6 gap-3 text-slate-500">
           <h1 className="text-2xl font-bold">
             What is Disposable Temporary E-mail?
