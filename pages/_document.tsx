@@ -83,12 +83,11 @@ export default function Document() {
         />
         <meta name="google-adsense-account" content="ca-pub-5728499744349930" />
         {process.env.NODE_ENV === "production" && (
-          <Script
-            strategy="lazyOnload"
+          <script
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5728499744349930"
             crossOrigin="anonymous"
-          ></Script>
+          ></script>
         )}
         {/*         <meta name="google-adsense-account" content="ca-pub-3938307797483770" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3938307797483770" crossOrigin="anonymous"></script> */}
