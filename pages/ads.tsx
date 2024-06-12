@@ -1,30 +1,29 @@
 import React, { useEffect, useRef } from "react";
 
 const Ads: React.FC = () => {
-  const adRef = useRef<HTMLDivElement>(null);
+  const adRef = useRef(null);
 
   useEffect(() => {
-    // if (!document.querySelector('script[data-adsbygoogle-loaded="true"]')) {
-    //   const script = document.createElement("script");
-    //   script.src =
-    //     "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5728499744349930";
-    //   script.async = true;
-    //   script.setAttribute("data-adsbygoogle-loaded", "true");
-    //   document.body.appendChild(script);
-    // }
+    if (!document.querySelector('script[data-adsbygoogle-loaded="true"]')) {
+      const script = document.createElement("script");
+      script.src =
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5728499744349930";
+      script.async = true;
+      script.setAttribute("data-adsbygoogle-loaded", "true");
+      document.body.appendChild(script);
+    }
 
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (error) {
       console.log(error);
     }
-    {
-    }
   }, []);
 
   return (
     <div>
       <ins
+        ref={adRef}
         className="adsbygoogle"
         style={{ display: "block" }}
         data-ad-client="ca-pub-5728499744349930"
