@@ -1,9 +1,15 @@
+// components/ContactForm.tsx
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-
-import axiosInstance from "@/common/axiosInstance";
 import axios from "axios";
+
+interface FormValues {
+  name: string;
+  email: string;
+  reason: string;
+  message: string;
+}
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -14,9 +20,10 @@ const validationSchema = Yup.object({
   message: Yup.string().required("Message is required"),
 });
 
-const ContactForm = () => {
-  const [isSubmitted, setIsSubmmited] = useState(false);
-  const formik = useFormik({
+const ContactForm: React.FC = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const formik = useFormik<FormValues>({
     initialValues: {
       name: "",
       email: "",
@@ -24,20 +31,20 @@ const ContactForm = () => {
       message: "",
     },
     validationSchema,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       try {
-        axios.post("/api/contact", values);
-        setIsSubmmited(true);
+        await axios.post("https://tempmail-email.com/api/contact", values);
+        setIsSubmitted(true);
       } catch (error) {
-        console.log(error);
+        console.error("Error submitting form:", error);
       }
     },
   });
 
   return (
-    <div className="md:max-w-xl min-h-screen max-w-md mx-auto p-6 bg-white rounded-md shadow-lg  my-5">
-      <h1 className="bg-[#21232a]  capitalize p-3 rounded-2xl text-white font-mono sm:text-3xl text-lg font-bold mb-8 text-center">
-        Conatct us
+    <div className="md:max-w-xl min-h-screen max-w-md mx-auto p-6 bg-white rounded-md shadow-lg my-5">
+      <h1 className="bg-[#21232a] capitalize p-3 rounded-2xl text-white font-mono sm:text-3xl text-lg font-bold mb-8 text-center">
+        Contact us
       </h1>
       <p className="text-gray-600 mb-6">
         If the answers to common questions and a detailed description on the
@@ -51,7 +58,7 @@ const ContactForm = () => {
       </p>
       {isSubmitted ? (
         <h1 className="text-2xl font-bold text-green-500 text-center">
-          Your request sent sucessfull and we will contact you soon...
+          Your request was sent successfully, and we will contact you soon...
         </h1>
       ) : (
         <form onSubmit={formik.handleSubmit}>
@@ -123,7 +130,7 @@ const ContactForm = () => {
               } rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
             >
               <option value="">Select a reason</option>
-              <option value="General inqiry">General inqiry</option>
+              <option value="General inquiry">General inquiry</option>
               <option value="Abuse report">Abuse report</option>
               <option value="Bug report">Bug report</option>
               <option value="Feedback / suggestion">

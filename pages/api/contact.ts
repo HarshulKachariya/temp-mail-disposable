@@ -1,15 +1,14 @@
+// pages/api/contact.ts
 import type { NextApiRequest, NextApiResponse } from "next";
 import clientPromise from "../../lib/mongodb";
-
 import cors, { runMiddleware } from "../../lib/cors";
 
-
-type RequestBody = {
+interface RequestBody {
   name: string;
   email: string;
   reason: string;
   message: string;
-};
+}
 
 const handlePostRequest = async (req: NextApiRequest, res: NextApiResponse) => {
   const { name, email, reason, message } = req.body as RequestBody;
@@ -51,9 +50,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-
   await runMiddleware(req, res, cors);
-
 
   if (req.method === "POST") {
     await handlePostRequest(req, res);
