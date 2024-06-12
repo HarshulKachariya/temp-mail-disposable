@@ -7,23 +7,11 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/:path*", // Apply these headers to all routes
+        source: "/:path*",
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: (req) => {
-              const origin = req.headers.origin;
-              const whitelist = [
-                "https://tempmail-email.com",
-                "http://localhost:3000",
-                "https://temp-mail-disposable.vercel.app",
-                "https://tempmail-disposable.netlify.app",
-              ];
-              if (whitelist.includes(origin)) {
-                return origin;
-              }
-              return ""; // Return an empty string or a default value if not in the whitelist
-            },
+            value: "*", // Static value used here for simplicity
           },
           {
             key: "Access-Control-Allow-Methods",

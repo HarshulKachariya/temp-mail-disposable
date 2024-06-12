@@ -1,4 +1,3 @@
-// components/ContactForm.tsx
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -33,7 +32,7 @@ const ContactForm: React.FC = () => {
     validationSchema,
     onSubmit: async (values) => {
       try {
-        await axios.post("https://tempmail-email.com/api/contact", values);
+        await axios.post("/api/contact", values);
         setIsSubmitted(true);
       } catch (error) {
         console.error("Error submitting form:", error);

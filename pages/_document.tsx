@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
   return (
@@ -81,11 +82,14 @@ export default function Document() {
           content="google157ac4885f988124"
         />
         <meta name="google-adsense-account" content="ca-pub-5728499744349930" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5728499744349930"
-          crossOrigin="anonymous"
-        ></script>
+        {process.env.NODE_ENV === "production" && (
+          <Script
+            strategy="lazyOnload"
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5728499744349930"
+            crossOrigin="anonymous"
+          ></Script>
+        )}
         {/*         <meta name="google-adsense-account" content="ca-pub-3938307797483770" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3938307797483770" crossOrigin="anonymous"></script> */}
       </Head>

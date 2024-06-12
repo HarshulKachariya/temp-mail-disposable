@@ -2,10 +2,12 @@ import Cors from "cors";
 
 const cors = Cors({
   methods: ["GET", "POST", "OPTIONS"],
-  origin:
-    "https://tempmail-email.com" ||
-    "http://localhost:3000" ||
+  origin: [
+    "https://tempmail-email.com",
+    "http://localhost:3000",
     "https://temp-mail-disposable.vercel.app",
+    "https://tempmail-disposable.netlify.app",
+  ],
 });
 
 function runMiddleware(req: any, res: any, fn: any) {
