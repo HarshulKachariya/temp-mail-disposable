@@ -25,7 +25,7 @@ const ComingSoon = () => {
   }
 
   return (
-    <div className="flex px-6 md:px-36 h-full flex-col gap-10 justify-center items-center text-zinc-200 font-bold bg-[#21232a]">
+    <div className="flex px-6 md:px-36 md:h-screen flex-col gap-10 justify-center items-center text-zinc-200 font-bold bg-[#21232a]">
       <Link
         href="/pages/temp mail"
         className="text-lg flex w-full justify-start font-semibold"
