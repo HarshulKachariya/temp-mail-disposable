@@ -1,18 +1,35 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { blogs } from "@/utils/data";
+import { useParams } from "next/navigation";
 
-const CommingSoon = () => {
+const ComingSoon = () => {
+  const [blog, setBlog] = useState<null | any>(null);
+  const { slug } = useParams();
+
+  useEffect(() => {
+    const foundBlog = blogs.find((blog) => blog.id === Number(slug));
+    setBlog(foundBlog);
+  }, [slug]);
+
+  if (!blog) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <>
-      <div className="flex h-screen flex-col-reverse gap-10  justify-center items-center text-zinc-200  font-bold bg-[#21232a]">
-        <Link href="/pages/temp mail" className="text-lg font-semibold">
-          {"<"} GO BACK
-        </Link>
-        <p>Click below to back on home page</p>
-        <h1 className=" md:text-7xl text-3xl">Comming Soon</h1>
+    <div className="flex px-6 md:px-36 h-full flex-col gap-10 justify-center items-center text-zinc-200 font-bold bg-[#21232a]">
+      <Link
+        href="/pages/temp mail"
+        className="text-lg flex w-full justify-start font-semibold"
+      >
+        {"<"} GO BACK
+      </Link>
+      <div className="flex flex-col gap-4">
+        <h1 className="text-3xl">{blog?.title}</h1>
+        <p>{blog?.description}</p>
       </div>
-    </>
+    </div>
   );
 };
 
-export default CommingSoon;
+export default ComingSoon;
