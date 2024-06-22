@@ -3,13 +3,19 @@ import React, { useEffect, useState } from "react";
 import { blogs } from "@/utils/data";
 import { useParams } from "next/navigation";
 
+interface Blog {
+  id: number;
+  title: string;
+  description: string;
+}
+
 const ComingSoon = () => {
-  const [blog, setBlog] = useState<null | any>(null);
+  const [blog, setBlog] = useState<Blog | null>(null);
   const { slug } = useParams();
 
   useEffect(() => {
     const foundBlog = blogs.find((blog) => blog.id === Number(slug));
-    setBlog(foundBlog);
+    setBlog(foundBlog || null);
   }, [slug]);
 
   if (!blog) {
@@ -25,8 +31,8 @@ const ComingSoon = () => {
         {"<"} GO BACK
       </Link>
       <div className="flex flex-col gap-4">
-        <h1 className="text-3xl">{blog?.title}</h1>
-        <p>{blog?.description}</p>
+        <h1 className="text-3xl">{blog.title}</h1>
+        <p>{blog.description}</p>
       </div>
     </div>
   );
