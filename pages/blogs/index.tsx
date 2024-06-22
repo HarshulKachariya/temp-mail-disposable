@@ -1,4 +1,4 @@
-import BlogsCard from "@/components/blogs";
+import BlogsCard from "@/components/blog";
 import { blogs } from "@/utils/data";
 
 import Link from "next/link";

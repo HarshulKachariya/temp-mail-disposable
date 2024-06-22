@@ -11,14 +11,16 @@ interface Blog {
 
 const ComingSoon = () => {
   const [blog, setBlog] = useState<Blog | null>(null);
-  const { slug } = useParams();
+  const slug = useParams();
 
   useEffect(() => {
-    const foundBlog = blogs.find((blog) => blog.id === Number(slug));
-    setBlog(foundBlog || null);
+    if (slug) {
+      const foundBlog = blogs.find((blog) => blog.id === Number(slug.slug));
+      setBlog(foundBlog || null);
+    }
   }, [slug]);
 
-  if (!blog) {
+  if (slug && !blog) {
     return <div>Loading...</div>;
   }
 
@@ -30,10 +32,19 @@ const ComingSoon = () => {
       >
         {"<"} GO BACK
       </Link>
-      <div className="flex flex-col gap-4">
-        <h1 className="text-3xl">{blog.title}</h1>
-        <p>{blog.description}</p>
-      </div>
+      {slug ? (
+        <div className="flex flex-col gap-4">
+          <h1 className="text-3xl">{blog?.title}</h1>
+          <p>{blog?.description}</p>
+        </div>
+      ) : (
+        blogs.map((blog: Blog) => (
+          <div key={blog.id} className="flex flex-col gap-4">
+            <h1 className="text-3xl">{blog.title}</h1>
+            <p>{blog.description}</p>
+          </div>
+        ))
+      )}
     </div>
   );
 };
