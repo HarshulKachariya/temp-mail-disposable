@@ -84,79 +84,85 @@ const MailBox = ({ email }: { email: string }) => {
   return (
     <>
       <div className="flex flex-col gap-4 items-center justify-center min-h-screen bg-gray-100">
-        <Ads />
-        <div className="bg-white w-[90%] lg:w-[50%] mb-3 rounded-md shadow-md mt-10">
-          <div className="bg-[#21232a] flex items-center justify-between p-4 rounded-t">
-            <h1 className="text-xl font-bold text-white">Inbox</h1>
-            <div className="w-12 h-12">
-              <CircularProgressbar
-                value={countdown * 10}
-                text={formatTime(countdown)}
-                styles={buildStyles({
-                  textSize: "24px",
-                  textColor: "white",
-                  pathColor: "white",
-                  trailColor: "rgba(255, 255, 255, 0.2)",
-                })}
-              />
-            </div>
+        <div className="flex flex-row gap-2">
+          <div className="hidden sm:block md:block">
+            <Ads />
           </div>
-          <ul className="flex flex-col min-h-96 overflow-y-auto">
-            {mails.length > 0 ? (
-              mails.map((mail: any, index) => (
-                <li key={index} className="border-b border-gray-200">
-                  <button
-                    className="flex w-full p-4 text-left"
-                    onClick={() => handleMailClick(mail?.id, mail?.subject)}
-                  >
-                    <div className="flex-shrink-0">
-                      <Image
-                        className="h-8 w-8 rounded-full"
-                        src="/email.png"
-                        alt="Email icon"
-                        width={32}
-                        height={32}
-                      />
-                    </div>
-                    <div className="flex w-full justify-between">
-                      <div className="min-w-0 px-3 flex-col text-start">
-                        <p className="text-sm font-semibold leading-6 text-gray-900">
-                          {formatGmail(mail)?.name}
-                        </p>
-                        <p className="mt-0 truncate text-xs leading-5 text-gray-500">
-                          {formatGmail(mail)?.email}
-                        </p>
-                      </div>
-                      <div className="min-w-0 px-3 flex-col text-start">
-                        <p className="text-sm font-semibold leading-6 text-gray-900 hidden md:flex">
-                          {mail?.subject}
-                        </p>
-                      </div>
-                    </div>
-                  </button>
-                </li>
-              ))
-            ) : (
-              <div className="flex flex-col gap-2 items-center justify-center mt-28">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  className="w-12 h-12 animate-spin"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                  <path
-                    fillRule="evenodd"
-                    d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"
-                  />
-                </svg>
-                <p className="text-gray-400 mt-4">Your inbox is empty</p>
-                <p className="text-gray-400">Waiting for incoming emails</p>
+          <div className="bg-white w-[90%] lg:w-[150%] mb-3 rounded-md shadow-md mt-10">
+            <div className="bg-[#21232a] flex items-center justify-between p-4 rounded-t">
+              <h1 className="text-xl font-bold text-white">Inbox</h1>
+              <div className="w-12 h-12">
+                <CircularProgressbar
+                  value={countdown * 10}
+                  text={formatTime(countdown)}
+                  styles={buildStyles({
+                    textSize: "24px",
+                    textColor: "white",
+                    pathColor: "white",
+                    trailColor: "rgba(255, 255, 255, 0.2)",
+                  })}
+                />
               </div>
-            )}
-          </ul>
+            </div>
+            <ul className="flex flex-col min-h-96 overflow-y-auto">
+              {mails.length > 0 ? (
+                mails.map((mail: any, index) => (
+                  <li key={index} className="border-b border-gray-200">
+                    <button
+                      className="flex w-full p-4 text-left"
+                      onClick={() => handleMailClick(mail?.id, mail?.subject)}
+                    >
+                      <div className="flex-shrink-0">
+                        <Image
+                          className="h-8 w-8 rounded-full"
+                          src="/email.png"
+                          alt="Email icon"
+                          width={32}
+                          height={32}
+                        />
+                      </div>
+                      <div className="flex w-full justify-between">
+                        <div className="min-w-0 px-3 flex-col text-start">
+                          <p className="text-sm font-semibold leading-6 text-gray-900">
+                            {formatGmail(mail)?.name}
+                          </p>
+                          <p className="mt-0 truncate text-xs leading-5 text-gray-500">
+                            {formatGmail(mail)?.email}
+                          </p>
+                        </div>
+                        <div className="min-w-0 px-3 flex-col text-start">
+                          <p className="text-sm font-semibold leading-6 text-gray-900 hidden md:flex">
+                            {mail?.subject}
+                          </p>
+                        </div>
+                      </div>
+                    </button>
+                  </li>
+                ))
+              ) : (
+                <div className="flex flex-col gap-2 items-center justify-center mt-28">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    className="w-12 h-12 animate-spin"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                    <path
+                      fillRule="evenodd"
+                      d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"
+                    />
+                  </svg>
+                  <p className="text-gray-400 mt-4">Your inbox is empty</p>
+                  <p className="text-gray-400">Waiting for incoming emails</p>
+                </div>
+              )}
+            </ul>
+          </div>
+          <div className="hidden sm:block md:block">
+            <Ads />
+          </div>
         </div>
-        <Ads />
         <div className="flex justify-center items-center flex-col lg:w-1/2 md:w-full sm:w-full w-full px-6 gap-3 text-slate-500">
           <h1 className="text-2xl font-bold">
             What is Disposable Temporary E-mail?
