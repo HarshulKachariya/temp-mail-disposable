@@ -26,6 +26,7 @@ const handlePostRequest = async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     res.status(201).json(result);
+    console.log("response", result);
   } catch (error) {
     console.error("Error handling POST request:", error);
     res.status(500).json({ error: "Internal Server Error" });

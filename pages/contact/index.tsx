@@ -27,7 +27,7 @@ const ContactForm = () => {
     validationSchema,
     onSubmit: async (values) => {
       try {
-        await axiosInstanceContact.post("/contact", values);
+        await axios.post("https://tempmail-email.com/api/contact", values);
         setIsSubmmited(true);
       } catch (error) {
         console.log(error);
