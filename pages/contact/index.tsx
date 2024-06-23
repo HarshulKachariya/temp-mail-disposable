@@ -28,7 +28,10 @@ const ContactForm = () => {
     validationSchema,
     onSubmit: async (values) => {
       try {
-        await axios.post(`${apiUrls}/api/contact`, values);
+        await axios.post(
+          `https://temp-mail-disposable.vercel.app/api/contact`,
+          values
+        );
         setIsSubmmited(true);
       } catch (error) {
         console.log(error);
