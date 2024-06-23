@@ -16,6 +16,7 @@ const validationSchema = Yup.object({
 });
 
 const ContactForm = () => {
+  const apiUrls = process.env.API_URL;
   const [isSubmitted, setIsSubmmited] = useState(false);
   const formik = useFormik({
     initialValues: {
@@ -27,7 +28,7 @@ const ContactForm = () => {
     validationSchema,
     onSubmit: async (values) => {
       try {
-        await axiosInstanceContact.post("/contact", values);
+        await axios.post(`${apiUrls}/api/contact`, values);
         setIsSubmmited(true);
       } catch (error) {
         console.log(error);

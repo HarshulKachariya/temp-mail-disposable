@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import clientPromise from "../../lib/mongodb";
-import cors, { runMiddleware } from "../../lib/cors";
+// import cors, { runMiddleware } from "../../lib/cors";
 
 type RequestBody = {
   name: string;
@@ -26,6 +26,7 @@ const handlePostRequest = async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     res.status(201).json(result);
+    console.log(result);
   } catch (error) {
     console.error("Error handling POST request:", error);
     res.status(500).json({ error: "Internal Server Error" });
@@ -49,7 +50,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  await runMiddleware(req, res, cors);
+  // await runMiddleware(req, res, cors);
 
   if (req.method === "POST") {
     await handlePostRequest(req, res);
