@@ -1,9 +1,8 @@
-
 import Cors from "cors";
 
 const cors = Cors({
   methods: ["GET", "POST", "OPTIONS"],
-  origin: "https://tempmail-email.com",
+  origin: "https://tempmail-email.com/api",
 });
 
 function runMiddleware(req: any, res: any, fn: any) {
