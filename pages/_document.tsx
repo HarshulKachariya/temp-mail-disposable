@@ -84,10 +84,13 @@ export default function Document() {
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5728499744349930"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         ></script>
 
-        <meta name="google-site-verification" content="WuFxV91DgUW_CNbRf45kqrU3eFpS49q5qqTBnGLhpCM" />
+        <meta
+          name="google-site-verification"
+          content="WuFxV91DgUW_CNbRf45kqrU3eFpS49q5qqTBnGLhpCM"
+        />
         {/*         <meta name="google-adsense-account" content="ca-pub-3938307797483770" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3938307797483770" crossOrigin="anonymous"></script> */}
       </Head>
