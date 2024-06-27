@@ -84,7 +84,7 @@ export default function Document() {
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5728499744349930"
-          crossOrigin="anonymous"
+          crossorigin="anonymous"
         ></script>
 
         <meta name="google-site-verification" content="WuFxV91DgUW_CNbRf45kqrU3eFpS49q5qqTBnGLhpCM" />
