@@ -76,16 +76,18 @@ export default function Document() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tempmail-email.com" />
-        <meta
+        {/* <meta
           name="google-site-verification"
           content="google157ac4885f988124"
-        />
+        /> */}
         <meta name="google-adsense-account" content="ca-pub-5728499744349930" />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5728499744349930"
           crossOrigin="anonymous"
         ></script>
+
+        <meta name="google-site-verification" content="WuFxV91DgUW_CNbRf45kqrU3eFpS49q5qqTBnGLhpCM" />
         {/*         <meta name="google-adsense-account" content="ca-pub-3938307797483770" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3938307797483770" crossOrigin="anonymous"></script> */}
       </Head>
