@@ -43,7 +43,7 @@ const ComingSoon = () => {
                 alt={blog.title}
                 width={500}
                 height={500}
-                className="w-full h-[500px] object-cover rounded-md mb-4"
+                className="w-full h-[500px] object-contain sm:object-cover rounded-md mb-4"
               />
             )}
             {blog?.description && (
