@@ -8,6 +8,7 @@ const Image = dynamic(() => import("next/image"), { ssr: false });
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import Ads from "../ads";
 import SqureAds from "../squreAds";
+import MiddleAds from "../middleAds";
 
 const MailBox = ({ email }: { email: string }) => {
   const [modalTitle, setModalTitle] = useState("");
@@ -87,9 +88,8 @@ const MailBox = ({ email }: { email: string }) => {
       <div className="flex flex-col  gap-4 items-center justify-center min-h-screen bg-gray-100">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4  w-full h-full  justify-between items-center ">
           <div className="  md:col-span-2  justify-center items-center  w-[80%] h-full mx-auto hidden md:flex">
-            <Ads />
+            <MiddleAds />
           </div>
-
           <div className="bg-white col-span-1 md:col-span-8 mb-3 rounded-md shadow-md mt-10 sm:mx-6 md:mx-0 mx-4">
             <div className="bg-[#21232a] flex items-center justify-between p-4 rounded-t">
               <h1 className="text-xl font-bold text-white">Inbox</h1>
@@ -163,7 +163,7 @@ const MailBox = ({ email }: { email: string }) => {
           </div>
 
           <div className=" md:col-span-2  justify-center items-center  w-[80%] h-full mx-auto hidden md:flex">
-            <Ads />
+            <MiddleAds />
           </div>
         </div>
 
