@@ -11,7 +11,7 @@ const MainPage = () => {
     <>
       <HomePage />
       <Blogs />
-      <div className="  h-32  flex justify-center items-center">
+      <div className="mb-7  h-32  flex justify-center items-center">
         <div className="w-[75%]">
           <Ads />
         </div>

@@ -64,7 +64,7 @@ const Home = () => {
     <>
       <div className="bg-[#21232a] md:p-7 p-5 grid md:grid-cols-header gap-5 justify-between items-center w-full md:h-2/3 h-3/4">
         <div className="  justify-center items-center  w-[80%] h-full mx-auto hidden md:flex">
-          <SqureAds />
+          <Ads />
         </div>
         <div className="max-w-[556px]">
           <div className="flex flex-col gap-4 justify-center items-center text-white mx-auto md:p-7 p-5 max-w-[556px] h-full border-2 border-zinc-700 rounded-md border-dashed">
@@ -121,7 +121,7 @@ const Home = () => {
           </p>
         </div>
         <div className=" flex justify-center items-center  md:w-[80%] h-full  mx-auto w-full  ">
-          <SqureAds />
+          <Ads />
         </div>
       </div>
       <div className="flex flex-wrap md:flex-row gap-4 md:gap-7 shadow-2xl  justify-center items-center p-7 bg-white text-black ">
