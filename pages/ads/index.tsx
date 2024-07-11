@@ -1,12 +1,12 @@
-import Ads from '@/components/ads'
-import React from 'react'
+import Ads from "@/components/ads";
+import React from "react";
 
 function index() {
   return (
-    <div>
-        <Ads/>
+    <div className="bg-black">
+      <Ads />
     </div>
-  )
+  );
 }
 
-export default index
+export default index;

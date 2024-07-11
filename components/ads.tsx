@@ -6,7 +6,7 @@ const Ads: React.FC = () => {
       ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
         {}
       );
-    }catch (error) {
+    } catch (error) {
       console.log(error);
     }
   }, []);

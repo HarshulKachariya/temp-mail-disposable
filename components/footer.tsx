@@ -16,6 +16,9 @@ const Footer = () => {
           <div>
             <ul className=" flex md:flex-row flex-col gap-4">
               <li>
+                <Link href="/blogs">Blogs</Link>
+              </li>
+              <li>
                 <Link href="/contact">Contact Us</Link>
               </li>
               <li>
