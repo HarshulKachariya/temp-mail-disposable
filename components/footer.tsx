@@ -42,7 +42,9 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <Ads dataAdFormat={"auto"} dataAdSlot={"7840492531"} />
+      <div className="  h-32  flex justify-center items-center">
+        <Ads dataAdFormat={"auto"} dataAdSlot={"7840492531"} />
+      </div>
     </div>
   );
 };
