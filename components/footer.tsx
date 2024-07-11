@@ -2,6 +2,8 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
+import Ads from "@/components/ads";
+
 const Footer = () => {
   const [copyName, setCopyName] = useState<string>();
   const params = useParams();
@@ -40,6 +42,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      <Ads dataAdFormat={"auto"} dataAdSlot={"7840492531"} />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import React from "react";
 function index() {
   return (
     <div className="bg-black">
-      <Ads />
+      <Ads dataAdFormat={"auto"} dataAdSlot={"1183533549"} />
     </div>
   );
 }
