@@ -2,7 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["temp-mail.org"],
+    domains: [
+      "temp-mail.org",
+      "noahsarkinterior.com",
+      "tempmails.net",
+      "www.touchpoint.com",
+      "i.pcmag.com",
+      "emailacademy.com",
+    ],
   },
 };
 

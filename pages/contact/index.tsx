@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import axiosInstance from "@/common/axiosInstance";
 import axios from "axios";
 import axiosInstanceContact from "@/common/axiosInstanceContact";
 
@@ -16,7 +15,7 @@ const validationSchema = Yup.object({
 });
 
 const ContactForm = () => {
-  const apiUrls = process.env.API_URL;
+  // const apiUrls = process.env.API_URL;
   const [isSubmitted, setIsSubmmited] = useState(false);
   const formik = useFormik({
     initialValues: {
@@ -28,10 +27,7 @@ const ContactForm = () => {
     validationSchema,
     onSubmit: async (values) => {
       try {
-        await axios.post(
-          `https://temp-mail-disposable.vercel.app/api/contact`,
-          values
-        );
+        await axios.post(`/api/contact`, values);
         setIsSubmmited(true);
       } catch (error) {
         console.log(error);

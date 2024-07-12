@@ -2,6 +2,9 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
+import Ads from "@/components/ads";
+import HeaderAds from "./headerAds";
+
 const Footer = () => {
   const [copyName, setCopyName] = useState<string>();
   const params = useParams();
@@ -15,6 +18,9 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center flex-col">
           <div>
             <ul className=" flex md:flex-row flex-col gap-4">
+              <li>
+                <Link href="/blogs">Blogs</Link>
+              </li>
               <li>
                 <Link href="/contact">Contact Us</Link>
               </li>
@@ -37,6 +43,9 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      <div className="  h-32  flex justify-center items-center">
+        <HeaderAds />
+      </div>
     </div>
   );
 };
