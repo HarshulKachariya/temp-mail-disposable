@@ -62,8 +62,9 @@ const Home = () => {
 
   return (
     <>
-      <div className="bg-[#21232a] md:p-7 p-5 grid md:grid-cols-12 gap-5 justify-between items-center w-full md:h-2/3 h-3/4">
-        <div className=" hidden md:grid md:col-span-3">
+      <div className="bg-[#21232a] md:p-7 p-5 flex flex-col  md:grid md:grid-cols-12 gap-5 justify-between items-center w-full md:h-2/3 h-3/4">
+        {/* <div className="bg-[#21232a] md:p-7 p-5 grid md:grid-cols-12 gap-5 justify-between items-center w-full md:h-2/3 h-3/4"> */}
+        <div className="bg-black hidden md:grid md:col-span-3">
           <SqureAds />
         </div>
         <div className="md:col-span-6 col-span-12 ">
@@ -121,7 +122,7 @@ const Home = () => {
             temporary, secure, anonymous, free, disposable email address.
           </p>
         </div>
-        <div className=" hidden md:grid md:col-span-3">
+        <div className="bg-black md:grid md:col-span-3">
           {/* <div className=" w-[400px] h-[280px] mx-auto hidden md:grid md:col-span-3"> */}
           <SqureAds />
         </div>
