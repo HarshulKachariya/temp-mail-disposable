@@ -86,9 +86,9 @@ const MailBox = ({ email }: { email: string }) => {
   return (
     <>
       <div className="flex flex-col  gap-4 items-center justify-center min-h-screen bg-gray-100">
-        <div className="md:grid grid grid-cols-1 grid-rows-3  md:grid-cols-12 gap-4  w-full h-full  justify-between items-center ">
+        <div className=" grid grid-cols-1   md:grid-cols-12 gap-4  w-full h-full  justify-between items-center ">
           {/* <div className="md:grid grid-cols-1 md:grid-cols-12 gap-4  w-full h-full  justify-between items-center "> */}
-          <div className="w-full h-full  grid row-span-1 md:col-span-2">
+          <div className="w-full h-full   col-span-1 md:col-span-2">
             <SqureAds />
           </div>
           <div className="bg-white col-span-1 md:col-span-8 mb-3 rounded-md shadow-md mt-10 sm:mx-6 md:mx-0 mx-4">
@@ -162,7 +162,7 @@ const MailBox = ({ email }: { email: string }) => {
               )}
             </ul>
           </div>
-          <div className="w-full h-full  grid row-span-1 md:col-span-2">
+          <div className="w-full h-full   col-span-1 md:col-span-2">
             <SqureAds />
           </div>
         </div>

@@ -219,7 +219,7 @@ const ContactForm = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 md:gap-5 gap-3 justify-between items-center md:mx-6">
-      <div className="mx-auto w-full min-h-[200px] bg-black  col-span-1 md:col-span-3">
+      <div className="mx-auto w-full min-h-[200px] col-span-1 md:col-span-3">
         <SqureAds />
       </div>
       <div className="grid row-span-1 md:col-span-6">
@@ -367,8 +367,8 @@ const ContactForm = () => {
           )}
         </div>
       </div>
-      <div className="mx-auto w-full min-h-[200px] bg-black col-span-1 md:col-span-3">
-        <MultipleAds />
+      <div className="mx-auto w-fullh-full col-span-1 md:col-span-3">
+        <SqureAds />
       </div>
     </div>
   );

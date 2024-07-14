@@ -1,3 +1,4 @@
+import Ads from "@/components/ads";
 import Header from "@/components/header";
 import MultipleAds from "@/components/multipleAds";
 import Link from "next/link";
@@ -106,7 +107,7 @@ export default function FAQ() {
         ))}
       </div>
       <div>
-        <MultipleAds />
+        <Ads />
       </div>
     </div>
   );
