@@ -2,7 +2,6 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-import Ads from "@/components/ads";
 import HeaderAds from "./headerAds";
 
 const Footer = () => {
@@ -43,7 +42,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="  h-32  flex justify-center items-center">
+      <div>
         <HeaderAds />
       </div>
     </div>

@@ -16,9 +16,8 @@ const MultipleAds: React.FC = () => {
       className="adsbygoogle"
       style={{ display: "block" }}
       data-ad-client="ca-pub-5728499744349930"
-      data-ad-slot="7840492531"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
+      data-ad-slot="7648920840"
+      data-ad-format="autorelaxed"
     ></ins>
   );
 };
