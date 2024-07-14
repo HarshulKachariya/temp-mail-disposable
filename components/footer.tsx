@@ -2,7 +2,6 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-import HeaderAds from "./headerAds";
 import Ads from "./ads";
 
 const Footer = () => {
