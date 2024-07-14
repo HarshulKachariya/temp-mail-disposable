@@ -87,8 +87,8 @@ const MailBox = ({ email }: { email: string }) => {
     <>
       <div className="flex flex-col  gap-4 items-center justify-center min-h-screen bg-gray-100">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4  w-full h-full  justify-between items-center ">
-          <div className="  md:col-span-2  mx-auto hidden md:grid">
-            <MiddleAds />
+          <div className="hidden md:grid md:col-span-2">
+            <SqureAds />
           </div>
           <div className="bg-white col-span-1 md:col-span-8 mb-3 rounded-md shadow-md mt-10 sm:mx-6 md:mx-0 mx-4">
             <div className="bg-[#21232a] flex items-center justify-between p-4 rounded-t">
@@ -161,9 +161,8 @@ const MailBox = ({ email }: { email: string }) => {
               )}
             </ul>
           </div>
-
-          <div className=" md:col-span-2  md:mx-auto hidden md:grid">
-            <MiddleAds />
+          <div className="hidden md:grid md:col-span-2">
+            <SqureAds />
           </div>
         </div>
 
