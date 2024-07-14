@@ -63,7 +63,7 @@ const Home = () => {
   return (
     <>
       <div className="bg-[#21232a] md:p-7 p-5 grid md:grid-cols-header gap-5 justify-between items-center w-full md:h-2/3 h-3/4">
-        <div className="  justify-center items-center  w-full h-full mx-auto hidden md:flex">
+        <div className="bg-black  w-full h-full mx-auto hidden md:flex">
           <SqureAds />
         </div>
         <div className="max-w-[556px]">
@@ -120,7 +120,7 @@ const Home = () => {
             temporary, secure, anonymous, free, disposable email address.
           </p>
         </div>
-        <div className=" flex justify-center items-center  md:w-full h-full  mx-auto w-full  ">
+        <div className="bg-black  w-full h-full mx-auto hidden md:flex">
           <SqureAds />
         </div>
       </div>
