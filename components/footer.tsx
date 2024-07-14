@@ -41,10 +41,10 @@ const Footer = () => {
             </p>
           </div>
         </div>
+        <div className="bg-black">
+          <Ads />
+        </div>
       </footer>
-      <div>
-        <Ads />
-      </div>
     </div>
   );
 };
