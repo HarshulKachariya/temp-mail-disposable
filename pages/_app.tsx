@@ -1,8 +1,10 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import Script from 'next/script';
+import type { AppProps } from "next/app";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import "@/styles/globals.css";
-import type { AppProps } from "next/app";
-import Script from 'next/script';
 const GA_TRACKING_ID = 'G-TLSRBXL8TD';
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
