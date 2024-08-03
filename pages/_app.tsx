@@ -9,7 +9,7 @@ const GA_TRACKING_ID = 'G-TLSRBXL8TD';
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = (url:any) => {
       window.gtag('config', GA_TRACKING_ID, {
         page_path: url,
       });
