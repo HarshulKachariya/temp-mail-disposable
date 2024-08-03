@@ -88,15 +88,6 @@ export default function Document() {
           name="google-site-verification"
           content="WuFxV91DgUW_CNbRf45kqrU3eFpS49q5qqTBnGLhpCM"
         />
-
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-TLSRBXL8TD"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)}
-          gtag('js', new Date());
-
-          gtag('config', 'G-TLSRBXL8TD');
-        </script>
         {/*         <meta name="google-adsense-account" content="ca-pub-3938307797483770" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3938307797483770" crossOrigin="anonymous"></script> */}
       </Head>
