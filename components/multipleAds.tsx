@@ -15,7 +15,7 @@ const MultipleAds: React.FC = () => {
     <ins
       className="adsbygoogle"
       style={{ display: "block" }}
-      data-ad-client="ca-pub-5728499744349930"
+      data-ad-client="ca-pub-3068255257089060"
       data-ad-slot="7648920840"
       data-ad-format="autorelaxed"
     ></ins>
