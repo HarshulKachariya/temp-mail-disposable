@@ -3,7 +3,7 @@ import React from "react";
 const CopyrightPage = () => {
   return (
     <>
-      <div className="flex flex-col items-center justify-center bg-gray-100 mb-5">
+      <div className="flex flex-col items-center justify-center bg-gray-100 mx-5 mb-5">
         <div className="bg-white shadow-md rounded-lg p-6 max-w-3xl w-full">
           <h1 className="text-2xl font-bold mb-4 text-center">
             Copyright Notice

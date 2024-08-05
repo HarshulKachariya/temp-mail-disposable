@@ -6,9 +6,7 @@ export default function Document() {
       <Head>
         <link rel="icon" href="/email.svg" crossOrigin="anonymous" />
 
-        <title>
-          TempMail - Get your temporary and disposable email address instantly!
-        </title>
+        <title>TempMail - Get your temporary email address instantly!</title>
 
         <meta
           name="description"
@@ -17,7 +15,7 @@ export default function Document() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="keywords"
-          content="tempmail, temporary email, disposable email, spoof mail
+          content="'tempmail', 'temporary email', 'disposable email', 'spoof mail', 'temp mail', 'tempmail-email', 'temp', 'email','tempemail', 'temp mail email', 'free email', 'disposable email', 'temporary email', 'tempmail email address', 'temporary email',
           'spoof-email', 'free', 'temp','temporary', email,temp email, 'disposable', 'mail', 'temp emails', 'email address', 'temp mail', 'tempmail mail', 
     'tem email', 'temp mail email', 'temporary email', 'temp mailbox', 'disposable temporary email', 'disposable email', 'smailpro', 
     'burner email address', 'temporary email generator', 'temp mail generator', 'burner email generator', 'temporary email address', 
@@ -81,12 +79,31 @@ export default function Document() {
           content="google157ac4885f988124"
         /> */}
         <meta name="google-adsense-account" content="ca-pub-5728499744349930" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
 
         <meta
           name="google-site-verification"
           content="WuFxV91DgUW_CNbRf45kqrU3eFpS49q5qqTBnGLhpCM"
         />
+         <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=G-TLSRBXL8TD`}
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-TLSRBXL8TD', {
+                  page_path: window.location.pathname,
+                });
+              `,
+            }}
+          ></script>
         {/*         <meta name="google-adsense-account" content="ca-pub-3938307797483770" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3938307797483770" crossOrigin="anonymous"></script> */}
       </Head>

@@ -1,3 +1,4 @@
+import Ads from "@/components/ads";
 import BlogsCard from "@/components/blog";
 import { blogs } from "@/utils/data";
 
@@ -6,6 +7,9 @@ import Link from "next/link";
 const Blogs = () => {
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-100 py-10 md:px-24 sm:px-14">
+      <div>
+        <Ads />
+      </div>
       <div className=" mx-auto px-4">
         <h1 className="text-4xl font-bold text-black text-center mb-10">
           Popular Articles
@@ -17,6 +21,9 @@ const Blogs = () => {
             </Link>
           ))}
         </div>
+      </div>
+      <div>
+        <Ads />
       </div>
     </div>
   );

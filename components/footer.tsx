@@ -2,8 +2,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-import Ads from "@/components/ads";
-import HeaderAds from "./headerAds";
+import Ads from "./ads";
 
 const Footer = () => {
   const [copyName, setCopyName] = useState<string>();
@@ -43,8 +42,8 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="  h-32  flex justify-center items-center">
-        <HeaderAds />
+      <div>
+        <Ads />
       </div>
     </div>
   );
