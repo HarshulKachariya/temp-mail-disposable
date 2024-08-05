@@ -1,1 +1,3 @@
-google.com, pub-5728499744349930, DIRECT, f08c47fec0942fa0
+google.com, pub-3068255257089060, DIRECT, f08c47fec0942fa0
+google.com, pub-3068255257089060, RESELLER, f08c47fec0942fa0
+nivedigitalmedia.com, 2804200401, DIRECT
