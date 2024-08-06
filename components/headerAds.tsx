@@ -1,25 +1,28 @@
-import React, { useEffect, useRef } from "react";
+import Head from "next/head";
+import React from "react";
 
 const HeaderAds: React.FC = () => {
-  useEffect(() => {
-    try {
-      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
-        {}
-      );
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
-
+ 
   return (
-    <ins
-      className="adsbygoogle"
-      style={{ display: "block" }}
-      data-ad-client="ca-pub-5728499744349930"
-      data-ad-slot="7840492531"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    ></ins>
+    <>
+    <Head>
+      <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+      <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.googletag = window.googletag || {cmd: []};
+              googletag.cmd.push(function() {
+                googletag.defineSlot('/23199569535/Header-ads', [728, 90], 'div-gpt-ad-1722955528138-0').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+              });
+            `,
+          }}
+        />
+    </Head>
+    <div id="div-gpt-ad-1722955528138-0" style={{ width: '728px', height: '90px' }}></div>
+
+  </>
   );
 };
 
