@@ -78,11 +78,11 @@ export default function Document() {
           name="google-site-verification"
           content="google157ac4885f988124"
         /> */}
-        <meta name="google-adsense-account" content="ca-pub-5728499744349930" />
+        {/* <meta name="google-adsense-account" content="ca-pub-5728499744349930" />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
+        ></script> */}
 
         <meta
           name="google-site-verification"

@@ -35,10 +35,14 @@ const Home = () => {
   const handleFetchEmails = async () => {
     try {
       const response = await axiosInstance.get("/new");
-      const { email } = response.data;
-      setEmail(email);
+      const { email: fetchedEmail, token: any } = response.data;
+      localStorage.setItem(
+        "email",
+        JSON.stringify({ email: fetchedEmail, token: any })
+      );
+      setEmail(fetchedEmail);
       setIsMailboxLoading(false);
-      setIsBtnLoading(true);
+      setIsBtnLoading(false);
     } catch (error) {
       setEmail("Loading...");
       setIsBtnLoading(false);
@@ -48,10 +52,16 @@ const Home = () => {
 
   useEffect(() => {
     if (effectRan.current === false) {
-      if (email === "Loading...") {
-        handleFetchEmails();
+      const storedData = localStorage.getItem("email");
+      const storedEmail = storedData ? JSON.parse(storedData).email : null;
+
+      if (storedEmail) {
+        setEmail(storedEmail);
         setIsMailboxLoading(false);
+      } else {
+        handleFetchEmails();
       }
+
       effectRan.current = true;
 
       return () => {
@@ -63,12 +73,10 @@ const Home = () => {
   return (
     <>
       <div className="bg-[#21232a] md:p-7 p-5 flex flex-col  md:grid md:grid-cols-12 gap-5 justify-between items-center w-full md:h-2/3 h-3/4">
-        {/* <div className="bg-[#21232a] md:p-7 p-5 grid md:grid-cols-12 gap-5 justify-between items-center w-full md:h-2/3 h-3/4"> */}
-        <div className=" hidden md:grid md:col-span-3">
+        <div className="hidden md:grid md:col-span-3">
           <SqureAds />
         </div>
-        <div className="md:col-span-6 col-span-12 ">
-          {/* <div className="max-w-[556px]"> */}
+        <div className="md:col-span-6 col-span-12">
           <div className="flex flex-col gap-4 justify-center items-center text-white mx-auto md:p-7 p-5 max-w-[556px] h-full border-2 border-zinc-700 rounded-md border-dashed">
             <span className="text-xl font-bold">
               Your Temporary Email Address
@@ -91,7 +99,6 @@ const Home = () => {
                     <QrCodeIcon className="text-white text-2xl" />
                     <span className="md:hidden">QR Code</span>
                   </Button>
-
                   <Button
                     name="copy"
                     onClick={copyEmailToClipboard}
@@ -122,8 +129,7 @@ const Home = () => {
             temporary, secure, anonymous, free, disposable email address.
           </p>
         </div>
-        <div className=" md:grid md:col-span-3">
-          {/* <div className=" w-[400px] h-[280px] mx-auto hidden md:grid md:col-span-3"> */}
+        <div className="md:grid md:col-span-3">
           <SqureAds />
         </div>
       </div>
@@ -132,7 +138,11 @@ const Home = () => {
           <FileCopyIcon />
           Copy
         </CustomButton>
-        <CustomButton disabled={isBtnLoading} onClick={() => {}} name="refresh">
+        <CustomButton
+          disabled={isBtnLoading}
+          onClick={handleFetchEmails}
+          name="refresh"
+        >
           <SyncIcon />
           Refresh
         </CustomButton>

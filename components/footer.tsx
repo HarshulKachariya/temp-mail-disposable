@@ -3,6 +3,7 @@ import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 import Ads from "./ads";
+import HeaderAds from "./headerAds";
 
 const Footer = () => {
   const [copyName, setCopyName] = useState<string>();
@@ -43,7 +44,7 @@ const Footer = () => {
         </div>
       </footer>
       <div>
-        <Ads />
+        <HeaderAds />
       </div>
     </div>
   );
