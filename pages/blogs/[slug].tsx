@@ -3,8 +3,7 @@ import React, { useMemo, useState } from "react";
 import { blogs } from "@/utils/data";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-import SqureAds from "@/components/squreAds";
-import HeaderAds from "@/components/headerAds";
+
 
 interface Blog {
   id: number;

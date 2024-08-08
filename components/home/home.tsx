@@ -13,8 +13,7 @@ import MailBox from "../mailbox/mailbox";
 
 import axiosInstance from "@/common/axiosInstance";
 import CustomButton from "../custombuttons";
-import Ads from "../ads";
-import SqureAds from "../squreAds";
+
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);

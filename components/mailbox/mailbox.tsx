@@ -6,9 +6,7 @@ import axiosInstance from "@/common/axiosInstance";
 const Image = dynamic(() => import("next/image"), { ssr: false });
 
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
-import Ads from "../ads";
-import SqureAds from "../squreAds";
-import MiddleAds from "../middleAds";
+
 
 const MailBox = ({ email }: { email: string }) => {
   const [modalTitle, setModalTitle] = useState("");

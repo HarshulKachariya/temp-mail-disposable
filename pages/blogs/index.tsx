@@ -1,4 +1,4 @@
-import Ads from "@/components/ads";
+
 import BlogsCard from "@/components/blog";
 import { blogs } from "@/utils/data";
 
