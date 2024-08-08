@@ -5,9 +5,9 @@ import React from "react";
 const index = () => {
   return (
     <div className="px-6">
-      <div className=" grid grid-cols-1 md:grid-cols-12 gap-5 w-full h-full justify-between items-center">
+      <div className=" flex flex-col gap-5 w-full h-full justify-between items-center">
 
-        <div className="col-span-1 md:col-span-6 mx-auto p-6  space-y-4">
+        <div className="flex flex-col gap-5-span-6 mx-auto p-6  space-y-4">
           <Link href="/pages/temp mail" className="text-lg font-semibold">
             {"<"} GO BACK
           </Link>

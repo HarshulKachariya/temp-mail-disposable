@@ -35,8 +35,7 @@ const ContactForm = () => {
   });
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-12 md:gap-5 gap-3 justify-between items-center md:mx-6">
-      <div className="grid row-span-1 md:col-span-6">
+    <div className="flex flex-col md:gap-5 gap-3 justify-between items-center md:mx-6">
         <div className="md:max-w-xl min-h-screen max-w-md mx-auto p-6 bg-white rounded-md shadow-lg  my-5">
           <h1 className="bg-[#21232a]  capitalize p-3 rounded-2xl text-white font-mono sm:text-3xl text-lg font-bold mb-8 text-center">
             Conatct us
@@ -180,7 +179,7 @@ const ContactForm = () => {
             </form>
           )}
         </div>
-      </div>
+ 
     </div>
   );
 };

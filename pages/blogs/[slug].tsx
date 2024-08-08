@@ -35,7 +35,7 @@ const ComingSoon = () => {
       >
         {"<"} GO BACK
       </Link>
-      <div className="space-y-10 grid grid-cols-1 md:grid-cols-12 gap-5 w-full h-full justify-between items-center">
+
         <div className="col-span-1 md:col-span-8">
           {slug ? (
             <div className="max-w-4xl flex flex-col gap-4">
@@ -68,7 +68,7 @@ const ComingSoon = () => {
             ))
           )}
         </div>
-      </div>
+   
     </div>
   );
 };
