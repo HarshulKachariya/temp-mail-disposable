@@ -1,6 +1,4 @@
-import Ads from "@/components/ads";
-import MiddleAds from "@/components/middleAds";
-import SqureAds from "@/components/squreAds";
+
 import Link from "next/link";
 import { useState } from "react";
 
@@ -69,13 +67,9 @@ export default function FAQ() {
 
   return (
     <div className="px-6">
-      <div className=" w-full h-full ">
-        <MiddleAds />
-      </div>
+
       <div className=" grid grid-cols-1 md:grid-cols-12 gap-5 w-full h-full justify-between items-center">
-        <div className=" col-span-1 md:col-span-3  ">
-          <SqureAds />
-        </div>
+  
         <div className="col-span-1 md:col-span-6 mx-auto p-6 space-y-4">
           <Link href="/pages/temp mail" className="text-lg font-semibold">
             {"<"} GO BACK
@@ -115,13 +109,9 @@ export default function FAQ() {
             ))}
           </div>
         </div>
-        <div className=" col-span-1 md:col-span-3  ">
-          <SqureAds />
-        </div>
+
       </div>
-      <div className=" w-full h-full ">
-        <MiddleAds />
-      </div>
+
     </div>
   );
 }

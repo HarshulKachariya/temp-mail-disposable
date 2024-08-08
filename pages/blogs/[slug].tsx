@@ -30,9 +30,6 @@ const ComingSoon = () => {
 
   return (
     <div className="flex px-6 md:h-full flex-col gap-10 justify-center items-center text-zinc-200 font-bold bg-[#21232a]">
-      <div className=" w-full h-full ">
-        <HeaderAds />
-      </div>
       <Link
         href="/pages/temp mail"
         className="text-lg flex w-full justify-start font-semibold"
@@ -40,9 +37,6 @@ const ComingSoon = () => {
         {"<"} GO BACK
       </Link>
       <div className="space-y-10 grid grid-cols-1 md:grid-cols-12 gap-5 w-full h-full justify-between items-center">
-        <div className=" col-span-1 md:col-span-2">
-          <SqureAds />
-        </div>
         <div className="col-span-1 md:col-span-8">
           {slug ? (
             <div className="max-w-4xl flex flex-col gap-4">
@@ -75,12 +69,6 @@ const ComingSoon = () => {
             ))
           )}
         </div>
-        <div className=" col-span-1 md:col-span-2">
-          <SqureAds />
-        </div>
-      </div>
-      <div className=" w-full h-full">
-        <HeaderAds />
       </div>
     </div>
   );

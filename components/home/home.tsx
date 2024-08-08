@@ -73,9 +73,6 @@ const Home = () => {
   return (
     <>
       <div className="bg-[#21232a] md:p-7 p-5 flex flex-col  md:grid md:grid-cols-12 gap-5 justify-between items-center w-full md:h-2/3 h-3/4">
-        <div className="hidden md:grid md:col-span-3">
-          <SqureAds />
-        </div>
         <div className="md:col-span-6 col-span-12">
           <div className="flex flex-col gap-4 justify-center items-center text-white mx-auto md:p-7 p-5 max-w-[556px] h-full border-2 border-zinc-700 rounded-md border-dashed">
             <span className="text-xl font-bold">
@@ -128,9 +125,6 @@ const Home = () => {
             robots. Keep your real mailbox clean and secure. Temp Mail provides
             temporary, secure, anonymous, free, disposable email address.
           </p>
-        </div>
-        <div className="md:grid md:col-span-3">
-          <SqureAds />
         </div>
       </div>
       <div className="flex flex-wrap md:flex-row gap-4 md:gap-7 shadow-2xl  justify-center items-center p-7 bg-white text-black ">

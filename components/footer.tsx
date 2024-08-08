@@ -43,9 +43,6 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div>
-        <HeaderAds />
-      </div>
     </div>
   );
 };
