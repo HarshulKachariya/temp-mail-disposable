@@ -14,7 +14,6 @@ import MailBox from "../mailbox/mailbox";
 import axiosInstance from "@/common/axiosInstance";
 import CustomButton from "../custombuttons";
 
-
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isBtnLoading, setIsBtnLoading] = useState(false);
@@ -35,10 +34,6 @@ const Home = () => {
     try {
       const response = await axiosInstance.get("/new");
       const { email: fetchedEmail, token: any } = response.data;
-      localStorage.setItem(
-        "email",
-        JSON.stringify({ email: fetchedEmail, token: any })
-      );
       setEmail(fetchedEmail);
       setIsMailboxLoading(false);
       setIsBtnLoading(false);
@@ -51,15 +46,9 @@ const Home = () => {
 
   useEffect(() => {
     if (effectRan.current === false) {
-      const storedData = localStorage.getItem("email");
-      const storedEmail = storedData ? JSON.parse(storedData).email : null;
+      setIsMailboxLoading(false);
 
-      if (storedEmail) {
-        setEmail(storedEmail);
-        setIsMailboxLoading(false);
-      } else {
-        handleFetchEmails();
-      }
+      handleFetchEmails();
 
       effectRan.current = true;
 
