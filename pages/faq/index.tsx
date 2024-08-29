@@ -1,6 +1,6 @@
 import Ads from "@/components/ads";
-import MiddleAds from "@/components/middleAds";
-import SqureAds from "@/components/squreAds";
+import Header from "@/components/header";
+import MultipleAds from "@/components/multipleAds";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -68,59 +68,46 @@ export default function FAQ() {
   };
 
   return (
-    <div className="px-6">
-      <div className=" w-full h-full ">
-        <MiddleAds />
-      </div>
-      <div className=" grid grid-cols-1 md:grid-cols-12 gap-5 w-full h-full justify-between items-center">
-        <div className=" col-span-1 md:col-span-3  ">
-          <SqureAds />
-        </div>
-        <div className="col-span-1 md:col-span-6 mx-auto p-6 space-y-4">
-          <Link href="/pages/temp mail" className="text-lg font-semibold">
-            {"<"} GO BACK
-          </Link>
-          <h1 className="bg-[#21232a] capitalize p-3 rounded-2xl text-white font-mono sm:text-3xl text-xl font-bold mb-8 text-center">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-lg text-center mb-4">
-            Temporary anonymous email service is specifically designed to
-            protect your privacy. This service has appeared relatively recently.
-            Answers to frequently asked questions will help you to clarify the
-            service offered and to immediately make full use of our convenient
-            and fully secure service.
-          </p>
-          <div className="space-y-6">
-            {questionsAndAnswers.map((item, index) => (
-              <div key={index} className="bg-white p-4 rounded-xl ">
-                <h2
-                  className={`text-xl font-semibold cursor-pointer flex justify-between items-center ${
-                    activeIndex === index ? "text-[#00c497]" : ""
-                  }`}
-                  onClick={() => toggleAnswer(index)}
-                >
-                  {item.question}
-                  <span
-                    className={`transform transition-transform ${
-                      activeIndex === index ? "rotate-180" : "rotate-0"
-                    }`}
-                  >
-                    ▼
-                  </span>
-                </h2>
-                {activeIndex === index && (
-                  <p className="mt-2 text-gray-600">{item.answer}</p>
-                )}
-              </div>
-            ))}
+    <div className="max-w-4xl mx-auto p-6 space-y-4">
+      <Link href="/pages/temp mail" className="text-lg font-semibold">
+        {"<"} GO BACK
+      </Link>
+      <h1 className="bg-[#21232a] capitalize p-3 rounded-2xl text-white font-mono sm:text-3xl text-xl font-bold mb-8 text-center">
+        Frequently Asked Questions
+      </h1>
+      <p className="text-lg text-center mb-4">
+        Temporary anonymous email service is specifically designed to protect
+        your privacy. This service has appeared relatively recently. Answers to
+        frequently asked questions will help you to clarify the service offered
+        and to immediately make full use of our convenient and fully secure
+        service.
+      </p>
+      <div className="space-y-6">
+        {questionsAndAnswers.map((item, index) => (
+          <div key={index} className="bg-white p-4 rounded-xl ">
+            <h2
+              className={`text-xl font-semibold cursor-pointer flex justify-between items-center ${
+                activeIndex === index ? "text-[#00c497]" : ""
+              }`}
+              onClick={() => toggleAnswer(index)}
+            >
+              {item.question}
+              <span
+                className={`transform transition-transform ${
+                  activeIndex === index ? "rotate-180" : "rotate-0"
+                }`}
+              >
+                ▼
+              </span>
+            </h2>
+            {activeIndex === index && (
+              <p className="mt-2 text-gray-600">{item.answer}</p>
+            )}
           </div>
-        </div>
-        <div className=" col-span-1 md:col-span-3  ">
-          <SqureAds />
-        </div>
+        ))}
       </div>
-      <div className=" w-full h-full ">
-        <MiddleAds />
+      <div>
+        <Ads />
       </div>
     </div>
   );
