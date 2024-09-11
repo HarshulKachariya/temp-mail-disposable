@@ -166,7 +166,7 @@ const MailBox = ({ email }: { email: string }) => {
             <SqureAds />
           </div>
         </div>
-
+        <SqureAds />
         <div className="flex justify-center items-center flex-col lg:w-1/2 md:w-full sm:w-full w-full px-6 gap-3 text-slate-500">
           <h1 className="text-2xl font-bold">
             What is Disposable Temporary E-mail?
@@ -184,6 +184,8 @@ const MailBox = ({ email }: { email: string }) => {
           </p>
         </div>
       </div>
+
+      <SqureAds />
 
       {showModal && (
         <>

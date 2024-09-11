@@ -1,5 +1,6 @@
 import Ads from "@/components/ads";
 import BlogsCard from "@/components/blog";
+import MiddleAds from "@/components/middleAds";
 import { blogs } from "@/utils/data";
 
 import Link from "next/link";
@@ -14,6 +15,7 @@ const Blogs = () => {
         <h1 className="text-4xl font-bold text-black text-center mb-10">
           Popular Articles
         </h1>
+        <MiddleAds />
         <div className="md:max-w-6xl grid md:gap-8 sm:gap-5 gap-3 lg:grid-cols-2 sm:grid-cols-1">
           {blogs?.map((blog: any) => (
             <Link href={`/blogs/${blog.id}`} key={blog.id}>
@@ -21,6 +23,7 @@ const Blogs = () => {
             </Link>
           ))}
         </div>
+        <MiddleAds />
       </div>
       <div>
         <Ads />

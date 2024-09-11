@@ -64,7 +64,7 @@ const Home = () => {
     <>
       <div className="bg-[#21232a] md:p-7 p-5 flex flex-col  md:grid md:grid-cols-12 gap-5 justify-between items-center w-full md:h-2/3 h-3/4">
         {/* <div className="bg-[#21232a] md:p-7 p-5 grid md:grid-cols-12 gap-5 justify-between items-center w-full md:h-2/3 h-3/4"> */}
-        <div className=" hidden md:grid md:col-span-3">
+        <div className=" md:grid md:col-span-3">
           <SqureAds />
         </div>
         <div className="md:col-span-6 col-span-12 ">
@@ -127,6 +127,7 @@ const Home = () => {
           <SqureAds />
         </div>
       </div>
+      <SqureAds />
       <div className="flex flex-wrap md:flex-row gap-4 md:gap-7 shadow-2xl  justify-center items-center p-7 bg-white text-black ">
         <CustomButton onClick={copyEmailToClipboard} name="copy">
           <FileCopyIcon />
@@ -145,6 +146,7 @@ const Home = () => {
           Delete
         </CustomButton>
       </div>
+      <SqureAds />
       <MailBox email={email} />
     </>
   );

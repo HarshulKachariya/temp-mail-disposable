@@ -223,6 +223,7 @@ const ContactForm = () => {
         <SqureAds />
       </div>
       <div className="grid row-span-1 md:col-span-6">
+        <SqureAds />
         <div className="md:max-w-xl min-h-screen max-w-md mx-auto p-6 bg-white rounded-md shadow-lg  my-5">
           <h1 className="bg-[#21232a]  capitalize p-3 rounded-2xl text-white font-mono sm:text-3xl text-lg font-bold mb-8 text-center">
             Conatct us
@@ -363,9 +364,11 @@ const ContactForm = () => {
               >
                 Send
               </button>
+              <SqureAds />
             </form>
           )}
         </div>
+        <SqureAds />
       </div>
       <div className="mx-auto w-fullh-full col-span-1 md:col-span-3">
         <SqureAds />

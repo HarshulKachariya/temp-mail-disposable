@@ -1,5 +1,6 @@
 import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
+import Ads from "./ads";
 
 const Header = () => {
   return (
@@ -10,6 +11,7 @@ const Header = () => {
           <h1>Temp Mail</h1>
         </Link>
       </div>
+      <Ads />
     </div>
   );
 };
