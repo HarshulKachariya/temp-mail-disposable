@@ -70,7 +70,7 @@ export default function FAQ() {
   return (
     <div className="px-6">
       <div className=" w-full h-full ">
-        <MiddleAds />
+        <Ads />
       </div>
       <div className=" grid grid-cols-1 md:grid-cols-12 gap-5 w-full h-full justify-between items-center">
         <div className=" col-span-1 md:col-span-3  ">
@@ -120,7 +120,7 @@ export default function FAQ() {
         </div>
       </div>
       <div className=" w-full h-full ">
-        <MiddleAds />
+        <Ads />
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ const BlogsCard = ({ url, title, content }: any) => {
           <h2 className="sm:mb-0 md:text-base text-xl sm:text-sm font-semibold text-gray-900 hover:text-emerald-500">
             {title}
           </h2>
-          <p className="text-gray-700 text-sm sm:hidden  md:block line-clamp-2 overflow-hidden">
+          <p className="text-gray-700 text-sm sm:hidden   md:block !line-clamp-2 overflow-hidden">
             {content}
           </p>
         </div>

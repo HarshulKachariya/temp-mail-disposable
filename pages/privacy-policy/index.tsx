@@ -1,3 +1,4 @@
+import Ads from "@/components/ads";
 import Header from "@/components/header";
 import MiddleAds from "@/components/middleAds";
 import SqureAds from "@/components/squreAds";
@@ -8,9 +9,12 @@ const index = () => {
   return (
     <div className="px-6">
       <div className=" w-full h-full">
-        <MiddleAds />
+        <Ads />
       </div>
       <div className=" grid grid-cols-1 md:grid-cols-12 gap-5 w-full h-full justify-between items-center">
+        <div className=" col-span-1 md:col-span-3 ">
+          <SqureAds />
+        </div>
         <div className=" col-span-1 md:col-span-3 ">
           <SqureAds />
         </div>
@@ -147,9 +151,12 @@ const index = () => {
         <div className=" col-span-1 md:col-span-3 ">
           <SqureAds />
         </div>
+        <div className=" col-span-1 md:col-span-3 ">
+          <SqureAds />
+        </div>
       </div>
       <div className=" w-full h-full">
-        <MiddleAds />
+        <Ads />
       </div>
     </div>
   );

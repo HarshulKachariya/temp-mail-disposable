@@ -1,5 +1,5 @@
-import Header from "@/components/header";
-import MiddleAds from "@/components/middleAds";
+import Ads from "@/components/ads";
+
 import SqureAds from "@/components/squreAds";
 import Link from "next/link";
 import React from "react";
@@ -8,7 +8,7 @@ const index = () => {
   return (
     <div className="px-6">
       <div className=" w-full h-full ">
-        <MiddleAds />
+        <Ads />
       </div>
       <div className=" grid grid-cols-1 md:grid-cols-12 gap-5 w-full h-full justify-between items-center">
         <div className=" col-span-1 md:col-span-3 ">
@@ -126,14 +126,16 @@ const index = () => {
                 <span>This policy is effective as of 1 Jul 2020</span>
               </p>
             </div>
+            <Ads />
           </div>
         </div>
         <div className=" col-span-1 md:col-span-3 ">
           <SqureAds />
+          <Ads />
         </div>
       </div>
       <div className=" w-full h-full ">
-        <MiddleAds />
+        <Ads />
       </div>
     </div>
   );

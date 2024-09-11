@@ -154,7 +154,8 @@ const Home = () => {
           <DeleteIcon />
           Delete
         </CustomButton>
-      </div>
+      </div>{" "}
+      <SqureAds />
       <MailBox email={email} />
     </>
   );

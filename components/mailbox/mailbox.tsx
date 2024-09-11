@@ -185,6 +185,8 @@ const MailBox = ({ email }: { email: string }) => {
         </div>
       </div>
 
+      <SqureAds />
+
       {showModal && (
         <>
           <div className="justify-center w-full items-center flex overflow-hidden fixed inset-0 z-50 outline-none focus:outline-none">

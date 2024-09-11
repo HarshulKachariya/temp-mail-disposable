@@ -31,7 +31,7 @@ const ComingSoon = () => {
   return (
     <div className="flex px-6 md:h-full flex-col gap-10 justify-center items-center text-zinc-200 font-bold bg-[#21232a]">
       <div className=" w-full h-full ">
-        <HeaderAds />
+        <SqureAds />
       </div>
       <Link
         href="/pages/temp mail"
@@ -47,17 +47,25 @@ const ComingSoon = () => {
           {slug ? (
             <div className="max-w-4xl flex flex-col gap-4">
               {blog?.url && (
-                <Image
-                  src={blog.url}
-                  alt={blog.title}
-                  width={500}
-                  height={500}
-                  className="w-full h-[500px] object-contain sm:object-cover rounded-md mb-4"
-                />
+                <>
+                  <Image
+                    src={blog.url}
+                    alt={blog.title}
+                    width={500}
+                    height={500}
+                    className="w-full h-[500px] object-contain sm:object-cover rounded-md mb-4"
+                  />
+                  <div className=" w-full h-full ">
+                    <SqureAds />
+                  </div>
+                </>
               )}
               {blog?.description && (
                 <div dangerouslySetInnerHTML={{ __html: blog.description }} />
               )}
+              <div className=" w-full h-full">
+                <SqureAds />
+              </div>
             </div>
           ) : (
             blogs.map((blog: Blog) => (
@@ -78,9 +86,6 @@ const ComingSoon = () => {
         <div className=" col-span-1 md:col-span-2">
           <SqureAds />
         </div>
-      </div>
-      <div className=" w-full h-full">
-        <HeaderAds />
       </div>
     </div>
   );
