@@ -1,10 +1,11 @@
 import Link from "next/link";
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useEffect, useState } from "react";
 import { blogs } from "@/utils/data";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Ads from "@/components/ads";
 import SqureAds from "@/components/squreAds";
+import { useRouter } from "next/router";
 
 interface Blog {
   id: number;
@@ -16,6 +17,36 @@ interface Blog {
 const ComingSoon = () => {
   const [blog, setBlog] = useState<Blog | null>(null);
   const slug = useParams();
+  const router = useRouter();
+  const [currentBlogId, setCurrentBlogId] = useState(1);
+
+  useEffect(() => {
+    const updateCurrentBlogId = () => {
+      const path = window.location.pathname;
+      const id = parseInt(path.split("/").pop() || "1", 10);
+      const validId = isNaN(id) || id < 1 || id > 6 ? 1 : id;
+      setCurrentBlogId(validId);
+    };
+
+    // Update currentBlogId when the component mounts or the route changes
+    updateCurrentBlogId();
+
+    // Set up a listener for route changes
+    router.events.on("routeChangeComplete", updateCurrentBlogId);
+
+    return () => {
+      router.events.off("routeChangeComplete", updateCurrentBlogId);
+    };
+  }, [router]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const nextBlogId = currentBlogId < 6 ? currentBlogId + 1 : 1;
+      router.push(`/blogs/${nextBlogId}`);
+    }, 5000);
+
+    // return () => clearTimeout(timer);
+  }, [currentBlogId, router]);
 
   useMemo(() => {
     if (slug) {
@@ -40,10 +71,14 @@ const ComingSoon = () => {
           {"<"} GO BACK
         </Link>
         <div className="space-y-10">
+          <Ads />
+
           {slug ? (
             <div className="max-w-4xl flex flex-col gap-4">
               {blog?.url && (
                 <>
+                  <Ads />
+
                   <Image
                     src={blog.url}
                     alt={blog.title}
@@ -62,6 +97,8 @@ const ComingSoon = () => {
           ) : (
             blogs.map((blog: Blog) => (
               <div key={blog.id} className="max-w-4xl flex flex-col gap-4">
+                <Ads />
+
                 <Image
                   src={blog.url}
                   alt={blog.title}
@@ -70,7 +107,10 @@ const ComingSoon = () => {
                   className="w-full h-64 object-cover rounded-md mb-4"
                 />
                 <h1 className="text-3xl">{blog.title}</h1>
+                <Ads />
+
                 <div dangerouslySetInnerHTML={{ __html: blog.description }} />
+                <Ads />
               </div>
             ))
           )}

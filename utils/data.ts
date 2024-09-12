@@ -70,7 +70,7 @@ export const blogs: Blogs[] = [
     title: "How to Use Temporary Email",
     content:
       "Select a reliable temporary email service such as TempMail, Guerrilla Mail, or Mailinator.",
-    url: "https://temp-mail.org/blog/content/images/2021/06/4ciK4Pq-1-.png",
+    url: "/image.png",
 
     description: ` <article class="max-w-4xl mx-auto p-6  mt-10">
         <header class="mb-4">
