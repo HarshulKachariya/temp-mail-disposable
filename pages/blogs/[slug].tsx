@@ -43,9 +43,9 @@ const ComingSoon = () => {
     const timer = setTimeout(() => {
       const nextBlogId = currentBlogId < 6 ? currentBlogId + 1 : 1;
       router.push(`/blogs/${nextBlogId}`);
-    }, 5000);
+    }, 15000);
 
-    // return () => clearTimeout(timer);
+    return () => clearTimeout(timer);
   }, [currentBlogId, router]);
 
   useMemo(() => {
