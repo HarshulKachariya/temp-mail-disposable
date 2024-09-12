@@ -3,11 +3,30 @@ import Header from "@/components/header";
 import MultipleAds from "@/components/multipleAds";
 import SqureAds from "@/components/squreAds";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [activeTitle, setActiveTitle] = useState(false);
+
+  const router = useRouter();
+  const [pathName, setpathName] = useState("");
+
+  useEffect(() => {
+    const path = window.location.pathname;
+    setpathName(path);
+  }, [router]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (pathName === "/faq") {
+        router.push("/contact");
+      }
+    }, 15000);
+
+    return () => clearTimeout(timer);
+  }, [pathName, router]);
 
   const questionsAndAnswers = [
     {

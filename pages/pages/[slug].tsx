@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import HomePage from "@/components/home/home";
 import Blogs from "@/pages/blogs";
 
 import CopyrightPage from "@/components/copyrightPage/index";
 import Ads from "@/components/ads";
+import { useRouter } from "next/router";
 
 const MainPage = () => {
+  const [pathName, setpathName] = useState("");
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const path = window.location.pathname;
+    setpathName(path);
+  }, [router]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (pathName) {
+        router.push("/blogs/1");
+      }
+    }, 20000);
+
+    return () => clearTimeout(timer);
+  }, [pathName, router]);
+
   return (
     <>
       <HomePage />

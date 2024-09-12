@@ -6,6 +6,7 @@ import Image from "next/image";
 import Ads from "@/components/ads";
 import SqureAds from "@/components/squreAds";
 import { useRouter } from "next/router";
+import MiddleAds from "@/components/middleAds";
 
 interface Blog {
   id: number;
@@ -24,14 +25,11 @@ const ComingSoon = () => {
     const updateCurrentBlogId = () => {
       const path = window.location.pathname;
       const id = parseInt(path.split("/").pop() || "1", 10);
-      const validId = isNaN(id) || id < 1 || id > 6 ? 1 : id;
+      const validId = isNaN(id) || id < 1 || id > 14 ? 1 : id;
       setCurrentBlogId(validId);
     };
 
-    // Update currentBlogId when the component mounts or the route changes
     updateCurrentBlogId();
-
-    // Set up a listener for route changes
     router.events.on("routeChangeComplete", updateCurrentBlogId);
 
     return () => {
@@ -39,14 +37,18 @@ const ComingSoon = () => {
     };
   }, [router]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const nextBlogId = currentBlogId < 6 ? currentBlogId + 1 : 1;
-      router.push(`/blogs/${nextBlogId}`);
-    }, 15000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (currentBlogId < 14) {
+  //       router.push(`/blogs/${currentBlogId + 1}`);
+  //     } else {
+  //       // Redirect to privacy policy page after the last blog
+  //       router.push("/privacy-policy");
+  //     }
+  //   }, 15000);
 
-    return () => clearTimeout(timer);
-  }, [currentBlogId, router]);
+  //   return () => clearTimeout(timer);
+  // }, [currentBlogId, router]);
 
   useMemo(() => {
     if (slug) {
@@ -60,64 +62,65 @@ const ComingSoon = () => {
   }
 
   return (
-    <>
-      <Ads />
-
-      <div className="flex px-6 md:px-36  md:h-full flex-col gap-10 justify-center items-center text-zinc-200 font-bold bg-[#21232a]">
+    <div className="grid grid-cols-12 bg-gray-100">
+      <div className="col-span-2  ">
+        <SqureAds />
+      </div>
+      <div className="col-span-8 flex px-6 md:px-20 md:h-full flex-col gap-10 justify-center items-center  font-bold bg-white">
         <Link
           href="/pages/temp mail"
-          className="text-lg flex w-full justify-start font-semibold"
+          className="text-lg flex w-full justify-start font-semibold mt-5"
         >
           {"<"} GO BACK
         </Link>
-        <div className="space-y-10">
-          <Ads />
-
+        <div className="space-y-10 ">
           {slug ? (
-            <div className="max-w-4xl flex flex-col gap-4">
+            <div className=" flex flex-col gap-4">
               {blog?.url && (
                 <>
-                  <Ads />
-
                   <Image
                     src={blog.url}
                     alt={blog.title}
                     width={500}
                     height={500}
-                    className="w-full h-[500px] object-contain sm:object-cover rounded-md mb-4"
+                    className="w-full h-[500px] object-contain sm:object-cover rounded-md "
                   />
                   <SqureAds />
                 </>
               )}
               {blog?.description && (
-                <div dangerouslySetInnerHTML={{ __html: blog.description }} />
+                <div
+                  dangerouslySetInnerHTML={{ __html: blog.description }}
+                  className="text-gray-800"
+                />
               )}
-              <SqureAds />
             </div>
           ) : (
             blogs.map((blog: Blog) => (
-              <div key={blog.id} className="max-w-4xl flex flex-col gap-4">
-                <Ads />
-
+              <div key={blog.id} className=" flex flex-col gap-4">
                 <Image
                   src={blog.url}
                   alt={blog.title}
                   width={500}
                   height={300}
-                  className="w-full h-64 object-cover rounded-md mb-4"
+                  className="w-full h-64 object-cover rounded-md "
                 />
-                <h1 className="text-3xl">{blog.title}</h1>
-                <Ads />
+                <SqureAds />
 
-                <div dangerouslySetInnerHTML={{ __html: blog.description }} />
-                <Ads />
+                <h1 className="text-3xl text-black">{blog.title}</h1>
+                <div
+                  dangerouslySetInnerHTML={{ __html: blog.description }}
+                  className="text-gray-800"
+                />
               </div>
             ))
           )}
         </div>
-        <Ads />
       </div>
-    </>
+      <div className="col-span-2  ">
+        <SqureAds />
+      </div>
+    </div>
   );
 };
 

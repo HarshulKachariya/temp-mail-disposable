@@ -2,9 +2,28 @@ import Ads from "@/components/ads";
 import Header from "@/components/header";
 import SqureAds from "@/components/squreAds";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 const index = () => {
+  const [pathName, setpathName] = useState("");
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const path = window.location.pathname;
+    setpathName(path);
+  }, [router]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (pathName === "/privacy-policy") {
+        router.push("/terms-of-service");
+      }
+    }, 15000);
+
+    return () => clearTimeout(timer);
+  }, [pathName, router]);
   return (
     <>
       <Ads />
