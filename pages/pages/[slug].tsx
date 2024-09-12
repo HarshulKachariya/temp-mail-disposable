@@ -8,13 +8,13 @@ import Ads from "@/components/ads";
 import { useRouter } from "next/router";
 
 const MainPage = () => {
-  const [pathName, setpathName] = useState("");
+  const [pathName, setPathName] = useState("");
 
   const router = useRouter();
 
   useEffect(() => {
     const path = window.location.pathname;
-    setpathName(path);
+    setPathName(path);
   }, [router]);
 
   useEffect(() => {

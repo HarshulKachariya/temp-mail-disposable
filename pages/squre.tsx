@@ -3,13 +3,13 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
 const Squre = () => {
-  const [pathName, setpathName] = useState("");
+  const [pathName, setPathName] = useState("");
 
   const router = useRouter();
 
   useEffect(() => {
     const path = window.location.pathname;
-    setpathName(path);
+    setPathName(path);
   }, [router]);
 
   useEffect(() => {

@@ -11,11 +11,11 @@ export default function FAQ() {
   const [activeTitle, setActiveTitle] = useState(false);
 
   const router = useRouter();
-  const [pathName, setpathName] = useState("");
+  const [pathName, setPathName] = useState("");
 
   useEffect(() => {
     const path = window.location.pathname;
-    setpathName(path);
+    setPathName(path);
   }, [router]);
 
   useEffect(() => {

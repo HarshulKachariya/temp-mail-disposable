@@ -5,14 +5,14 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const index = () => {
-  const [pathName, setpathName] = useState("");
+const Index = () => {
+  const [pathName, setPathName] = useState("");
 
   const router = useRouter();
 
   useEffect(() => {
     const path = window.location.pathname;
-    setpathName(path);
+    setPathName(path);
   }, [router]);
 
   useEffect(() => {
@@ -141,4 +141,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

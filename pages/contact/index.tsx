@@ -39,13 +39,13 @@ const ContactForm = () => {
     },
   });
 
-  const [pathName, setpathName] = useState("");
+  const [pathName, setPathName] = useState("");
 
   const router = useRouter();
 
   useEffect(() => {
     const path = window.location.pathname;
-    setpathName(path);
+    setPathName(path);
   }, [router]);
 
   useEffect(() => {
