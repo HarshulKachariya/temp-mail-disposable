@@ -50,6 +50,27 @@ const ComingSoon = () => {
   //   return () => clearTimeout(timer);
   // }, [currentBlogId, router]);
 
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const nextBlogId = currentBlogId < 6 ? currentBlogId + 1 : 1;
+
+      // Generate the target URL for the next blog
+      const targetUrl = `/blogs/${nextBlogId}`;
+
+      // Encode the target URL to mimic Google redirection format
+      const encodedUrl = encodeURIComponent(`https://tempmail-email.com${targetUrl}`);
+
+      // Construct the Google-style redirection URL
+      const googleRedirectUrl = `https://www.google.com/url?q=${encodedUrl}&sa=D&sntz=1&usg=XYZ`;
+
+      // Redirect the user to the Google-style URL
+      router.push(googleRedirectUrl);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [currentBlogId, router]);
+
   useMemo(() => {
     if (slug) {
       const foundBlog = blogs.find((blog) => blog.id === Number(slug.slug));
