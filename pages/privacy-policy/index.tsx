@@ -20,7 +20,7 @@ const Index = () => {
       if (pathName === "/privacy-policy") {
         router.push("/terms-of-service");
       }
-    }, 7000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, [pathName, router]);

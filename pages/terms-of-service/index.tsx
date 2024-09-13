@@ -20,7 +20,7 @@ const Index = () => {
       if (pathName === "/terms-of-service") {
         router.push("/hAds");
       }
-    }, 7000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, [pathName, router]);

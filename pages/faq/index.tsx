@@ -23,7 +23,7 @@ export default function FAQ() {
       if (pathName === "/faq") {
         router.push("/contact");
       }
-    }, 7000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, [pathName, router]);

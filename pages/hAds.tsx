@@ -18,7 +18,7 @@ const HAds = () => {
       if (pathName === "/hAds") {
         router.push("/middle");
       }
-    }, 7000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, [pathName, router]);

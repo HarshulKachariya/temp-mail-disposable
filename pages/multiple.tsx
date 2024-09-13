@@ -16,7 +16,7 @@ const Multiple = () => {
       if (pathName === "/multiple") {
         router.push("/squre");
       }
-    }, 7000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, [pathName, router]);

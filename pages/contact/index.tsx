@@ -53,7 +53,7 @@ const ContactForm = () => {
       if (pathName === "/contact") {
         router.push("/terms-of-service");
       }
-    }, 7000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, [pathName, router]);

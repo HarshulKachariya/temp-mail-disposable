@@ -38,18 +38,18 @@ const ComingSoon = () => {
     };
   }, [router]);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     if (currentBlogId < 14) {
-  //       router.push(`/blogs/${currentBlogId + 1}`);
-  //     } else {
-  //       // Redirect to privacy policy page after the last blog
-  //       router.push("/privacy-policy");
-  //     }
-  //   }, 7000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (currentBlogId < 14) {
+        router.push(`/blogs/${currentBlogId + 1}`);
+      } else {
+        // Redirect to privacy policy page after the last blog
+        router.push("/privacy-policy");
+      }
+    }, 5000);
 
-  //   return () => clearTimeout(timer);
-  // }, [currentBlogId, router]);
+    return () => clearTimeout(timer);
+  }, [currentBlogId, router]);
 
   useMemo(() => {
     if (slug) {
