@@ -1,3 +1,5 @@
+import SqureAds from "@/components/squreAds";
+
 type Blogs = {
   id: number;
   title: string;
@@ -26,9 +28,7 @@ export const blogs: Blogs[] = [
         <section class="mb-4">
             <h2 class="text-2xl font-semibold">What is Temporary Email?</h2>
             <p class="text-gray-500">Temporary email, or temp mail, is a service that provides short-term email addresses that self-destruct after a period. These are ideal for one-time use when you don't want to use your primary email address.</p>
-        </section>  
-                        <SqureAds />
-                                  
+        </section>               
         <section>
             <h2 class="text-2xl font-semibold">Benefits of Using Temporary Email</h2>
             <ul class="list-disc pl-6">
@@ -520,7 +520,8 @@ export const blogs: Blogs[] = [
     <p class="text-gray-500">By harnessing the world of subatomic physics, quantum computers enable us to process, store, and transmit information with speed. This presents several opportunities for the Middle East.</p>
     <p class="text-gray-500">In Saudi Arabia, quantum computing is accelerating the kingdom’s drive to achieve its Vision 2030 objectives.</p>
     <p class="text-gray-500">Zapata Computing, a software company, is working with King Abdullah University of Science and Technology to examine how quantum technologies can aid research, as well as important sectors such as oil and gas.</p>
-    <p class="text-gray-500">In the UAE, the region’s first quantum computer has been unveiled at Abu Dhabi’s Technology Innovation Institute, brought in from Finland.</p>
+    <p class="text-gray-500">In the UAE, the region’s first quantum computer has been unveiled at Abu Dhabi’s Technology Innovation Institute, brought in from Finland.</p>import SqureAds from './../components/squreAds';
+
   </section>
 
   <SqureAds />

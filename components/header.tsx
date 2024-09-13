@@ -11,7 +11,6 @@ const Header = () => {
           <h1>Temp Mail</h1>
         </Link>
       </div>
-      <Ads />
     </div>
   );
 };

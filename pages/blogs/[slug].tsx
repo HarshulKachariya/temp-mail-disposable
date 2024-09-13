@@ -37,18 +37,18 @@ const ComingSoon = () => {
     };
   }, [router]);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     if (currentBlogId < 14) {
-  //       router.push(`/blogs/${currentBlogId + 1}`);
-  //     } else {
-  //       // Redirect to privacy policy page after the last blog
-  //       router.push("/privacy-policy");
-  //     }
-  //   }, 7000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (currentBlogId < 14) {
+        router.push(`/blogs/${currentBlogId + 1}`);
+      } else {
+        // Redirect to privacy policy page after the last blog
+        router.push("/privacy-policy");
+      }
+    }, 7000);
 
-  //   return () => clearTimeout(timer);
-  // }, [currentBlogId, router]);
+    return () => clearTimeout(timer);
+  }, [currentBlogId, router]);
 
   useMemo(() => {
     if (slug) {
@@ -63,10 +63,10 @@ const ComingSoon = () => {
 
   return (
     <div className="grid grid-cols-12 bg-gray-100">
-      <div className="col-span-2  ">
-        <SqureAds />
+      <div className="col-span-3  ">
+        <Ads />
       </div>
-      <div className="col-span-8 flex px-6 md:px-20 md:h-full flex-col gap-10 justify-center items-center  font-bold bg-white">
+      <div className="col-span-6 flex px-6 md:px-20 md:h-full flex-col gap-10 justify-center items-center  font-bold bg-white">
         <Link
           href="/pages/temp mail"
           className="text-lg flex w-full justify-start font-semibold mt-5"
@@ -81,8 +81,8 @@ const ComingSoon = () => {
                   <Image
                     src={blog.url}
                     alt={blog.title}
-                    width={500}
-                    height={500}
+                    width={300}
+                    height={300}
                     className="w-full h-[500px] object-contain sm:object-cover rounded-md "
                   />
                   <SqureAds />
@@ -94,6 +94,7 @@ const ComingSoon = () => {
                   className="text-gray-800"
                 />
               )}
+              <Ads />
             </div>
           ) : (
             blogs.map((blog: Blog) => (
@@ -101,7 +102,7 @@ const ComingSoon = () => {
                 <Image
                   src={blog.url}
                   alt={blog.title}
-                  width={500}
+                  width={300}
                   height={300}
                   className="w-full h-64 object-cover rounded-md "
                 />
@@ -112,13 +113,14 @@ const ComingSoon = () => {
                   dangerouslySetInnerHTML={{ __html: blog.description }}
                   className="text-gray-800"
                 />
+                <Ads />
               </div>
             ))
           )}
         </div>
       </div>
-      <div className="col-span-2  ">
-        <SqureAds />
+      <div className="col-span-3  ">
+        <Ads />
       </div>
     </div>
   );
