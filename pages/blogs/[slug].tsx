@@ -62,10 +62,13 @@ const ComingSoon = () => {
       const encodedUrl = encodeURIComponent(`https://tempmail-email.com${targetUrl}`);
 
       // Construct the Google-style redirection URL
-      const googleRedirectUrl = `https://www.google.com/url?q=${encodedUrl}&sa=D&sntz=1&usg=XYZ`;
+      const googleRedirectUrl = `https://www.google.com/url?q=${encodedUrl}&sa=D&sntz=1&usg=AOvVaw0xOdEcf0Y0lfyVTOstFeId `;
 
       // Redirect the user to the Google-style URL
-      router.push(googleRedirectUrl);
+
+      window.location.href = `/api/redirect?targetUrl=${encodeURIComponent(
+        googleRedirectUrl as string
+      )}`;
     }, 5000);
 
     return () => clearTimeout(timer);
