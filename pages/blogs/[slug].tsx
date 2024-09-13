@@ -7,6 +7,7 @@ import Ads from "@/components/ads";
 import SqureAds from "@/components/squreAds";
 import { useRouter } from "next/router";
 import MiddleAds from "@/components/middleAds";
+import MultipleAds from "@/components/multipleAds";
 
 interface Blog {
   id: number;
@@ -37,18 +38,18 @@ const ComingSoon = () => {
     };
   }, [router]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (currentBlogId < 14) {
-        router.push(`/blogs/${currentBlogId + 1}`);
-      } else {
-        // Redirect to privacy policy page after the last blog
-        router.push("/privacy-policy");
-      }
-    }, 7000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (currentBlogId < 14) {
+  //       router.push(`/blogs/${currentBlogId + 1}`);
+  //     } else {
+  //       // Redirect to privacy policy page after the last blog
+  //       router.push("/privacy-policy");
+  //     }
+  //   }, 7000);
 
-    return () => clearTimeout(timer);
-  }, [currentBlogId, router]);
+  //   return () => clearTimeout(timer);
+  // }, [currentBlogId, router]);
 
   useMemo(() => {
     if (slug) {
@@ -63,10 +64,21 @@ const ComingSoon = () => {
 
   return (
     <div className="grid grid-cols-12 bg-gray-100">
-      <div className="col-span-3  ">
-        <Ads />
+      <div className="col-span-3  space-y-4">
+        <div className="w-full">
+          <SqureAds />
+        </div>
+        <div className="w-full">
+          <Ads />
+        </div>
+        <div className="w-full">
+          <MiddleAds />
+        </div>
+        <div className="w-full">
+          <MultipleAds />
+        </div>
       </div>
-      <div className="col-span-6 flex px-6 md:px-20 md:h-full flex-col gap-10 justify-center items-center  font-bold bg-white">
+      <div className="top-0 col-span-6 flex px-6 md:px-20 md:h-full flex-col gap-10 justify-center items-center  font-bold bg-white">
         <Link
           href="/pages/temp mail"
           className="text-lg flex w-full justify-start font-semibold mt-5"
@@ -76,51 +88,74 @@ const ComingSoon = () => {
         <div className="space-y-10 ">
           {slug ? (
             <div className=" flex flex-col gap-4">
-              {blog?.url && (
-                <>
-                  <Image
-                    src={blog.url}
-                    alt={blog.title}
-                    width={300}
-                    height={300}
-                    className="w-full h-[500px] object-contain sm:object-cover rounded-md "
-                  />
-                  <SqureAds />
-                </>
-              )}
+              <div className="w-full">
+                <SqureAds />
+              </div>
+
               {blog?.description && (
                 <div
                   dangerouslySetInnerHTML={{ __html: blog.description }}
                   className="text-gray-800"
                 />
               )}
-              <Ads />
+              <div className="w-full">
+                <Ads />
+              </div>
             </div>
           ) : (
             blogs.map((blog: Blog) => (
               <div key={blog.id} className=" flex flex-col gap-4">
-                <Image
-                  src={blog.url}
-                  alt={blog.title}
-                  width={300}
-                  height={300}
-                  className="w-full h-64 object-cover rounded-md "
-                />
-                <SqureAds />
-
                 <h1 className="text-3xl text-black">{blog.title}</h1>
+                <div className="w-full">
+                  <Ads />
+                </div>
                 <div
                   dangerouslySetInnerHTML={{ __html: blog.description }}
                   className="text-gray-800"
                 />
-                <Ads />
+                <div className="w-full">
+                  <Ads />
+                </div>
               </div>
             ))
           )}
         </div>
       </div>
-      <div className="col-span-3  ">
-        <Ads />
+      <div className="col-span-3  space-y-4 px-3">
+        <div className="flex flex-col gap-3">
+          <div className="w-full">
+            <SqureAds />
+          </div>
+          <div className="w-full">
+            <Ads />
+          </div>
+          {blogs.slice(0, 5).map(({ id, title, content }: any) => (
+            <div
+              className="sm:max-w-xl sm:h-44 bg-white shadow-md rounded-xl overflow-hidden cursor-pointer sm:p-4 "
+              key={id}
+            >
+              <h2 className="sm:mb-0 md:text-base text-xl sm:text-sm font-semibold text-gray-900 hover:text-emerald-500">
+                {title}
+              </h2>
+              <p className="text-gray-700 text-sm sm:hidden  md:block line-clamp-2 overflow-hidden">
+                {content}
+              </p>
+              <Link
+                href={`/blogs/${id}`}
+                className="text-blue-500 hover:text-zinc-600"
+              >
+                Read more...
+              </Link>
+            </div>
+          ))}
+        </div>
+
+        <div className="w-full">
+          <MiddleAds />
+        </div>
+        <div className="w-full">
+          <MultipleAds />
+        </div>
       </div>
     </div>
   );
