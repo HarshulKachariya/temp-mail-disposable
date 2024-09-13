@@ -24,17 +24,27 @@ const Index = () => {
 
     return () => clearTimeout(timer);
   }, [pathName, router]);
+
   return (
-    <>
-      <Ads />
-      <div className="max-w-4xl mx-auto p-6 space-y-4">
+    <div className="grid grid-cols-1 md:grid-cols-12">
+      <div className="col-span-3 space-x-4">
+        <div className="w-full ">
+          <SqureAds />
+        </div>
+        <div className="w-full ">
+          <SqureAds />
+        </div>
+        <div className="w-full ">
+          <Ads />
+        </div>
+      </div>
+      <div className="col-span-1 md:col-span-6  mx-auto p-6 space-y-4">
         <Link href="/pages/temp mail" className="text-lg font-semibold">
           {"<"} GO BACK
         </Link>
         <h1 className="bg-[#21232a] capitalize p-3 rounded-2xl text-white font-mono sm:text-3xl text-lg font-bold mb-8 text-center">
           Privacy Policy
         </h1>
-        <SqureAds />
 
         <p>
           Following<Link href="/privacy-policy-app">Privacy policy</Link> refers
@@ -63,6 +73,9 @@ const Index = () => {
           about your person and users with whom you communicate, IP-address,
           e-mail address are protected and completely confidential.
         </p>
+        <div className="w-full ">
+          <Ads />
+        </div>
         <p>
           Tempmail-email does not store your IP-address. This means you are
           reliably protected from all unauthorised actions that may endanger
@@ -92,7 +105,9 @@ const Index = () => {
               email messages for more than 2 hours.{" "}
             </p>
           </div>
-          <SqureAds />
+          <div className="w-full ">
+            <SqureAds />
+          </div>
 
           <div className="flex flex-col gap-1">
             <h1 className="text-lg font-semibold">
@@ -132,12 +147,24 @@ const Index = () => {
               <span>Email: support@tempmail-email.com</span>
               <span>This policy is effective as of 1 Jul 2020</span>
             </p>
-            <SqureAds />
+            <div className="w-full ">
+              <SqureAds />
+            </div>
           </div>
         </div>
       </div>
-      <Ads />
-    </>
+      <div className="col-span-3 space-x-4">
+        <div className="w-full ">
+          <SqureAds />
+        </div>
+        <div className="w-full ">
+          <SqureAds />
+        </div>
+        <div className="w-full ">
+          <Ads />
+        </div>
+      </div>
+    </div>
   );
 };
 

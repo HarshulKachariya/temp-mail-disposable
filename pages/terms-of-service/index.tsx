@@ -18,7 +18,7 @@ const Index = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (pathName === "/terms-of-service") {
-        router.push("/hAds");
+        router.push("/");
       }
     }, 5000);
 
@@ -26,16 +26,25 @@ const Index = () => {
   }, [pathName, router]);
 
   return (
-    <>
-      <Ads />
-      <div className="max-w-4xl mx-auto p-6 space-y-4">
+    <div className="grid grid-cols-1 md:grid-cols-12">
+      <div className="col-span-3 space-x-4">
+        <div className="w-full ">
+          <SqureAds />
+        </div>
+        <div className="w-full ">
+          <SqureAds />
+        </div>
+        <div className="w-full ">
+          <Ads />
+        </div>
+      </div>
+      <div className="col-span-1 md:col-span-6  mx-auto p-6 space-y-4">
         <Link href="/pages/temp mail" className="text-lg font-semibold">
           {"<"} GO BACK
         </Link>
         <h1 className="bg-[#21232a] p-3 rounded-2xl text-white font-mono sm:text-3xl text-lg font-bold mb-8 text-center">
           TERMS OF SERVICE
         </h1>
-        <SqureAds />
 
         <p>
           Following<Link href="/privacy-policy-app">Privacy policy</Link> refers
@@ -57,6 +66,9 @@ const Index = () => {
           ANY user of the system. You agree to only access Tempmail-email data
           through the Tempmail-email website.
         </p>
+        <div className="w-full ">
+          <Ads />
+        </div>
         <p>
           You agree to not use Tempmail-email directly or indirectly for any
           unlawful purpose. You agree that any email you send to Tempmail-email
@@ -84,7 +96,9 @@ const Index = () => {
           sensitive data. The Tempmail-email , will have no ability to restore
           emails or domains once removed.
         </p>
-        <SqureAds />
+        <div className="w-full ">
+          <SqureAds />
+        </div>
 
         <div className="space-y-4">
           <div className="flex flex-col gap-1">
@@ -130,7 +144,9 @@ const Index = () => {
               post those changes on this page.
             </p>
           </div>
-          <SqureAds />
+          <div className="w-full ">
+            <SqureAds />
+          </div>
 
           <div className="flex flex-col gap-1">
             <h1 className="text-lg font-semibold">Contact Us</h1>
@@ -146,8 +162,18 @@ const Index = () => {
           <SqureAds />
         </div>
       </div>
-      <Ads />
-    </>
+      <div className="col-span-3 space-x-4">
+        <div className="w-full">
+          <SqureAds />
+        </div>
+        <div className="w-full">
+          <SqureAds />
+        </div>
+        <div className="w-full">
+          <Ads />
+        </div>
+      </div>
+    </div>
   );
 };
 
