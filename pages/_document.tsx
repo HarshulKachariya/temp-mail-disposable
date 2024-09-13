@@ -14,15 +14,6 @@ export default function Document() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/1" />
-        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/2" />
-        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/3" />
-        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/4" />
-        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/5" />
-        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/6" />
-        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/7" />
-        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/8" />
-        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/9" />
-        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/10" />
 
         <meta
           name="keywords"
