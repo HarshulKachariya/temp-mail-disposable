@@ -1,6 +1,7 @@
 import Ads from "@/components/ads";
 import BlogsCard from "@/components/blog";
 import MiddleAds from "@/components/middleAds";
+import SqureAds from "@/components/squreAds";
 import { blogs } from "@/utils/data";
 
 import Link from "next/link";
@@ -15,7 +16,6 @@ const Blogs = () => {
         <h1 className="text-4xl font-bold text-black text-center mb-10">
           Popular Articles
         </h1>
-        {/* <MiddleAds /> */}
         <div className="flex gap-4">
           <div className="flex flex-col max-w-3xl gap-2">
             {blogs?.map((blog) => (
@@ -34,9 +34,10 @@ const Blogs = () => {
                 {i.title}
               </div>
             ))}
+            <SqureAds />
           </div>
         </div>
-        {/* <MiddleAds /> */}
+        <MiddleAds />
       </div>
       <div>
         <Ads />
