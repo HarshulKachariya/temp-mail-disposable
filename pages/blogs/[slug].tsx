@@ -2,7 +2,6 @@ import Link from "next/link";
 import React, { useMemo, useEffect, useState } from "react";
 import { blogs } from "@/utils/data";
 import { useParams } from "next/navigation";
-import Image from "next/image";
 import Ads from "@/components/ads";
 import SqureAds from "@/components/squreAds";
 import { useRouter } from "next/router";
@@ -12,12 +11,13 @@ import MultipleAds from "@/components/multipleAds";
 interface Blog {
   id: number;
   title: string;
-  url: string;
+  content: any;
   description: string;
 }
 
 const ComingSoon = () => {
   const [blog, setBlog] = useState<Blog | null>(null);
+  const [randomBlogs, setRandomBlogs] = useState<Blog[]>([]);
   const slug = useParams();
   const router = useRouter();
   const [currentBlogId, setCurrentBlogId] = useState(1);
@@ -56,6 +56,10 @@ const ComingSoon = () => {
       const foundBlog = blogs.find((blog) => blog.id === Number(slug.slug));
       setBlog(foundBlog || null);
     }
+
+    // Randomly select 5 blogs
+    const shuffledBlogs = [...blogs].sort(() => 0.5 - Math.random());
+    setRandomBlogs(shuffledBlogs.slice(0, 5));
   }, [slug]);
 
   if (slug && !blog) {
@@ -78,7 +82,7 @@ const ComingSoon = () => {
           <MultipleAds />
         </div>
       </div>
-      <div className="top-0 col-span-6 flex px-6 md:px-20 md:h-full flex-col gap-10 justify-center items-center  font-bold bg-white">
+      <div className=" col-span-6 flex px-6 md:px-10 md:h-full flex-col gap-10 overflowx-x-hidden   font-bold bg-white">
         <Link
           href="/pages/temp mail"
           className="text-lg flex w-full justify-start font-semibold mt-5"
@@ -88,10 +92,9 @@ const ComingSoon = () => {
         <div className="space-y-10 ">
           {slug ? (
             <div className=" flex flex-col gap-4">
-              <div className="w-full">
+              {/* <div className="w-full">
                 <SqureAds />
-              </div>
-
+              </div> */}
               {blog?.description && (
                 <div
                   dangerouslySetInnerHTML={{ __html: blog.description }}
@@ -103,7 +106,7 @@ const ComingSoon = () => {
               </div>
             </div>
           ) : (
-            blogs.map((blog: Blog) => (
+            randomBlogs.map((blog: Blog) => (
               <div key={blog.id} className=" flex flex-col gap-4">
                 <h1 className="text-3xl text-black">{blog.title}</h1>
                 <div className="w-full">
@@ -123,21 +126,21 @@ const ComingSoon = () => {
       </div>
       <div className="col-span-3  space-y-4 px-3">
         <div className="flex flex-col gap-3">
-          <div className="w-full">
+          {/* <div className="w-full">
             <SqureAds />
           </div>
           <div className="w-full">
             <Ads />
-          </div>
-          {blogs.slice(0, 5).map(({ id, title, content }: any) => (
+          </div> */}
+          {randomBlogs.map(({ id, title, content }: Blog) => (
             <div
-              className="sm:max-w-xl sm:h-44 bg-white shadow-md rounded-xl overflow-hidden cursor-pointer sm:p-4 "
+              className="sm:max-w-xl sm:h-44 bg-white  overflow-hidden cursor-pointer sm:p-4 "
               key={id}
             >
               <h2 className="sm:mb-0 md:text-base text-xl sm:text-sm font-semibold text-gray-900 hover:text-emerald-500">
                 {title}
               </h2>
-              <p className="text-gray-700 text-sm sm:hidden  md:block line-clamp-2 overflow-hidden">
+              <p className="text-gray-700 text-sm sm:hidden  md:block !line-clamp-3 overflow-hidden">
                 {content}
               </p>
               <Link

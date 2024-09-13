@@ -7,23 +7,36 @@ import Link from "next/link";
 
 const Blogs = () => {
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-100 py-10 md:px-24 sm:px-14">
+    <div className="min-h-screen flex  bg-gray-100 py-10 md:px-24 sm:px-14">
       <div>
         <Ads />
       </div>
-      <div className="mx-auto px-4">
+      <div className="px-4 flex flex-col">
         <h1 className="text-4xl font-bold text-black text-center mb-10">
           Popular Articles
         </h1>
-        <MiddleAds />
-        <div className="md:max-w-6xl grid md:gap-8 sm:gap-5 gap-3 lg:grid-cols-2 sm:grid-cols-1">
-          {blogs?.map((blog) => (
-            <Link href={`/blogs/${blog.id}`} key={blog.id}>
-              <BlogsCard {...blog} />
-            </Link>
-          ))}
+        {/* <MiddleAds /> */}
+        <div className="flex gap-4">
+          <div className="flex flex-col max-w-3xl gap-2">
+            {blogs?.map((blog) => (
+              <Link href={`/blogs/${blog.id}`} key={blog.id}>
+                <BlogsCard {...blog} />
+              </Link>
+            ))}
+          </div>
+          <div className="flex flex-col bg-white  md:max-w-xl p-5 gap-3">
+            <p className="text-3xl font-bold">Recent Posts</p>
+            {blogs.map((i) => (
+              <div
+                key={i.id}
+                className="text-blue-500 underline hover:text-zinc-500 cursor-pointer "
+              >
+                {i.title}
+              </div>
+            ))}
+          </div>
         </div>
-        <MiddleAds />
+        {/* <MiddleAds /> */}
       </div>
       <div>
         <Ads />

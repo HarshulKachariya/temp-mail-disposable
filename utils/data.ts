@@ -4,7 +4,6 @@ type Blogs = {
   id: number;
   title: string;
   content: string;
-  url: string;
   description: string;
 };
 
@@ -13,8 +12,7 @@ export const blogs: Blogs[] = [
     id: 1,
     title: "Introduction to Temporary Email",
     content:
-      "In today's digital age, email is a crucial part of our daily lives. But with the convenience of email comes the downside of spam, unwanted newsletters, and privacy concerns. That's where temporary email services come into play.",
-    url: "https://noahsarkinterior.com/uploads/wIl9DpiWkz1Z5XQ_1712838708.webp",
+      "In today's digital age, email is a crucial part of our daily lives. But with the convenience of email comes the downside of spam, unwanted newsletters, and privacy concerns. That's where temporary email services come into play.Temporary email, or temp mail, is a service that provides short-term email addresses that self-destruct after a period. These are ideal for one-time use when you don't want to use your primary email address.In today's digital age, email is a crucial part of our daily lives. But with the convenience of email comes the downside of spam, unwanted newsletters, and privacy concerns. That's where temporary email services come into play.",
     description: `<article class="max-w-4xl mx-auto p-6  mt-10">
         <header class="mb-4">
             <h1 class="text-3xl font-bold">Introduction to Temporary Email: What You Need to Know</h1>
@@ -44,8 +42,7 @@ export const blogs: Blogs[] = [
     id: 2,
     title: "Why Use Temporary Email?",
     content:
-      "Temporary email services provide numerous advantages, making them a valuable tool for managing your online interactions. Here are some compelling reasons to consider using temp mail.",
-    url: "https://tempmails.net/uploads/1704719583-temporary-emails-more-in-use.webp",
+      "Temporary email services provide numerous advantages, making them a valuable tool for managing your online interactions. Here are some compelling reasons to consider using temp mail.One of the most common uses for temporary email addresses is to protect personal email accounts from spam. In fact, it’s the original idea behind Mailinator. When signing up for websites or online services, users can use a temporary email to avoid sharing their primary email address. This helps keep their inbox free from unwanted newsletters and promotional emails. Mailinator, for instance, offers free public inboxes where users can receive emails without registering an account, making it a convenient tool for such needs​.",
 
     description: `<article class="max-w-4xl mx-auto p-6  mt-10">
         <header class="mb-4">
@@ -77,8 +74,7 @@ export const blogs: Blogs[] = [
     id: 3,
     title: "How to Use Temporary Email",
     content:
-      "Select a reliable temporary email service such as TempMail, Guerrilla Mail, or Mailinator.",
-    url: "/image.png",
+      "Select a reliable temporary email service such as TempMail, Guerrilla Mail, or Mailinator.Select a reliable temporary email service such as TempMail, Guerrilla Mail, or Mailinator.Use the generated address for signing up on websites, downloading content, or any other purpose where you need an email.",
 
     description: ` <article class="max-w-4xl mx-auto p-6  mt-10">
         <header class="mb-4">
@@ -111,8 +107,7 @@ export const blogs: Blogs[] = [
     id: 4,
     title: "Best Practices for Using Temporary Email",
     content:
-      "To make the most of temporary email services while maintaining security and efficiency, follow these best practices.",
-    url: "https://www.touchpoint.com/wp-content/uploads/2023/02/Customer-service-email-templates.png",
+      "If you’re online a lot, you’ve probably noticed an increase in websites asking for your email address. Although sharing your personal email might seem harmless, it often leads to a flood of unwanted spam and can put your privacy at risk.That’s where temporary email services come to the rescue by providing disposable email addresses that can get the job done without sharing your personal information. In this article, we’ll look at what they are, why they’re useful, and how you can use them, followed by some recommendations.",
 
     description: `<article class="max-w-4xl mx-auto p-6  mt-10">
         <header class="mb-4">
@@ -148,8 +143,7 @@ export const blogs: Blogs[] = [
     id: 5,
     title: "Comparing Temporary Email Services",
     content:
-      "TempMail offers a simple interface and instant email generation. It's ideal for quick, short-term needs.",
-    url: "https://i.pcmag.com/imagery/roundups/06eBwBDdgVaaZruFXXqs3c8-2..v1711046275.png",
+      "TempMail offers a simple interface and instant email generation. It's ideal for quick, short-term needs.You can’t survive on the internet without an email address. Need to download an ebook? Enter your email. Want to view content on a social forum? Enter your email.But, you might hesitate before giving your personal email address you don’t know well or trust completely. So, what should you do then?You can use a disposable email address to view content on such sites. Temporary emails offer you security, online privacy, and anonymity and keep you safe from spam and phishing attacks.This guide will discuss everything you need to know about disposable emails and the 9 best disposable email services to use. Let’s dive right in!",
 
     description: ` <article class="max-w-4xl mx-auto p-6  mt-10">
         <header class="mb-4">
@@ -185,8 +179,7 @@ export const blogs: Blogs[] = [
     id: 6,
     title: "Future of Temporary Email",
     content:
-      "As digital privacy concerns grow, temporary email services are evolving to meet new challenges. Let's explore the future trends of temp mail.",
-    url: "https://emailacademy.com/storage/img/post/aG5ZRlp9wbvvjGZGG2mzLHrhFhWs8gOBwLHHYhm1_1200.webp",
+      "As digital privacy concerns grow, temporary email services are evolving to meet new challenges. Let's explore the future trends of temp mail.Looking ahead, the future of disposable email services is likely to involve further advancements in privacy protection and increased integration with other online platforms.Privacy concerns continue to be a major issue for internet users. As data breaches and online tracking become more prevalent, disposable email services have an opportunity to enhance their privacy features. This could include the integration of encryption protocols, allowing users to send and receive encrypted emails, further safeguarding their communications.Moreover, disposable email services may expand their integration with other platforms and services. We can expect to see tighter integration with social media accounts, e-commerce platforms, and online forums. This integration would enable users to sign up for services or participate in discussions while maintaining their privacy through temporary email addresses.",
 
     description: ` <article class="max-w-4xl mx-auto p-6  mt-10">
         <header class="mb-4">
@@ -218,8 +211,7 @@ export const blogs: Blogs[] = [
     id: 7,
     title: "The Rise of Quantum Computing",
     content:
-      "Quantum computing is poised to revolutionize the tech industry. We explore its potential impact on cryptography, drug discovery, and artificial intelligence.",
-    url: "/quantum.jpg",
+      "Quantum computing is poised to revolutionize the tech industry. We explore its potential impact on cryptography, drug discovery, and artificial intelligence.Quantum computing is rapidly emerging as one of the most transformative technologies of the 21st century. Unlike classical computers that use bits to process information, quantum computers leverage the principles of quantum mechanics, utilizing qubits to perform complex calculations at unprecedented speeds. This blog delves into the fundamentals of quantum computing, its potential applications, and the future implications of this groundbreaking technology.",
     description: `<article class="max-w-4xl mx-auto p-6 mt-10">
       <header class="mb-4">
         <h1 class="text-3xl font-bold">Quantum Computing: The Next Frontier in Technology</h1>
@@ -250,8 +242,7 @@ export const blogs: Blogs[] = [
     id: 8,
     title: "5G and the Internet of Things",
     content:
-      "The rollout of 5G networks is set to supercharge the Internet of Things. Discover how this will transform smart cities, autonomous vehicles, and more.",
-    url: "/5g-internet.jpeg",
+      "The rollout of 5G networks is set to supercharge the Internet of Things. Discover how this will transform smart cities, autonomous vehicles, and more.By connecting things enterprises can develop new or improve existing products, services, and business processes. From automotive to smart manufacturing and utilities, the role of IoT will grow in importance, transcending almost every industry. In addition, IoT will continue to benefit society by enabling implementation of government policy. For example, by enabling further control of electricity demand and fluctuating supply or minimizing waste of critical resources such as water. Today’s mobile networks, known as 2G, 3G and 4G, provide a strong foundation for connecting things. 2G, 3G and 4G were originally developed to enable personal communication and mobile broadband services. Still, they have also proven extremely capable for the demands of IoT, offering technical capabilities exceeding most existing use cases and with characteristics particularly well-suited to IoT.",
     description: `<article class="max-w-4xl mx-auto p-6 mt-10">
     <header class="mb-4">
         <h1 class="text-3xl font-bold">What is 5G?</h1>
@@ -293,8 +284,7 @@ export const blogs: Blogs[] = [
     id: 9,
     title: "The Ethics of Artificial Intelligence",
     content:
-      "As AI becomes more prevalent in our lives, we must grapple with its ethical implications. We discuss bias in AI, job displacement, and the need for responsible AI development.",
-    url: "/ethics.jpeg",
+      "As AI becomes more prevalent in our lives, we must grapple with its ethical implications. We discuss bias in AI, job displacement, and the need for responsible AI development.The possibility of creating thinking machines raises a host of ethical issues. These questions relate both to ensuring that such machines do not harm humans and other morally relevant beings, and to the moral status of the machines themselves. The first section discusses issues that may arise in the near future of AI. The second section outlines challenges for ensuring that AI operates safely as it approaches humans in its intelligence. The third section outlines how we might assess whether, and in what circumstances, AIs themselves have moral status. In the fourth section, we consider how AIs might differ from humans in certain basic respects relevant to our ethical assessment of them. The final section addresses the issues of creating AIs more intelligent than human, and ensuring that they use their advanced intelligence for good rather than ill.",
     description: `<article class="max-w-4xl mx-auto p-6 mt-10">
       <header class="mb-4">
         <h1 class="text-3xl font-bold">Navigating the Ethical Landscape of AI</h1>
@@ -325,8 +315,7 @@ export const blogs: Blogs[] = [
     id: 10,
     title: "Blockchain Beyond Cryptocurrency",
     content:
-      "While blockchain is best known for powering cryptocurrencies, its potential applications are far broader. Explore how blockchain could transform supply chains, voting systems, and more.",
-    url: "/crypto.jpeg",
+      "While blockchain is best known for powering cryptocurrencies, its potential applications are far broader. Explore how blockchain could transform supply chains, voting systems, and more.Though often associated with cryptocurrencies, blockchain technology offers broader applications. Its secure, transparent, and decentralized nature enables transformative solutions in finance, supply chain management, voting systems, healthcare, and more. In finance, it streamlines transactions, reducing reliance on intermediaries. In supply chains, it enhances transparency and authenticity. Additionally, blockchain secures patient data in healthcare and facilitates the creation of decentralized applications and smart contracts, transforming business operations and legal agreements. This technology’s versatility is reshaping industries, illustrating its potential beyond digital currencies. ",
     description: `<article class="max-w-4xl mx-auto p-6 mt-10">
   <header class="mb-4">
     <h1 class="text-3xl font-bold">Blockchain Revolution: Transforming Industries with Decentralized Solutions</h1>
@@ -438,8 +427,7 @@ export const blogs: Blogs[] = [
     id: 11,
     title: "The Future of Work: Remote and AI-Assisted",
     content:
-      "The COVID-19 pandemic accelerated the shift towards remote work, and AI is increasingly assisting in various jobs. We examine how these trends are shaping the future of work.",
-    url: "/Remote-Work-AI.webp",
+      "The COVID-19 pandemic accelerated the shift towards remote work, and AI is increasingly assisting in various jobs. We examine how these trends are shaping the future of work.Remote work was already gaining traction before the COVID-19 pandemic, but the global health crisis accelerated its adoption at an unprecedented pace. Organizations were forced to quickly adapt to new ways of working, with technology playing a crucial role in enabling remote collaboration. Tools like Zoom, Microsoft Teams, and Slack became essential, but startups are now pushing the boundaries further with AI and the Metaverse.",
     description: `<article class="max-w-4xl mx-auto p-6 mt-10">
   <header class="mb-4">
     <h1 class="text-3xl font-bold">The Rise of Remote Collaboration: AI and the Metaverse at the Forefront</h1>
@@ -507,8 +495,7 @@ export const blogs: Blogs[] = [
     id: 12,
     title: "Cybersecurity in the Age of Quantum Computing",
     content:
-      "Quantum computing poses both opportunities and threats for cybersecurity. We discuss the race to develop quantum-resistant encryption and the potential for quantum-enhanced security measures.",
-    url: "/Cybersecurity.jpeg",
+      "Quantum computing poses both opportunities and threats for cybersecurity. We discuss the race to develop quantum-resistant encryption and the potential for quantum-enhanced security measures.The emergence of this technology makes critical areas such as government intelligence, digital payments, blockchain transactions, health records and national infrastructure more susceptible to security breaches. Businesses must remain vigilant and take measures to mitigate these threats. But quantum computing can compromise the foundations of cybersecurity, primarily through its impact on encryption and public key infrastructure (PKI) encryption in particular. It threatens the integrity of digital documents and the encryption of sensitive health and financial data.",
     description: `<article class="max-w-4xl mx-auto p-6 mt-10">
   <header class="mb-4">
     <h1 class="text-3xl font-bold">Quantum Computing: The Middle East’s Opportunity and Cybersecurity Risks</h1>
@@ -567,8 +554,7 @@ export const blogs: Blogs[] = [
     id: 13,
     title: "The Promise and Perils of Brain-Computer Interfaces",
     content:
-      "Brain-computer interfaces (BCIs) have the potential to revolutionize how we interact with technology. We explore the exciting possibilities and the ethical concerns surrounding this emerging technology.",
-    url: "/Brain-Computer.jpg",
+      "Brain-computer interfaces (BCIs) have the potential to revolutionize how we interact with technology. We explore the exciting possibilities and the ethical concerns surrounding this emerging technology.Neuralink faces formidable competition, notably from Synchron, an Australian company using a minimally invasive approach with a microelectrode mesh threaded through blood vessels. The broader landscape reveals global initiatives, with Stanford University showcasing a BCI in 2021. The pace of Neuralink’s developments prompts global curiosity, as the world anticipates how brain chip implants will revolutionize healthcare and human capabilities. The competitive landscape raises questions about patient recruitment, long-term support, and the ethical implications of a highly publicized race to commercialize next-generation BCIs.",
     description: `<article class="max-w-4xl mx-auto p-6 mt-10">
   <header class="mb-4">
     <h1 class="text-3xl font-bold">Crossing the Barrier from Brains to Digital Networks</h1>
@@ -624,8 +610,7 @@ export const blogs: Blogs[] = [
     id: 14,
     title: "The Green Tech Revolution",
     content:
-      "As climate change becomes an increasingly pressing issue, green technology is taking center stage. We examine innovations in renewable energy, sustainable transportation, and eco-friendly manufacturing.",
-    url: "/Green-Tech-Revolution.jpeg",
+      "As climate change becomes an increasingly pressing issue, green technology is taking center stage. We examine innovations in renewable energy, sustainable transportation, and eco-friendly manufacturing. In the face of the escalating climate crisis, the need for innovative, sustainable solutions has never been more urgent. The combined threats of rising temperatures, extreme weather events, and dwindling natural resources pose existential risks not only to the environment but to human society. Fortunately, at the intersection of environmental consciousness and technological progress lies the promise of the Green Tech Revolution.",
     description: `<article class="max-w-4xl mx-auto p-6 mt-10">
       <header class="mb-4">
         <h1 class="text-3xl font-bold">Green Tech: Innovating for a Sustainable Future</h1>
