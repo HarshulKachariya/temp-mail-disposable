@@ -13,7 +13,6 @@ export default function Document() {
           content="TempMail - Get your temporary email address instantly!"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/1" />
 
         <meta
           name="keywords"

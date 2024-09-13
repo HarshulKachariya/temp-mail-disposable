@@ -18,7 +18,7 @@ const Middle = () => {
       if (pathName === "/middle") {
         router.push("/multiple");
       }
-    }, 15000);
+    }, 7000);
 
     return () => clearTimeout(timer);
   }, [pathName, router]);

@@ -45,34 +45,10 @@ const ComingSoon = () => {
   //       // Redirect to privacy policy page after the last blog
   //       router.push("/privacy-policy");
   //     }
-  //   }, 15000);
+  //   }, 7000);
 
   //   return () => clearTimeout(timer);
   // }, [currentBlogId, router]);
-
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const nextBlogId = currentBlogId < 6 ? currentBlogId + 1 : 1;
-
-      // Generate the target URL for the next blog
-      const targetUrl = `/blogs/${nextBlogId}`;
-
-      // Encode the target URL to mimic Google redirection format
-      const encodedUrl = encodeURIComponent(`https://tempmail-email.com${targetUrl}`);
-
-      // Construct the Google-style redirection URL
-      const googleRedirectUrl = `https://www.google.com/url?q=${encodedUrl}&sa=D&sntz=1&usg=AOvVaw0xOdEcf0Y0lfyVTOstFeId `;
-
-      // Redirect the user to the Google-style URL
-
-      window.location.href = `/api/redirect?targetUrl=${encodeURIComponent(
-        googleRedirectUrl as string
-      )}`;
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, [currentBlogId, router]);
 
   useMemo(() => {
     if (slug) {

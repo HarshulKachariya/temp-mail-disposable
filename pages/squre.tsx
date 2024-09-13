@@ -17,7 +17,7 @@ const Squre = () => {
       if (pathName === "/squre") {
         router.push("/");
       }
-    }, 15000);
+    }, 7000);
 
     return () => clearTimeout(timer);
   }, [pathName, router]);
