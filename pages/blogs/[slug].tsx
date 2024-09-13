@@ -67,8 +67,8 @@ const ComingSoon = () => {
   }
 
   return (
-    <div className="grid grid-cols-12 bg-gray-100">
-      <div className="col-span-3  space-y-4">
+    <div className="grid grid-cols-1 lg:grid-cols-12 bg-gray-100">
+      <div className="lg:col-span-3  space-y-4">
         <div className="w-full ">
           <SqureAds />
         </div>
@@ -82,7 +82,7 @@ const ComingSoon = () => {
           <MultipleAds />
         </div>
       </div>
-      <div className=" col-span-6 flex px-6 md:px-10 md:h-full flex-col gap-10 overflowx-x-hidden   font-bold bg-white">
+      <div className="col-span-1 lg:col-span-6 flex px-6 md:px-10 md:h-full flex-col gap-10 overflowx-x-hidden   font-bold bg-white">
         <Link
           href="/pages/temp mail"
           className="text-lg flex w-full justify-start font-semibold mt-5"
@@ -124,7 +124,7 @@ const ComingSoon = () => {
           )}
         </div>
       </div>
-      <div className=" col-span-3  space-y-4 px-3">
+      <div className=" lg:col-span-3  space-y-4 px-3">
         <div className="flex flex-col gap-3">
           <div className="w-full ">
             <SqureAds />
@@ -152,13 +152,18 @@ const ComingSoon = () => {
             </div>
           ))}
         </div>
-
-        <div className="w-full ">
+        <div className="w-full">
           <MiddleAds />
         </div>
         <div className="w-full ">
           <MultipleAds />
         </div>
+      </div>
+      <div className="w-full">
+        <MiddleAds />
+      </div>
+      <div className="w-full ">
+        <MultipleAds />
       </div>
     </div>
   );
