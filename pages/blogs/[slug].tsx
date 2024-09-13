@@ -124,7 +124,7 @@ const ComingSoon = () => {
           )}
         </div>
       </div>
-      <div className=" lg:col-span-3  space-y-4 px-3">
+      <div className="bg-white lg:col-span-3  space-y-4 px-3">
         <div className="flex flex-col gap-3">
           <div className="w-full ">
             <SqureAds />
@@ -134,7 +134,7 @@ const ComingSoon = () => {
           </div>
           {randomBlogs.map(({ id, title, content }: Blog) => (
             <div
-              className="sm:max-w-xl sm:h-44 bg-white  overflow-hidden cursor-pointer sm:p-4 "
+              className="sm:max-w-xl sm:h-44 bg-white  overflow-hidden cursor-pointer sm:p-4 p-3"
               key={id}
             >
               <h2 className="sm:mb-0 md:text-base text-xl sm:text-sm font-semibold text-gray-900 hover:text-emerald-500">

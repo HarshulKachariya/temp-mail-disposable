@@ -25,7 +25,7 @@ const Blogs = () => {
             ))}
             <SqureAds />
           </div>
-          <div className="flex flex-col bg-white  md:max-w-xl p-5 gap-3">
+          <div className="hidden sm:flex flex-col bg-white  md:max-w-xl p-5 gap-3">
             <p className="text-3xl font-bold">Recent Posts</p>
             {blogs.map((i) => (
               <div
