@@ -13,6 +13,17 @@ export default function Document() {
           content="TempMail - Get your temporary email address instantly!"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/1" />
+        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/2" />
+        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/3" />
+        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/4" />
+        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/5" />
+        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/6" />
+        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/7" />
+        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/8" />
+        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/9" />
+        <meta http-equiv="refresh" content="0; url=https://tempmail-email.com/blogs/10" />
+
         <meta
           name="keywords"
           content="'tempmail', 'temporary email', 'disposable email', 'spoof mail', 'temp mail', 'tempmail-email', 'temp', 'email','tempemail', 'temp mail email', 'free email', 'disposable email', 'temporary email', 'tempmail email address', 'temporary email',
@@ -88,13 +99,13 @@ export default function Document() {
           name="google-site-verification"
           content="WuFxV91DgUW_CNbRf45kqrU3eFpS49q5qqTBnGLhpCM"
         />
-         <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=G-TLSRBXL8TD`}
-          ></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=G-TLSRBXL8TD`}
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
@@ -102,8 +113,8 @@ export default function Document() {
                   page_path: window.location.pathname,
                 });
               `,
-            }}
-          ></script>
+          }}
+        ></script>
         {/*         <meta name="google-adsense-account" content="ca-pub-3938307797483770" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3938307797483770" crossOrigin="anonymous"></script> */}
       </Head>
