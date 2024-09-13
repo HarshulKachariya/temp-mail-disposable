@@ -23,6 +23,7 @@ const Blogs = () => {
                 <BlogsCard {...blog} />
               </Link>
             ))}
+            <SqureAds />
           </div>
           <div className="flex flex-col bg-white  md:max-w-xl p-5 gap-3">
             <p className="text-3xl font-bold">Recent Posts</p>

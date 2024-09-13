@@ -38,18 +38,18 @@ const ComingSoon = () => {
     };
   }, [router]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (currentBlogId < 14) {
-        router.push(`/blogs/${currentBlogId + 1}`);
-      } else {
-        // Redirect to privacy policy page after the last blog
-        router.push("/privacy-policy");
-      }
-    }, 7000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (currentBlogId < 14) {
+  //       router.push(`/blogs/${currentBlogId + 1}`);
+  //     } else {
+  //       // Redirect to privacy policy page after the last blog
+  //       router.push("/privacy-policy");
+  //     }
+  //   }, 7000);
 
-    return () => clearTimeout(timer);
-  }, [currentBlogId, router]);
+  //   return () => clearTimeout(timer);
+  // }, [currentBlogId, router]);
 
   useMemo(() => {
     if (slug) {
@@ -69,16 +69,16 @@ const ComingSoon = () => {
   return (
     <div className="grid grid-cols-12 bg-gray-100">
       <div className="col-span-3  space-y-4">
-        <div className="w-full">
+        <div className="w-full ">
           <SqureAds />
         </div>
-        <div className="w-full">
+        <div className="w-full  ">
           <Ads />
         </div>
-        <div className="w-full">
+        <div className="w-full  ">
           <MiddleAds />
         </div>
-        <div className="w-full">
+        <div className="w-full ">
           <MultipleAds />
         </div>
       </div>
@@ -92,16 +92,16 @@ const ComingSoon = () => {
         <div className="space-y-10 ">
           {slug ? (
             <div className=" flex flex-col gap-4">
-              {/* <div className="w-full">
+              <div className="w-full ">
                 <SqureAds />
-              </div> */}
+              </div>
               {blog?.description && (
                 <div
                   dangerouslySetInnerHTML={{ __html: blog.description }}
                   className="text-gray-800"
                 />
               )}
-              <div className="w-full">
+              <div className="w-full ">
                 <Ads />
               </div>
             </div>
@@ -116,7 +116,7 @@ const ComingSoon = () => {
                   dangerouslySetInnerHTML={{ __html: blog.description }}
                   className="text-gray-800"
                 />
-                <div className="w-full">
+                <div className="w-full ">
                   <Ads />
                 </div>
               </div>
@@ -124,14 +124,14 @@ const ComingSoon = () => {
           )}
         </div>
       </div>
-      <div className="col-span-3  space-y-4 px-3">
+      <div className=" col-span-3  space-y-4 px-3">
         <div className="flex flex-col gap-3">
-          {/* <div className="w-full">
+          <div className="w-full ">
             <SqureAds />
           </div>
-          <div className="w-full">
+          <div className="w-full ">
             <Ads />
-          </div> */}
+          </div>
           {randomBlogs.map(({ id, title, content }: Blog) => (
             <div
               className="sm:max-w-xl sm:h-44 bg-white  overflow-hidden cursor-pointer sm:p-4 "
@@ -153,10 +153,10 @@ const ComingSoon = () => {
           ))}
         </div>
 
-        <div className="w-full">
+        <div className="w-full ">
           <MiddleAds />
         </div>
-        <div className="w-full">
+        <div className="w-full ">
           <MultipleAds />
         </div>
       </div>
