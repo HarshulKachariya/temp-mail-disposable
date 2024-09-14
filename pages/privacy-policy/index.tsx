@@ -1,6 +1,7 @@
 import Ads from "@/components/ads";
 import Header from "@/components/header";
-import SqureAds from "@/components/squreAds";
+import SqureAds from "@/components/Ads/SqureAds";
+
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -29,13 +30,13 @@ const Index = () => {
     <div className="grid grid-cols-1 md:grid-cols-12">
       <div className="col-span-3 space-x-4">
         <div className="w-full ">
-          <SqureAds />
+          <SqureAds id={`1726286290822-0`} type="Display" />
         </div>
         <div className="w-full ">
-          <SqureAds />
+          <SqureAds id={`1726287451092-0`} type="Display" />
         </div>
         <div className="w-full ">
-          <Ads />
+          <SqureAds id={`1726289966999-0`} type="Display" />
         </div>
       </div>
       <div className="col-span-1 md:col-span-6  mx-auto p-6 space-y-4">
@@ -74,7 +75,7 @@ const Index = () => {
           e-mail address are protected and completely confidential.
         </p>
         <div className="w-full ">
-          <Ads />
+          <SqureAds id={`1726289913861-0`} type="Display" />
         </div>
         <p>
           Tempmail-email does not store your IP-address. This means you are
@@ -106,7 +107,7 @@ const Index = () => {
             </p>
           </div>
           <div className="w-full ">
-            <SqureAds />
+            <SqureAds id={`1726287429838-0`} type="Display" />
           </div>
 
           <div className="flex flex-col gap-1">
@@ -148,20 +149,20 @@ const Index = () => {
               <span>This policy is effective as of 1 Jul 2020</span>
             </p>
             <div className="w-full ">
-              <SqureAds />
+              <SqureAds id={`1726287410753-0`} type="Display" />
             </div>
           </div>
         </div>
       </div>
       <div className="col-span-3 space-x-4">
         <div className="w-full ">
-          <SqureAds />
+          <SqureAds id={`1726287372412-0`} type="Display" />
         </div>
         <div className="w-full ">
-          <SqureAds />
+          <SqureAds id={`1726286806414-0`} type="Display" />
         </div>
         <div className="w-full ">
-          <Ads />
+          <SqureAds id={`1726289885283-0`} type="Display" />
         </div>
       </div>
     </div>

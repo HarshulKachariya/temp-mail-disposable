@@ -14,7 +14,7 @@ import MailBox from "../mailbox/mailbox";
 import axiosInstance from "@/common/axiosInstance";
 import CustomButton from "../custombuttons";
 import Ads from "../ads";
-import SqureAds from "../squreAds";
+import SqureAds from "../Ads/SqureAds";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,7 +65,9 @@ const Home = () => {
       <div className="bg-[#21232a] md:p-7 p-5 flex flex-col  md:grid md:grid-cols-12 gap-5 justify-between items-center w-full md:h-2/3 h-3/4">
         {/* <div className="bg-[#21232a] md:p-7 p-5 grid md:grid-cols-12 gap-5 justify-between items-center w-full md:h-2/3 h-3/4"> */}
         <div className=" md:grid md:col-span-3">
-          <SqureAds />
+          <div className="w-full ">
+            <SqureAds id={`1726286290822-0`} type="Display" />
+          </div>
         </div>
         <div className="md:col-span-6 col-span-12 ">
           {/* <div className="max-w-[556px]"> */}
@@ -124,10 +126,11 @@ const Home = () => {
         </div>
         <div className=" md:grid md:col-span-3">
           {/* <div className=" w-[400px] h-[280px] mx-auto hidden md:grid md:col-span-3"> */}
-          <SqureAds />
+          <div className="w-full ">
+            <SqureAds id={`1726287429838-0`} type="Display" />
+          </div>
         </div>
       </div>
-      <SqureAds />
       <div className="flex flex-wrap md:flex-row gap-4 md:gap-7 shadow-2xl  justify-center items-center p-7 bg-white text-black ">
         <CustomButton onClick={copyEmailToClipboard} name="copy">
           <FileCopyIcon />
@@ -146,7 +149,9 @@ const Home = () => {
           Delete
         </CustomButton>
       </div>
-      <SqureAds />
+      <div className="w-full ">
+        <SqureAds id={`1726287451092-0`} type="Display" />
+      </div>
       <MailBox email={email} />
     </>
   );

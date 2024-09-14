@@ -3,7 +3,7 @@ import React, { useMemo, useEffect, useState } from "react";
 import { blogs } from "@/utils/data";
 import { useParams } from "next/navigation";
 import Ads from "@/components/ads";
-import SqureAds from "@/components/squreAds";
+import SqureAds from "@/components/Ads/SqureAds";
 import { useRouter } from "next/router";
 import MiddleAds from "@/components/middleAds";
 import MultipleAds from "@/components/multipleAds";
@@ -69,17 +69,17 @@ const ComingSoon = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 bg-gray-100">
       <div className="lg:col-span-3  space-y-4">
-        <div className="w-full ">
-          <SqureAds />
+        <div className="w-full border-2 border-black">
+          <SqureAds id={`1726286290822-0`} type="Display" />
         </div>
-        <div className="w-full  ">
-          <Ads />
+        <div className="w-full  border-2 border-black">
+          <SqureAds id={`1726290027315-0`} type="Display" />{" "}
         </div>
-        <div className="w-full  ">
-          <MiddleAds />
+        <div className="w-full   border-2 border-black">
+          <SqureAds id={`1726290016924-0`} type="Display" />{" "}
         </div>
-        <div className="w-full ">
-          <MultipleAds />
+        <div className="w-full  border-2 border-black">
+          <SqureAds id={`1726290000960-0`} type="Display" />
         </div>
       </div>
       <div className="col-span-1 lg:col-span-6 flex px-6 md:px-10 md:h-full flex-col gap-10 overflowx-x-hidden   font-bold bg-white">
@@ -92,8 +92,8 @@ const ComingSoon = () => {
         <div className="space-y-10 ">
           {slug ? (
             <div className=" flex flex-col gap-4">
-              <div className="w-full ">
-                <SqureAds />
+              <div className="w-full  border-2 border-black">
+                <SqureAds id={`1726287410753-0`} type="Display" />
               </div>
               {blog?.description && (
                 <div
@@ -102,7 +102,7 @@ const ComingSoon = () => {
                 />
               )}
               <div className="w-full ">
-                <Ads />
+                <SqureAds id={`1726289966999-0`} type="Display" />{" "}
               </div>
             </div>
           ) : (
@@ -124,10 +124,10 @@ const ComingSoon = () => {
           )}
         </div>
       </div>
-      <div className="bg-white lg:col-span-3  space-y-4 px-3">
+      <div className=" lg:col-span-3  space-y-4 px-3">
         <div className="flex flex-col gap-3">
-          <div className="w-full ">
-            <SqureAds />
+          <div className="w-full  border-2 border-black">
+            <SqureAds id={`1726287372412-0`} type="Display" />
           </div>
           <div className="w-full ">
             <Ads />
@@ -153,17 +153,19 @@ const ComingSoon = () => {
           ))}
         </div>
         <div className="w-full">
-          <MiddleAds />
+          <SqureAds id={`1726289913861-0`} type="Display" />
         </div>
-        <div className="w-full ">
-          <MultipleAds />
+        <div className="w-full  border-2 border-black">
+          <SqureAds id={`1726286290822-0`} type="Display" />
         </div>
       </div>
-      <div className="w-full">
-        <MiddleAds />
-      </div>
-      <div className="w-full ">
-        <MultipleAds />
+      <div className="space-y-4">
+        <div className="w-full border-2 border-black">
+          <SqureAds id={`1726286806414-0`} type="Display" />
+        </div>
+        <div className="w-full  border-2 border-black">
+          <SqureAds id={`1726289885283-0`} type="Display" />
+        </div>
       </div>
     </div>
   );

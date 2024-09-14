@@ -1,7 +1,8 @@
 import Ads from "@/components/ads";
 import Header from "@/components/header";
 import MultipleAds from "@/components/multipleAds";
-import SqureAds from "@/components/squreAds";
+import SqureAds from "@/components/Ads/SqureAds";
+
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -89,14 +90,14 @@ export default function FAQ() {
 
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-4">
-      <Ads />
+      <SqureAds id={`1726289966999-0`} type="Display" />
       <Link href="/pages/temp mail" className="text-lg font-semibold">
         {"<"} GO BACK
       </Link>
       <h1 className="bg-[#21232a] capitalize p-3 rounded-2xl text-white font-mono sm:text-3xl text-xl font-bold mb-8 text-center">
         Frequently Asked Questions
       </h1>
-      <SqureAds />
+      <SqureAds id={`1726286290822-0`} type="Display" />
       <p className="text-lg text-center mb-4">
         Temporary anonymous email service is specifically designed to protect
         your privacy. This service has appeared relatively recently. Answers to
@@ -128,9 +129,9 @@ export default function FAQ() {
           </div>
         ))}
       </div>
-      <SqureAds />
+      <SqureAds id={`1726287372412-0`} type="Display" />
       <div>
-        <Ads />
+        <SqureAds id={`1726289913861-0`} type="Display" />
       </div>
     </div>
   );

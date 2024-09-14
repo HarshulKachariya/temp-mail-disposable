@@ -3,6 +3,7 @@ import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 import Ads from "./ads";
+import FooterAds from "./Ads/FooterAds";
 
 const Footer = () => {
   const [copyName, setCopyName] = useState<string>();
@@ -11,6 +12,7 @@ const Footer = () => {
     const slug = Array.isArray(params?.slug) ? params.slug[0] : params?.slug;
     return setCopyName(slug);
   }, [params]);
+
   return (
     <footer className="bg-[#21232a] text-white px-14 py-8 bottom-0 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center flex-col">
@@ -40,7 +42,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <Ads />
+      <FooterAds />
     </footer>
   );
 };
