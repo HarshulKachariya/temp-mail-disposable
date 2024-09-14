@@ -69,16 +69,16 @@ const ComingSoon = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 bg-gray-100">
       <div className="lg:col-span-3  space-y-4">
-        <div className="w-full border-2 border-black">
+        <div className="w-full ">
           <SqureAds id={`1726286290822-0`} type="Display" />
         </div>
-        <div className="w-full  border-2 border-black">
+        <div className="w-full  ">
           <SqureAds id={`1726290027315-0`} type="Display" />{" "}
         </div>
-        <div className="w-full   border-2 border-black">
+        <div className="w-full   ">
           <SqureAds id={`1726290016924-0`} type="Display" />{" "}
         </div>
-        <div className="w-full  border-2 border-black">
+        <div className="w-full  ">
           <SqureAds id={`1726290000960-0`} type="Display" />
         </div>
       </div>
@@ -92,7 +92,7 @@ const ComingSoon = () => {
         <div className="space-y-10 ">
           {slug ? (
             <div className=" flex flex-col gap-4">
-              <div className="w-full  border-2 border-black">
+              <div className="w-full  ">
                 <SqureAds id={`1726287410753-0`} type="Display" />
               </div>
               {blog?.description && (
@@ -126,7 +126,7 @@ const ComingSoon = () => {
       </div>
       <div className=" lg:col-span-3  space-y-4 px-3">
         <div className="flex flex-col gap-3">
-          <div className="w-full  border-2 border-black">
+          <div className="w-full  ">
             <SqureAds id={`1726287372412-0`} type="Display" />
           </div>
           <div className="w-full ">
@@ -155,15 +155,15 @@ const ComingSoon = () => {
         <div className="w-full">
           <SqureAds id={`1726289913861-0`} type="Display" />
         </div>
-        <div className="w-full  border-2 border-black">
+        <div className="w-full  ">
           <SqureAds id={`1726286290822-0`} type="Display" />
         </div>
       </div>
       <div className="space-y-4">
-        <div className="w-full border-2 border-black">
+        <div className="w-full ">
           <SqureAds id={`1726286806414-0`} type="Display" />
         </div>
-        <div className="w-full  border-2 border-black">
+        <div className="w-full  ">
           <SqureAds id={`1726289885283-0`} type="Display" />
         </div>
       </div>
