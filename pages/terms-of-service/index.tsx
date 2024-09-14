@@ -1,5 +1,3 @@
-import Ads from "@/components/ads";
-import Header from "@/components/header";
 import SqureAds from "@/components/Ads/SqureAds";
 
 import Link from "next/link";

@@ -1,6 +1,4 @@
-import Ads from "@/components/ads";
 import BlogsCard from "@/components/blog";
-import MiddleAds from "@/components/middleAds";
 import SqureAds from "@/components/Ads/SqureAds";
 
 import { blogs } from "@/utils/data";

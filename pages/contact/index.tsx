@@ -4,10 +4,8 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import axios from "axios";
-import axiosInstanceContact from "@/common/axiosInstanceContact";
 import SqureAds from "@/components/Ads/SqureAds";
 
-import MultipleAds from "@/components/multipleAds";
 import { useRouter } from "next/router";
 
 const validationSchema = Yup.object({

@@ -2,11 +2,9 @@ import Link from "next/link";
 import React, { useMemo, useEffect, useState } from "react";
 import { blogs } from "@/utils/data";
 import { useParams } from "next/navigation";
-import Ads from "@/components/ads";
+
 import SqureAds from "@/components/Ads/SqureAds";
 import { useRouter } from "next/router";
-import MiddleAds from "@/components/middleAds";
-import MultipleAds from "@/components/multipleAds";
 
 interface Blog {
   id: number;
@@ -110,14 +108,14 @@ const ComingSoon = () => {
               <div key={blog.id} className=" flex flex-col gap-4">
                 <h1 className="text-3xl text-black">{blog.title}</h1>
                 <div className="w-full">
-                  <Ads />
+                  <SqureAds id={`1726287451092-0`} type="Display" />
                 </div>
                 <div
                   dangerouslySetInnerHTML={{ __html: blog.description }}
                   className="text-gray-800"
                 />
                 <div className="w-full ">
-                  <Ads />
+                  <SqureAds id={`1726287372412-0`} type="Display" />
                 </div>
               </div>
             ))
@@ -130,7 +128,7 @@ const ComingSoon = () => {
             <SqureAds id={`1726287372412-0`} type="Display" />
           </div>
           <div className="w-full ">
-            <Ads />
+            <SqureAds id={`1726287429838-0`} type="Display" />
           </div>
           {randomBlogs.map(({ id, title, content }: Blog) => (
             <div

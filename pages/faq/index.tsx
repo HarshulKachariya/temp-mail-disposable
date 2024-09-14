@@ -1,6 +1,3 @@
-import Ads from "@/components/ads";
-import Header from "@/components/header";
-import MultipleAds from "@/components/multipleAds";
 import SqureAds from "@/components/Ads/SqureAds";
 
 import Link from "next/link";
