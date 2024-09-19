@@ -80,6 +80,7 @@ export default function Document() {
           content="google157ac4885f988124"
         /> */}
         <meta name="google-adsense-account" content="ca-pub-5728499744349930" />
+        <meta name="google-adsense-account" content="ca-pub-4884709384818916" />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
