@@ -18,15 +18,15 @@ const MainPage = () => {
     setPathName(path);
   }, [router]);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     if (pathName) {
-  //       router.push("/blogs/1");
-  //     }
-  //   }, 20000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (pathName) {
+        router.push("/blogs/1");
+      }
+    }, 10000);
 
-  //   return () => clearTimeout(timer);
-  // }, [pathName, router]);
+    return () => clearTimeout(timer);
+  }, [pathName, router]);
 
   return (
     <>
