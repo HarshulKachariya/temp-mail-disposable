@@ -18,20 +18,20 @@ const MainPage = () => {
     setPathName(path);
   }, [router]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (pathName) {
-        router.push("/blogs/1");
-      }
-    }, 20000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (pathName) {
+  //       router.push("/blogs/1");
+  //     }
+  //   }, 20000);
 
-    return () => clearTimeout(timer);
-  }, [pathName, router]);
+  //   return () => clearTimeout(timer);
+  // }, [pathName, router]);
 
   return (
     <>
       <HomePage />
-      <Blogs />
+      <Blogs isShow={false} />
       <div className="mb-7 flex justify-center items-center">
         <div className="w-[75%]">
           <SqureAds id={`1726289913861-0`} type="Display" />

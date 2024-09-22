@@ -5,13 +5,17 @@ import { blogs } from "@/utils/data";
 
 import Link from "next/link";
 
-const Blogs = () => {
+interface BlogsProps {
+  isShow?: boolean;
+}
+
+const Blogs = ({ isShow = true }: BlogsProps) => {
   return (
-    <div className="min-h-screen flex  bg-gray-100 py-10 md:px-24 sm:px-14">
-      <div>
+    <div className="grid grid-cols-1  lg:grid-cols-12 min-h-screen  w-full  bg-gray-100 py-10 ">
+      <div className="col-span-3">
         <SqureAds id={`1726290000960-0`} type="Display" />
       </div>
-      <div className="px-4 flex flex-col">
+      <div className="px-4 flex flex-col col-span-6">
         <h1 className="text-4xl font-bold text-black text-center mb-10">
           Popular Articles
         </h1>
@@ -24,7 +28,11 @@ const Blogs = () => {
             ))}
             <SqureAds id={`1726286290822-0`} type="Display" />
           </div>
-          <div className="hidden sm:flex flex-col bg-white  md:max-w-xl p-5 gap-3">
+          <div
+            className={`hidden ${
+              isShow === false && "sm:hidden"
+            }  sm:flex flex-col bg-white  md:max-w-xl p-5 gap-3`}
+          >
             <p className="text-3xl font-bold">Recent Posts</p>
             {blogs.map((i) => (
               <div
@@ -39,7 +47,7 @@ const Blogs = () => {
         </div>
         <SqureAds id={`1726290027315-0`} type="Display" />
       </div>
-      <div>
+      <div className="col-span-3">
         <SqureAds id={`1726286806414-0`} type="Display" />{" "}
       </div>
     </div>
