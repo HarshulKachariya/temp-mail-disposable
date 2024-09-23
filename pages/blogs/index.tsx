@@ -1,5 +1,5 @@
 import BlogsCard from "@/components/blog";
-import SqureAds from "@/components/Ads/SqureAds";
+import SquareAds from "@/components/Ads/SquareAds";
 
 import { blogs } from "@/utils/data";
 
@@ -13,7 +13,7 @@ const Blogs = ({ isShow = true }: BlogsProps) => {
   return (
     <div className="grid grid-cols-1  lg:grid-cols-12 min-h-screen  w-full  bg-gray-100 py-10 ">
       <div className="col-span-3">
-        <SqureAds id={`1726290000960-0`} type="Display" />
+        <SquareAds id={`1727111456818-0`} type="sequre-new" />
       </div>
       <div className="px-4 flex flex-col col-span-6">
         <h1 className="text-4xl font-bold text-black text-center mb-10">
@@ -26,7 +26,7 @@ const Blogs = ({ isShow = true }: BlogsProps) => {
                 <BlogsCard {...blog} />
               </Link>
             ))}
-            <SqureAds id={`1726286290822-0`} type="Display" />
+            <SquareAds id={`1727111466235-0`} type="sequre-new" />
           </div>
           <div
             className={`hidden ${
@@ -42,13 +42,13 @@ const Blogs = ({ isShow = true }: BlogsProps) => {
                 {i.title}
               </div>
             ))}
-            <SqureAds id={`1726287429838-0`} type="Display" />
+            <SquareAds id={`1727111466235-0`} type="sequre-new" />
           </div>
         </div>
-        <SqureAds id={`1726290027315-0`} type="Display" />
+        <SquareAds id={`1727111484263-0`} type="sequre-new" />
       </div>
       <div className="col-span-3">
-        <SqureAds id={`1726286806414-0`} type="Display" />{" "}
+        <SquareAds id={`1727111492026-0`} type="sequre-new" />{" "}
       </div>
     </div>
   );

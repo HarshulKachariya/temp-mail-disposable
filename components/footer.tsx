@@ -42,7 +42,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <FooterAds />
+      <FooterAds id="1727111567305-0" />
     </footer>
   );
 };

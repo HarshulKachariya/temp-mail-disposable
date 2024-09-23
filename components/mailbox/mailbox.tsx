@@ -7,7 +7,7 @@ const Image = dynamic(() => import("next/image"), { ssr: false });
 
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import Ads from "../ads";
-import SqureAds from "../Ads/SqureAds";
+import SqureAds from "../Ads/SquareAds";
 import MiddleAds from "../middleAds";
 
 const MailBox = ({ email }: { email: string }) => {
@@ -89,7 +89,7 @@ const MailBox = ({ email }: { email: string }) => {
         <div className=" grid grid-cols-1   md:grid-cols-12 gap-4  w-full h-full  justify-between items-center ">
           {/* <div className="md:grid grid-cols-1 md:grid-cols-12 gap-4  w-full h-full  justify-between items-center "> */}
           <div className="w-full h-full   col-span-1 md:col-span-2">
-            <SqureAds id={`1726286290822-0`} type="Display" />
+            <SqureAds id={`1726286290822-0`} type="sequre-new" />
           </div>
           <div className="bg-white col-span-1 md:col-span-8 mb-3 rounded-md shadow-md mt-10 sm:mx-6 md:mx-0 mx-4">
             <div className="bg-[#21232a] flex items-center justify-between p-4 rounded-t">
@@ -163,10 +163,10 @@ const MailBox = ({ email }: { email: string }) => {
             </ul>
           </div>
           <div className="w-full h-full   col-span-1 md:col-span-2">
-            <SqureAds id={`1726287429838-0`} type="Display" />
+            <SqureAds id={`1726287429838-0`} type="sequre-new" />
           </div>
         </div>
-        <SqureAds id={`1726286806414-0`} type="Display" />
+        <SqureAds id={`1726286806414-0`} type="sequre-new" />
         <div className="flex justify-center items-center flex-col lg:w-1/2 md:w-full sm:w-full w-full px-6 gap-3 text-slate-500">
           <h1 className="text-2xl font-bold">
             What is Disposable Temporary E-mail?
@@ -185,7 +185,7 @@ const MailBox = ({ email }: { email: string }) => {
         </div>
       </div>
 
-      <SqureAds id={`1726287372412-0`} type="Display" />
+      <SqureAds id={`1726287372412-0`} type="sequre-new" />
 
       {showModal && (
         <>

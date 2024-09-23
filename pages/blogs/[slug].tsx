@@ -3,7 +3,7 @@ import React, { useMemo, useEffect, useState } from "react";
 import { blogs } from "@/utils/data";
 import { useParams } from "next/navigation";
 
-import SqureAds from "@/components/Ads/SqureAds";
+import SquareAds from "@/components/Ads/SquareAds";
 import { useRouter } from "next/router";
 
 interface Blog {
@@ -68,16 +68,16 @@ const ComingSoon = () => {
     <div className="grid grid-cols-1 lg:grid-cols-12 bg-gray-100">
       <div className="lg:col-span-3  space-y-4">
         <div className="w-full ">
-          <SqureAds id={`1726286290822-0`} type="Display" />
+          <SquareAds id={`1726286290822-0`} type="sequre-new" />
         </div>
         <div className="w-full  ">
-          <SqureAds id={`1726290027315-0`} type="Display" />{" "}
+          <SquareAds id={`1726290027315-0`} type="sequre-new" />{" "}
         </div>
         <div className="w-full   ">
-          <SqureAds id={`1726290016924-0`} type="Display" />{" "}
+          <SquareAds id={`1726290016924-0`} type="sequre-new" />{" "}
         </div>
         <div className="w-full  ">
-          <SqureAds id={`1726290000960-0`} type="Display" />
+          <SquareAds id={`1726290000960-0`} type="sequre-new" />
         </div>
       </div>
       <div className="col-span-1 lg:col-span-6 flex px-6 md:px-10 md:h-full flex-col gap-10 overflowx-x-hidden   font-bold bg-white">
@@ -91,7 +91,7 @@ const ComingSoon = () => {
           {slug ? (
             <div className=" flex flex-col gap-4">
               <div className="w-full  ">
-                <SqureAds id={`1726287410753-0`} type="Display" />
+                <SquareAds id={`1726287410753-0`} type="sequre-new" />
               </div>
               {blog?.description && (
                 <div
@@ -100,7 +100,7 @@ const ComingSoon = () => {
                 />
               )}
               <div className="w-full ">
-                <SqureAds id={`1726289966999-0`} type="Display" />{" "}
+                <SquareAds id={`1727111401755-0`} type="sequre-new" />{" "}
               </div>
             </div>
           ) : (
@@ -108,14 +108,14 @@ const ComingSoon = () => {
               <div key={blog.id} className=" flex flex-col gap-4">
                 <h1 className="text-3xl text-black">{blog.title}</h1>
                 <div className="w-full">
-                  <SqureAds id={`1726287451092-0`} type="Display" />
+                  <SquareAds id={`1727111417691-0`} type="sequre-new" />
                 </div>
                 <div
                   dangerouslySetInnerHTML={{ __html: blog.description }}
                   className="text-gray-800"
                 />
                 <div className="w-full ">
-                  <SqureAds id={`1726287372412-0`} type="Display" />
+                  <SquareAds id={`1726287372412-0`} type="sequre-new" />
                 </div>
               </div>
             ))
@@ -125,10 +125,10 @@ const ComingSoon = () => {
       <div className=" lg:col-span-3  space-y-4 px-3">
         <div className="flex flex-col gap-3">
           <div className="w-full  ">
-            <SqureAds id={`1726287372412-0`} type="Display" />
+            <SquareAds id={`1727111433306-0`} type="sequre-new" />
           </div>
           <div className="w-full ">
-            <SqureAds id={`1726287429838-0`} type="Display" />
+            <SquareAds id={`1727111443398-0`} type="sequre-new" />
           </div>
           {randomBlogs.map(({ id, title, content }: Blog) => (
             <div
@@ -151,18 +151,18 @@ const ComingSoon = () => {
           ))}
         </div>
         <div className="w-full">
-          <SqureAds id={`1726289913861-0`} type="Display" />
+          <SquareAds id={`1726289913861-0`} type="sequre-new" />
         </div>
         <div className="w-full  ">
-          <SqureAds id={`1726286290822-0`} type="Display" />
+          <SquareAds id={`1727111456818-0`} type="sequre-new" />
         </div>
       </div>
       <div className="space-y-4">
         <div className="w-full ">
-          <SqureAds id={`1726286806414-0`} type="Display" />
+          <SquareAds id={`1726286806414-0`} type="sequre-new" />
         </div>
         <div className="w-full  ">
-          <SqureAds id={`1726289885283-0`} type="Display" />
+          <SquareAds id={`1726289885283-0`} type="sequre-new" />
         </div>
       </div>
     </div>

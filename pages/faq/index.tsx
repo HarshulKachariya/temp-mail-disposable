@@ -1,4 +1,4 @@
-import SqureAds from "@/components/Ads/SqureAds";
+import SquareAds from "@/components/Ads/SquareAds";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -87,14 +87,14 @@ export default function FAQ() {
 
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-4">
-      <SqureAds id={`1726289966999-0`} type="Display" />
+      <SquareAds id={`1727114719795-0`} type="sequre-new" />
       <Link href="/pages/temp mail" className="text-lg font-semibold">
         {"<"} GO BACK
       </Link>
       <h1 className="bg-[#21232a] capitalize p-3 rounded-2xl text-white font-mono sm:text-3xl text-xl font-bold mb-8 text-center">
         Frequently Asked Questions
       </h1>
-      <SqureAds id={`1726286290822-0`} type="Display" />
+      <SquareAds id={`1727114730161-0`} type="sequre-new" />
       <p className="text-lg text-center mb-4">
         Temporary anonymous email service is specifically designed to protect
         your privacy. This service has appeared relatively recently. Answers to
@@ -126,9 +126,9 @@ export default function FAQ() {
           </div>
         ))}
       </div>
-      <SqureAds id={`1726287372412-0`} type="Display" />
+      <SquareAds id={`1727114738172-0`} type="sequre-new" />
       <div>
-        <SqureAds id={`1726289913861-0`} type="Display" />
+        <SquareAds id={`1727114748373-0`} type="sequre-new" />
       </div>
     </div>
   );

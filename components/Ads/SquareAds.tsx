@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 
-interface FooterAdsProps {
-  id?: string;
-  type?: string;
+interface SquareAdsProps {
+  id: string;
+  type: string;
 }
 
 declare global {
@@ -12,10 +12,7 @@ declare global {
   }
 }
 
-const FooterAds: React.FC<FooterAdsProps> = ({
-  id = "1726289885283-0",
-  type = "footer-new",
-}) => {
+const SquareAds: React.FC<SquareAdsProps> = ({ id, type }) => {
   useEffect(() => {
     const loadGPT = () => {
       const googletag = window.googletag || { cmd: [] };
@@ -23,15 +20,11 @@ const FooterAds: React.FC<FooterAdsProps> = ({
         googletag
           .defineSlot(
             `/23199569535/${type}`,
-            [
-              [300, 100],
-              [320, 50],
-              [320, 100],
-              [300, 50],
-            ],
+            ["fluid", [300, 250], [250, 250], [336, 280]],
             `div-gpt-ad-${id}`
           )
           ?.addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
         googletag.enableServices();
         googletag.display(`div-gpt-ad-${id}`);
       });
@@ -63,10 +56,10 @@ const FooterAds: React.FC<FooterAdsProps> = ({
       </Head>
       <div
         id={`div-gpt-ad-${id}`}
-        style={{ minWidth: "300px", minHeight: "50px" }}
+        style={{ minWidth: "250px", minHeight: "250px" }}
       />
     </>
   );
 };
 
-export default FooterAds;
+export default SquareAds;

@@ -6,7 +6,7 @@ import Blogs from "@/pages/blogs";
 import CopyrightPage from "@/components/copyrightPage/index";
 import Ads from "@/components/ads";
 import { useRouter } from "next/router";
-import SqureAds from "@/components/Ads/SqureAds";
+import SquareAds from "@/components/Ads/SquareAds";
 
 const MainPage = () => {
   const [pathName, setPathName] = useState("");
@@ -34,12 +34,12 @@ const MainPage = () => {
       <Blogs isShow={false} />
       <div className="mb-7 flex justify-center items-center">
         <div className="w-[75%]">
-          <SqureAds id={`1726289913861-0`} type="Display" />
+          <SquareAds id={`1727114757466-0`} type="sequre-new" />
         </div>
       </div>
       <CopyrightPage />
 
-      <SqureAds id={`1726287372412-0`} type="Display" />
+      <SquareAds id={`1727114767454-0`} type="sequre-new" />
     </>
   );
 };

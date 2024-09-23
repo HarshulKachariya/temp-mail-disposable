@@ -1,10 +1,10 @@
 import React from "react";
-import SqureAds from "../Ads/SqureAds";
+import SquareAds from "../Ads/SquareAds";
 
 const CopyrightPage = () => {
   return (
     <>
-      <SqureAds id={`1726286290822-0`} type="Display" />
+      <SquareAds id={`1726286290822-0`} type="sequre-new" />
 
       <div className="flex flex-col items-center justify-center bg-gray-100 mx-4 mb-5">
         <div className="bg-white shadow-md rounded-lg p-6 max-w-3xl w-full">

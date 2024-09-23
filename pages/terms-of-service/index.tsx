@@ -1,4 +1,4 @@
-import SqureAds from "@/components/Ads/SqureAds";
+import SquareAds from "@/components/Ads/SquareAds";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -28,13 +28,13 @@ const Index = () => {
     <div className="grid grid-cols-1 md:grid-cols-12">
       <div className="col-span-3 space-x-4">
         <div className="w-full ">
-          <SqureAds id={`1726286290822-0`} type="Display" />
+          <SquareAds id={`1727114905010-0`} type="sequre-new" />
         </div>
         <div className="w-full ">
-          <SqureAds id={`1726286806414-0`} type="Display" />
+          <SquareAds id={`1727114927474-0`} type="sequre-new" />
         </div>
         <div className="w-full ">
-          <SqureAds id={`1726289885283-0`} type="Display" />
+          <SquareAds id={`1727114937329-0`} type="sequre-new" />
         </div>
       </div>
       <div className="col-span-1 md:col-span-6  mx-auto p-6 space-y-4">
@@ -66,7 +66,7 @@ const Index = () => {
           through the Tempmail-email website.
         </p>
         <div className="w-full ">
-          <SqureAds id={`1726289966999-0`} type="Display" />
+          <SquareAds id={`1727114948469-0`} type="sequre-new" />
         </div>
         <p>
           You agree to not use Tempmail-email directly or indirectly for any
@@ -96,7 +96,7 @@ const Index = () => {
           emails or domains once removed.
         </p>
         <div className="w-full ">
-          <SqureAds id={`1726287372412-0`} type="Display" />
+          <SquareAds id={`1727114963611-0`} type="sequre-new" />
         </div>
 
         <div className="space-y-4">
@@ -144,7 +144,7 @@ const Index = () => {
             </p>
           </div>
           <div className="w-full ">
-            <SqureAds id={`1726287410753-0`} type="Display" />
+            <SquareAds id={`1727114970169-0`} type="sequre-new" />
           </div>
 
           <div className="flex flex-col gap-1">
@@ -158,18 +158,18 @@ const Index = () => {
               <span>This policy is effective as of 1 Jul 2020</span>
             </p>
           </div>
-          <SqureAds id={`1726287429838-0`} type="Display" />
+          <SquareAds id={`1727114979632-0`} type="sequre-new" />
         </div>
       </div>
       <div className="col-span-3 space-x-4">
         <div className="w-full">
-          <SqureAds id={`1726287451092-0`} type="Display" />
+          <SquareAds id={`1727114986844-0`} type="sequre-new" />
         </div>
         <div className="w-full">
-          <SqureAds id={`1726286290822-0`} type="Display" />
+          <SquareAds id={`1727114696008-0`} type="sequre-new" />
         </div>
         <div className="w-full">
-          <SqureAds id={`1726290000960-0`} type="Display" />
+          <SquareAds id={`1727114997479-0`} type="sequre-new" />
         </div>
       </div>
     </div>
