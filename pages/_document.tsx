@@ -18,7 +18,7 @@ export default function Document() {
         <link rel="icon" href="/email.svg" crossOrigin="anonymous" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{`TempMail-email.com | Free Disposable Email Service - ${dynamicKeyword}`}</title>
+        <title>{`TempMail | Free Disposable Email Service - ${dynamicKeyword}`}</title>
 
         <meta
           name="description"
