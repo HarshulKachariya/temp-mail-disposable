@@ -25,7 +25,7 @@ export default function Document() {
 
         <meta
           name="keywords"
-          content={`tempmail, ${dynamicKeyword}, disposable email, anonymous email, temporary email address, spam protection, privacy tool`}
+          content={`tempmail, ${dynamicKeyword}, disposable email, anonymous email, temporary email address, spam protection, privacy tool, fakemail, temp mail, tempemail, temp email, anonomous mail,spoof mail, proxy mail, email, mail, gmail`}
         />
 
         <meta name="author" content="TempMail-email.com" />
