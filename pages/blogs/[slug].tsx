@@ -73,32 +73,23 @@ const ComingSoon = () => {
         <meta name="description" content={blog?.description} />
 
         <meta property="og:title" content={blog?.title} />
-        <meta property="og:description" content={blog?.content} />
+        <meta property="og:description" content={blog?.description} />
         <meta
           property="og:url"
-          content={`https://tempmail-email.com/blogs/${window.location.pathname
-            .split("/")
-            .pop()}`}
+          content={`https://yourwebsite.com/posts/${slug}`}
         />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Your Blog Name" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={blog?.title} />
-        <meta name="twitter:description" content={blog?.content} />
+        <meta name="twitter:description" content={blog?.description} />
         <meta
           name="twitter:url"
-          content={`https://tempmail-email.com/blogs/${window.location.pathname
-            .split("/")
-            .pop()}`}
+          content={`https://yourwebsite.com/posts/${slug}`}
         />
 
-        <link
-          rel="canonical"
-          href={`https://tempmail-email.com/blogs/${window.location.pathname
-            .split("/")
-            .pop()}`}
-        />
+        <link rel="canonical" href={`https://yourwebsite.com/posts/${slug}`} />
 
         <meta name="author" content="Tempmail-email.com" />
 
@@ -108,10 +99,8 @@ const ComingSoon = () => {
               "@context": "https://schema.org",
               "@type": "WebPage",
               "name": "${blog?.title} | TempMail-email.com",
-              "description": "TempMail-email.com's ${blog?.content}",
-              "url": "https://www.tempmail-email.com/blogs/${window.location.pathname
-                .split("/")
-                .pop()}",
+              "description": "TempMail-email.com's ${blog?.description}",
+              "url": "https://www.tempmail-email.com/blogs/${slug}",
               "mainEntity": {
                 "@type": "WebSite",
                 "name": "TempMail-email.com",
