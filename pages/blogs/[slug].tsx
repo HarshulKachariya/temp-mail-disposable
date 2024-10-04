@@ -61,8 +61,6 @@ const ComingSoon = () => {
     setRandomBlogs(shuffledBlogs.slice(0, 5));
   }, [slug]);
 
-  const routeName = window.location.pathname.split("/").pop() ?? "1";
-
   if (slug && !blog) {
     return <div>Loading...</div>;
   }
@@ -78,7 +76,9 @@ const ComingSoon = () => {
         <meta property="og:description" content={blog?.content} />
         <meta
           property="og:url"
-          content={`https://tempmail-email.com/blogs/${routeName}`}
+          content={`https://tempmail-email.com/blogs/${window.location.pathname
+            .split("/")
+            .pop()}`}
         />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Your Blog Name" />
@@ -88,12 +88,16 @@ const ComingSoon = () => {
         <meta name="twitter:description" content={blog?.content} />
         <meta
           name="twitter:url"
-          content={`https://tempmail-email.com/blogs/${routeName}`}
+          content={`https://tempmail-email.com/blogs/${window.location.pathname
+            .split("/")
+            .pop()}`}
         />
 
         <link
           rel="canonical"
-          href={`https://tempmail-email.com/blogs/${routeName}`}
+          href={`https://tempmail-email.com/blogs/${window.location.pathname
+            .split("/")
+            .pop()}`}
         />
 
         <meta name="author" content="Tempmail-email.com" />
@@ -105,7 +109,9 @@ const ComingSoon = () => {
               "@type": "WebPage",
               "name": "${blog?.title} | TempMail-email.com",
               "description": "TempMail-email.com's ${blog?.content}",
-              "url": "https://www.tempmail-email.com/blogs/${routeName}",
+              "url": "https://www.tempmail-email.com/blogs/${window.location.pathname
+                .split("/")
+                .pop()}",
               "mainEntity": {
                 "@type": "WebSite",
                 "name": "TempMail-email.com",
