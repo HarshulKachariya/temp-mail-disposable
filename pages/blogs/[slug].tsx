@@ -75,7 +75,7 @@ const ComingSoon = () => {
       <Head>
         {/* Dynamic Meta Tags for the Current Blog Post */}
         <title>{blog?.title}</title>
-        <meta name="description" content={blog?.content} />
+        <meta name="description" content={blog?.description} />
 
         <meta property="og:title" content={blog?.title} />
         <meta property="og:description" content={blog?.content} />
