@@ -3,12 +3,10 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Document() {
-  const [dynamicKeyword, setDynamicKeyword] = useState<string | any>(
-    "temp mail"
-  );
+  const [dynamicKeyword, setDynamicKeyword] = useState("temp mail");
 
   useEffect(() => {
-    const path = window.location.pathname.split("/").pop();
+    const path = window.location.pathname;
     setDynamicKeyword(path);
   }, []);
 
