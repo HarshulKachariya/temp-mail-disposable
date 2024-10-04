@@ -61,10 +61,7 @@ const ComingSoon = () => {
     setRandomBlogs(shuffledBlogs.slice(0, 5));
   }, [slug]);
 
-  const routeName =
-    (typeof window !== "undefined" &&
-      window.location.pathname.split("/").pop()) ??
-    "1";
+  const routeName = window.location.pathname.split("/").pop() ?? "1";
 
   if (slug && !blog) {
     return <div>Loading...</div>;
