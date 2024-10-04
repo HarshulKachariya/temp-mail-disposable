@@ -7,12 +7,6 @@ import CopyrightPage from "@/components/copyrightPage/index";
 import Ads from "@/components/ads";
 import { useRouter } from "next/router";
 import SquareAds from "@/components/Ads/SquareAds";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Tempmail",
-  description: "TempMail - Get your temporary email address instantly!",
-};
 
 const MainPage = () => {
   const [pathName, setPathName] = useState("");
