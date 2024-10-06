@@ -1,6 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import type { AppProps } from "next/app";
+import "../styles/globals.css";
 
 const Header = dynamic(() => import("@/components/header"), {
   loading: () => <></>,
