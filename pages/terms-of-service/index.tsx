@@ -1,8 +1,11 @@
-import SquareAds from "@/components/Ads/SquareAds";
+import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+const SquareAds = dynamic(() => import("@/components/Ads/SquareAds"), {
+  loading: () => <></>,
+});
 
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
 
 const Index = () => {
   const [pathName, setPathName] = useState("");

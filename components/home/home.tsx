@@ -1,7 +1,15 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 
+const MailBox = dynamic(() => import("../mailbox/mailbox"), {
+  loading: () => <></>,
+});
+const SquareAds = dynamic(() => import("../Ads/SquareAds"), {
+  loading: () => <></>,
+});
+import axiosInstance from "@/common/axiosInstance";
 import QrCodeIcon from "@mui/icons-material/QrCode";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
 import SyncIcon from "@mui/icons-material/Sync";
@@ -9,12 +17,8 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Button from "../button";
 import QRCode from "react-qr-code";
-import MailBox from "../mailbox/mailbox";
 
-import axiosInstance from "@/common/axiosInstance";
 import CustomButton from "../custombuttons";
-import Ads from "../ads";
-import SquareAds from "../Ads/SquareAds";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,14 +66,14 @@ const Home = () => {
 
   return (
     <>
-      <div className="bg-[#21232a] md:p-7 p-5 flex flex-col  md:grid md:grid-cols-12 gap-5 justify-between items-center w-full md:h-2/3 h-3/4">
+      <div className="bg-[#21232a] md:p-7 p-5 flex flex-col  lg:grid lg:grid-cols-12 gap-5 justify-between items-center w-full md:h-2/3 h-3/4">
         {/* <div className="bg-[#21232a] md:p-7 p-5 grid md:grid-cols-12 gap-5 justify-between items-center w-full md:h-2/3 h-3/4"> */}
         <div className=" md:grid md:col-span-3">
           <div className="w-full ">
             <SquareAds id={`1727111320780-0`} type="sequre-new" />
           </div>
         </div>
-        <div className="md:col-span-6 col-span-12 ">
+        <div className="md:col-span-6 col-span-1 ">
           {/* <div className="max-w-[556px]"> */}
           <div className="flex flex-col gap-4 justify-center items-center text-white mx-auto md:p-7 p-5 max-w-[556px] h-full border-2 border-zinc-700 rounded-md border-dashed">
             <span className="text-xl font-bold">
@@ -118,7 +122,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <p className=" mt-5 text-zinc-500 text-center">
+          <p className=" mt-5 text-zinc-300 text-center">
             Forget about spam, advertising mailings, hacking and attacking
             robots. Keep your real mailbox clean and secure. Temp Mail provides
             temporary, secure, anonymous, free, disposable email address.

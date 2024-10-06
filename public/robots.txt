@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+Disallow: /admin/
+Disallow: /private/
+Disallow: /account/
+
 Sitemap: https://tempmail-email.com/sitemap.xml

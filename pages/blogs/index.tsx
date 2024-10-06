@@ -1,5 +1,12 @@
-import BlogsCard from "@/components/blog";
-import SquareAds from "@/components/Ads/SquareAds";
+import dynamic from "next/dynamic";
+
+const BlogsCard = dynamic(() => import("@/components/blog"), {
+  loading: () => <></>,
+});
+
+const SquareAds = dynamic(() => import("@/components/Ads/SquareAds"), {
+  loading: () => <></>,
+});
 
 import { blogs } from "@/utils/data";
 

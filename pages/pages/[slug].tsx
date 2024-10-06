@@ -1,13 +1,23 @@
 import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 
-import HomePage from "@/components/home/home";
-import Blogs from "@/pages/blogs";
+const HomePage = dynamic(() => import("@/components/home/home"), {
+  loading: () => <></>,
+});
+const Blogs = dynamic(() => import("@/pages/blogs"), {
+  loading: () => <></>,
+});
+const CopyrightPage = dynamic(
+  () => import("@/components/copyrightPage/index"),
+  {
+    loading: () => <></>,
+  }
+);
+const SquareAds = dynamic(() => import("@/components/Ads/SquareAds"), {
+  loading: () => <></>,
+});
 
-import CopyrightPage from "@/components/copyrightPage/index";
-import Ads from "@/components/ads";
 import { useRouter } from "next/router";
-import SquareAds from "@/components/Ads/SquareAds";
-import Head from "next/head";
 
 const MainPage = () => {
   const [pathName, setPathName] = useState("");
@@ -19,15 +29,15 @@ const MainPage = () => {
     setPathName(path);
   }, [router]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (pathName) {
-        router.push("/blogs/1");
-      }
-    }, 10000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (pathName) {
+  //       router.push("/blogs/1");
+  //     }
+  //   }, 10000);
 
-    return () => clearTimeout(timer);
-  }, [pathName, router]);
+  //   return () => clearTimeout(timer);
+  // }, [pathName, router]);
 
   return (
     <>

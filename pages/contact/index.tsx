@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import axios from "axios";
-import SquareAds from "@/components/Ads/SquareAds";
+
+const SquareAds = dynamic(() => import("@/components/Ads/SquareAds"), {
+  loading: () => <></>,
+});
 
 import { useRouter } from "next/router";
 

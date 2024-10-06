@@ -1,48 +1,63 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import type { AppProps } from "next/app";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-import "@/styles/globals.css";
-import { useEffect } from "react";
+
+const Header = dynamic(() => import("@/components/header"), {
+  loading: () => <></>,
+});
+const Footer = dynamic(() => import("@/components/footer"), {
+  loading: () => <></>,
+});
+
 import Head from "next/head";
 const GA_TRACKING_ID = "G-TLSRBXL8TD";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <link rel="icon" href="/email.svg" crossOrigin="anonymous" />
-
-        <title>TempMail - Get your temporary email address instantly!</title>
-
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/email.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <title>TempMail - Get Your Temporary Email Address Instantly!</title>
         <meta
           name="description"
-          content="TempMail - Get your temporary email address instantly!"
+          content="TempMail provides secure, anonymous, and disposable email addresses. Protect your inbox from spam - no registration required!"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+        <meta name="author" content="TempMail" />
         <meta
           name="keywords"
-          content="free, temporary, email, disposable, mail, email address"
+          content="temporary email, disposable email, anonymous email, spam protection, email privacy"
         />
-        <meta name="author" content="Tempmail" />
         <meta
           property="og:title"
-          content="Temp Mail - Get Free Temporary Email"
+          content="TempMail - Free Temporary Email Service"
         />
         <meta
           property="og:description"
-          content="TempMail provides temporary, secure, anonymous, free, disposable email addresses. No registration required!"
+          content="Get a secure, disposable email address instantly. Protect your privacy and avoid spam with TempMail's free service."
         />
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tempmail-email.com/" />
-        <meta property="og:site_name" content="Temp Mail" />
-        <meta property="og:image" content="/email.png" />
-        <meta name="twitter:card" content="summary" />
+        <meta property="og:site_name" content="TempMail email" />
         <meta
-          property="og:description"
-          content="Keep spam out of your mail and stay safe - just use a disposable temporary email address! Protect your personal email address from spam with Tempmail-email"
+          property="og:image"
+          content="https://tempmail-email.com/email.png"
         />
-        <link href="/email.svg" rel="shortcut icon" />
+        <meta property="og:image:alt" content="TempMail logo" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="TempMail - Free Temporary Email Service"
+        />
+        <meta
+          name="twitter:description"
+          content="Get a secure, disposable email address instantly. Protect your privacy and avoid spam with TempMail's free service."
+        />
+        <meta
+          name="twitter:image"
+          content="https://tempmail-email.com/email.png"
+        />
         <link rel="canonical" href="https://tempmail-email.com/" />
       </Head>
       <Header />
