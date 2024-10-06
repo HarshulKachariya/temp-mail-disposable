@@ -1,3 +1,4 @@
+import React from "react";
 import type { AppProps } from "next/app";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
