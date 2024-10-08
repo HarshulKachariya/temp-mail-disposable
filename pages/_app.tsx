@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>TempMail - Get Your Temporary Email Address Instantly!</title>
         <meta
           name="description"
-          content="TempMail provides secure, anonymous, and disposable email addresses. Protect your inbox from spam - no registration required!, Protect your privacy and avoid spam with TempMail's free service."
+          content="TempMail provides secure, anonymous, and disposable email addresses. Protect your inbox from spam - no registration required! and avoid spam with TempMail's free service."
         />
         <meta name="author" content="TempMail" />
         <meta
