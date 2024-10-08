@@ -13,9 +13,7 @@ const CopyrightPage = dynamic(
     loading: () => <></>,
   }
 );
-const SquareAds = dynamic(() => import("@/components/Ads/SquareAds"), {
-  loading: () => <></>,
-});
+import SquareAds from "@/components/Ads/SquareAds";
 
 import { useRouter } from "next/router";
 

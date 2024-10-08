@@ -6,9 +6,11 @@ import dynamic from "next/dynamic";
 const MailBox = dynamic(() => import("../mailbox/mailbox"), {
   loading: () => <></>,
 });
-const SquareAds = dynamic(() => import("../Ads/SquareAds"), {
-  loading: () => <></>,
-});
+import SquareAds from "../Ads/SquareAds";
+
+// const SquareAds = dynamic(() => import("../Ads/SquareAds"), {
+//   loading: () => <></>,
+// });
 import axiosInstance from "@/common/axiosInstance";
 import QrCodeIcon from "@mui/icons-material/QrCode";
 import FileCopyIcon from "@mui/icons-material/FileCopy";

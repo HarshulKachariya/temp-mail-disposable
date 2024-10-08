@@ -2,10 +2,11 @@ import Link from "next/link";
 import React, { useMemo, useEffect, useState } from "react";
 import { blogs } from "@/utils/data";
 import { useParams } from "next/navigation";
+import SquareAds from "@/components/Ads/SquareAds";
 
-const SquareAds = dynamic(() => import("@/components/Ads/SquareAds"), {
-  loading: () => <></>,
-});
+// const SquareAds = dynamic(() => import("@/components/Ads/SquareAds"), {
+//   loading: () => <></>,
+// });
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 

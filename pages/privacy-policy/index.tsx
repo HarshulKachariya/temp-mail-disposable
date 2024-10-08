@@ -1,9 +1,7 @@
 import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
 
-const SquareAds = dynamic(() => import("@/components/Ads/SquareAds"), {
-  loading: () => <></>,
-});
+import SquareAds from "@/components/Ads/SquareAds";
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
