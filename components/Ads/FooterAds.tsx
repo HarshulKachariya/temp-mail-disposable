@@ -37,6 +37,8 @@ const FooterAds: React.FC<FooterAdsProps> = ({
       });
     };
 
+    loadGPT();
+
     // Load GPT script
     // const script = document.createElement("script");
     // script.src = "https://securepubads.g.doubleclick.net/tag/js/gpt.js";

@@ -30,6 +30,8 @@ const SquareAds: React.FC<SquareAdsProps> = ({ id, type }) => {
       });
     };
 
+    loadGPT();
+
     // // Load GPT script
     // const script = document.createElement("script");
     // script.src = "https://securepubads.g.doubleclick.net/tag/js/gpt.js";
