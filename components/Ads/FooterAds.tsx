@@ -37,19 +37,17 @@ const FooterAds: React.FC<FooterAdsProps> = ({
       });
     };
 
-    loadGPT();
-
     // Load GPT script
-    // const script = document.createElement("script");
-    // script.src = "https://securepubads.g.doubleclick.net/tag/js/gpt.js";
-    // script.async = true;
-    // script.onload = loadGPT;
-    // document.head.appendChild(script);
+    const script = document.createElement("script");
+    script.src = "https://securepubads.g.doubleclick.net/tag/js/gpt.js";
+    script.async = true;
+    script.onload = loadGPT;
+    document.head.appendChild(script);
 
-    // return () => {
-    //   // Cleanup
-    //   document.head.removeChild(script);
-    // };
+    return () => {
+      // Cleanup
+      document.head.removeChild(script);
+    };
   }, [id, type]);
 
   return (

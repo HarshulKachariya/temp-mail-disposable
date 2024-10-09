@@ -15,11 +15,6 @@ export default function Document() {
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         ></script>
 
-        <script
-          async
-          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-        ></script>
-
         <meta
           name="google-site-verification"
           content="WuFxV91DgUW_CNbRf45kqrU3eFpS49q5qqTBnGLhpCM"
