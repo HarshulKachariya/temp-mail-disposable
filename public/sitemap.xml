@@ -3,7 +3,7 @@
 	<!-- We manually set the two URLs we know already -->
 	<url>
 		<loc>
-			https://www.tempmail-email.com/
+			https://tempmail-email.com/pages/temp%20mail
 		</loc>
 		<lastmod>
 			2024-04-10T07:16:53.193Z
@@ -17,7 +17,7 @@
 	</url>
 	<url>
 		<loc>
-			https://www.tempmail-email.com/pages/tempmail
+			https://tempmail-email.com/pages/temp%20mail
 		</loc>
 		<lastmod>
 			2024-04-10T07:16:53.193Z

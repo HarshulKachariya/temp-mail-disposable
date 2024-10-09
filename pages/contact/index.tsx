@@ -6,9 +6,7 @@ import * as Yup from "yup";
 
 import axios from "axios";
 
-const SquareAds = dynamic(() => import("@/components/Ads/SquareAds"), {
-  loading: () => <></>,
-});
+import SquareAds from "@/components/Ads/SquareAds";
 
 import { useRouter } from "next/router";
 
