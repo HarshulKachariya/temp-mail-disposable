@@ -20,23 +20,23 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/email.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <title>TempMail - Temporary Email Address</title>
+        <title>Temp Mail - Temporary Email Address</title>
         <meta
           name="description"
-          content="TempMail provides secure, anonymous, and disposable email addresses. Protect your inbox from spam - no registration required! for TempMail's free service."
+          content="Temp Mail provides secure, anonymous, and disposable email addresses. Protect your inbox from spam - no registration required! for Temp Mail's free service."
         />
         <meta name="author" content="TempMail" />
         <meta
           name="keywords"
-          content="mail or, Mail,Temp Mail,disposable,Disposable Temporary,disposable mail,Temporary,Temporary Email,disposable temporary email,disposable email, Tempmail, tempmail, email, free email, temp mail, spoof mail, fake mail, temporary email, disposable email, anonymous email, spam protection, email privacy"
+          content="tempmail, temp mail,TempMail, Temp Mail, Temp Mail, disposable email, emails, temporary email, email, mail or, Mail,Temp Mail,disposable ,Disposable Temporary, disposable mail,Temporary,Temporary Email,disposable temporary email,disposable email, Tempmail, tempmail, email, free email, temp mail, spoof mail, fake mail, temporary email, disposable email, anonymous email, spam protection, email privacy"
         />
         <meta
           property="og:title"
-          content="TempMail - Free Temporary Email Service"
+          content="Temp Mail - Free Temporary Email Service"
         />
         <meta
           property="og:description"
-          content="Get a secure, disposable email address instantly. Protect your privacy and avoid spam with TempMail's free service."
+          content="Get a secure, disposable email address instantly. Protect your privacy and avoid spam with Temp Mail's free service."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -52,11 +52,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="TempMail - Free Temporary Email Service"
+          content="Temp Mail - Free Temporary Email Service"
         />
         <meta
           name="twitter:description"
-          content="Get a secure, disposable email address instantly. Protect your privacy and avoid spam with TempMail's free service."
+          content="Get a secure, disposable email address instantly. Protect your privacy and avoid spam with Temp Mail's free service."
         />
         <meta
           name="twitter:image"
