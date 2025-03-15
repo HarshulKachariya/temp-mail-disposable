@@ -49,15 +49,15 @@ const ContactForm = () => {
     setPathName(path);
   }, [router]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (pathName === "/contact") {
-        router.push("/terms-of-service");
-      }
-    }, 5000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (pathName === "/contact") {
+  //       router.push("/terms-of-service");
+  //     }
+  //   }, 5000);
 
-    return () => clearTimeout(timer);
-  }, [pathName, router]);
+  //   return () => clearTimeout(timer);
+  // }, [pathName, router]);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 md:gap-5 gap-3 justify-between items-center md:mx-6">

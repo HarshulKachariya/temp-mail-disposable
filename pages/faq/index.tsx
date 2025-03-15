@@ -17,15 +17,15 @@ export default function FAQ() {
     setPathName(path);
   }, [router]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (pathName === "/faq") {
-        router.push("/contact");
-      }
-    }, 5000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (pathName === "/faq") {
+  //       router.push("/contact");
+  //     }
+  //   }, 5000);
 
-    return () => clearTimeout(timer);
-  }, [pathName, router]);
+  //   return () => clearTimeout(timer);
+  // }, [pathName, router]);
 
   const questionsAndAnswers = [
     {

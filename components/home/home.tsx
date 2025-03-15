@@ -21,6 +21,7 @@ import Button from "../button";
 import QRCode from "react-qr-code";
 
 import CustomButton from "../custombuttons";
+import Ads from "../ads";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -158,6 +159,7 @@ const Home = () => {
       <div className="w-full ">
         <SquareAds id={`1726287451092-0`} type="sequre-new" />
       </div>
+      <Ads />
       <MailBox email={email} />
     </>
   );

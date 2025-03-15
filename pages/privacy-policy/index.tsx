@@ -16,15 +16,15 @@ const Index = () => {
     setPathName(path);
   }, [router]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (pathName === "/privacy-policy") {
-        router.push("/terms-of-service");
-      }
-    }, 5000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (pathName === "/privacy-policy") {
+  //       router.push("/terms-of-service");
+  //     }
+  //   }, 5000);
 
-    return () => clearTimeout(timer);
-  }, [pathName, router]);
+  //   return () => clearTimeout(timer);
+  // }, [pathName, router]);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-12">
